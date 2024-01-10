@@ -30,7 +30,7 @@ export const routes = [
   },
    //admin
    {
-    path: "admin",
+    path: "/admin",
     element: <LayoutMainAdmin />,
     children: [
       {
