@@ -43,47 +43,47 @@ export const routes = [
         ]
       },
 
-      {
-        element: <PrivateRoutes />,
-        children: [
-          {
-            index: true,
-            element: <DashBoard />,
-          },
-          //Danh mục công việc
-          {
-            path: "add-categories",
-            element: <AddCategories />
-          },
-          {
-            path: "management-categories",
-            element: <ManagementCategories />
-          },
-          //Quản lý công việc
-          {
-            path: "add-jobs",
-            element: <AddJobs />
-          },
-          {
-            path: "management-jobs",
-            element: <ManagementCategories />
-          },
-          //Quyền
-          {
-            path: "add-group-permission",
-            element: <AddGroupPermission />
-          },
-          {
-            path: "management-group-permission",
-            element: <ManagementGroupPermission />
-          },
-          {
-            path: "set-permission",
-            element: <SetPermission />
-          }
+      // {
+      //   element: <PrivateRoutes />,
+      //   children: [
+      //     {
+      //       index: true,
+      //       element: <DashBoard />,
+      //     },
+      //     //Danh mục công việc
+      //     {
+      //       path: "add-categories",
+      //       element: <AddCategories />
+      //     },
+      //     {
+      //       path: "management-categories",
+      //       element: <ManagementCategories />
+      //     },
+      //     //Quản lý công việc
+      //     {
+      //       path: "add-jobs",
+      //       element: <AddJobs />
+      //     },
+      //     {
+      //       path: "management-jobs",
+      //       element: <ManagementCategories />
+      //     },
+      //     //Quyền
+      //     {
+      //       path: "add-group-permission",
+      //       element: <AddGroupPermission />
+      //     },
+      //     {
+      //       path: "management-group-permission",
+      //       element: <ManagementGroupPermission />
+      //     },
+      //     {
+      //       path: "set-permission",
+      //       element: <SetPermission />
+      //     }
 
-        ]
-      },
+      //   ]
+      // },
 
     ],
   }
