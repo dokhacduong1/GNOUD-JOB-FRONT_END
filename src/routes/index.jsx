@@ -34,14 +34,18 @@ export const routes = [
     element: <LayoutMainAdmin />,
     children: [
       {
-        element: <CheckRoutes />,
-        children: [
-          {
-            path: "login",
-            element: <LoginAdmin />,
-          }
-        ]
-      },
+        path: "login",
+        element: <LoginAdmin />,
+      }
+      // {
+      //   element: <CheckRoutes />,
+      //   children: [
+      //     {
+      //       path: "login",
+      //       element: <LoginAdmin />,
+      //     }
+      //   ]
+      // },
 
       // {
       //   element: <PrivateRoutes />,
