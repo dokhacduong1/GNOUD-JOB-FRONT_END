@@ -1,0 +1,71 @@
+.email {
+    position: relative;
+    background-image: url("./images/email-form1.jpg");
+    min-height: 350px;
+    padding: 110px 0;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+ 
+
+    .mbr-overlay {
+        background-color: #999898;
+        bottom: 0;
+        left: 0;
+        opacity: 0.2;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    &__box {
+        position: relative;
+
+
+
+
+        &-title {
+            h2 {
+                position: relative;
+                font-size: 1.875rem;
+                font-weight: 600;
+                margin-bottom: 1.875rem;
+                color: #ffff;
+            }
+        }
+
+        &-form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            input{
+                width: 100%;
+                height: 50px;
+                padding: 5px 15px;
+                padding-left: 70px;
+                border: none;
+                
+                color: #5d677a;
+                font-size: 16px;
+                font-weight: 500;
+                border-top-left-radius: 4px;
+                border-bottom-left-radius: 4px;
+            }
+            .ant-input-group-addon{
+                background: #ff9900;
+                overflow:hidden ;
+                &:hover{
+                    background: #f3ad43 !important;
+                }
+                button{
+                    background: #ff9900;
+                    &:hover{
+                        background: #f7a62d !important;
+                    }
+                }
+            }
+        }
+    }
+}

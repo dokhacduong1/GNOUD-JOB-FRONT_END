@@ -1,0 +1,88 @@
+.job {
+    &__occupation {
+        .item-box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            height: 503px;
+        }
+        &-boxJob{
+            padding: 15px 10px;
+           &:nth-child(1) , &:nth-child(2){
+            border-bottom: 1px solid #EAEAEA;
+           }
+        }
+        &-title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #E6EEFA;
+            padding: 18px 20px;
+            text-align: center;
+            height: 100px;
+            h2 {
+                font-size: 24px;
+                color: #1E1E1E;
+                font-weight: 700;
+          
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+        &-item{
+          
+            border-right: 1px solid #EAEAEA;
+            border-left: 1px solid #EAEAEA;
+            border-bottom: 1px solid #EAEAEA;
+            padding: 19px 23px 12px;
+        }
+        &-boxImage{
+            padding: 20px 10px;
+            border: 1px solid #5dcaf9;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            img{
+                width: 100px;
+                height: 50px;
+                object-fit: cover;
+            }
+         }
+         &-content {
+             h2 {
+                 overflow: hidden;
+                 color: #172642;
+                 font-size: 16px;
+                 font-weight: 700;
+                 line-height: 1.2;
+                 text-overflow: ellipsis;
+                
+                 -webkit-line-clamp: 1;
+                 -webkit-box-orient: vertical;
+                 display: -webkit-box;
+                 overflow: hidden;
+             }
+             h3{
+                 overflow: hidden;
+                 color: #5d677a;
+                 text-overflow: ellipsis;
+                 font-weight: 500;
+             }
+             h4{
+                 color: #0040d6 !important;
+                 font-weight: 500;
+             }
+             h5{
+                 height: 21px;
+                 padding-left: 0;
+                 overflow: hidden;
+                 text-overflow: ellipsis;
+                 
+             }
+             svg{
+                 color: #5d677a;
+             }
+            }
+    }
+}

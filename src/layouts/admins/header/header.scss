@@ -1,0 +1,18 @@
+.headerAdmin{
+  padding: 10px;
+  border-bottom: 1px solid rgba(5, 5, 5, 0.06);
+  &__logo {
+    padding: 13px;
+    font-size: 39px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #5dcaf9;
+    margin-bottom: 0;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
+    background-color: #F6F6F6;
+    transform: rotate(-6deg);
+    text-align: center;
+
+  }
+}

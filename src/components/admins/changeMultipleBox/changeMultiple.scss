@@ -1,0 +1,17 @@
+.changeMultiple{
+    button{
+        background:#5dcaf9 !important;
+        border: none;
+    }
+     .ant-btn-primary:disabled{
+        color: #767676;
+        background:#e4e3e3ca !important;
+        border: 1px solid #ddd;
+    }
+     .ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer):hover .ant-select-selector{
+        border: 1px solid #5dcaf9 !important;
+    }
+    .ant-select-focused .ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer) .ant-select-selector{
+        border: 1px solid #5dcaf9 !important;
+    }
+}

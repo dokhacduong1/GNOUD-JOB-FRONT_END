@@ -1,0 +1,175 @@
+
+button:focus-visible{
+	outline: none !important;
+}
+
+body .title-text{
+	margin-bottom: 1.875rem;
+    color: #182642;
+    font-size: 1.875rem;
+    font-weight: 700;
+	font-family: 'Roboto', sans-serif !important;
+}
+.cb-section {
+    padding: 60px 0;
+}
+a{
+	text-decoration: none;
+	color: #000;
+	cursor: pointer;
+}
+a:hover{
+	color: #000;
+}
+.dir-line{
+	border-top: 1px solid #5dcaf9;
+	
+	padding: 5px 0px;
+}
+
+.ant-pagination .ant-pagination-disabled .ant-pagination-item-link, .ant-pagination .ant-pagination-disabled:hover .ant-pagination-item-link{
+	display: none;
+}
+.ant-pagination .ant-pagination-prev .ant-pagination-item-link, .ant-pagination .ant-pagination-next .ant-pagination-item-link{
+	border-radius: 50%;
+	background: #f5f5f5;
+	transition: none;
+	color: #3e3e3e !important;
+}
+.ant-pagination .ant-pagination-item{
+	background: #fff;
+	border-radius: 50%;
+	border: 1px solid #ddd;
+	color: #5d677a !important;
+	transition: none !important;
+}
+.ant-pagination .ant-pagination-item:hover , .ant-pagination .ant-pagination-item:active{
+	background-color: #5dcaf9 !important;
+	color: #fff !important;
+	border: 1px solid #5dcaf9;
+	
+}
+.ant-pagination .ant-pagination-item-active{
+	background: #5dcaf9;
+	color: #fff;
+	font-weight: normal;
+	border: 1px solid #5dcaf9;
+	color: #fff !important;
+}
+.ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn{
+	color: #5dcaf9;
+	font-size: 25px;
+}
+.ant-tabs .ant-tabs-tab-btn{
+	font-size: 25px;
+}
+.ant-tabs-top >.ant-tabs-nav .ant-tabs-ink-bar, .ant-tabs-top >div>.ant-tabs-nav .ant-tabs-ink-bar{
+	background:#5dcaf9 ;
+} 
+.button-delete , .button-edit , .button-eye{
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	padding: 5px;
+	font-size: 25px;
+	cursor: pointer;
+	background: #ffffff;
+	border-radius: 10px;
+}
+.button-delete-role , .button-edit-role , .button-eye-role{
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	padding: 5px;
+	font-size: 19px;
+	cursor: pointer;
+	background: #ffffff;
+	border-radius: 10px;
+}
+
+.button-delete:hover , .button-edit:hover , .button-eye:hover , .button-delete-role:hover , .button-edit-role:hover , .button-eye-role:hover{
+	background: #e7e7e7;
+}
+body .button-edit , .button-edit-role{
+	color: rgb(0 140 234);
+	
+}
+body .button-delete , .button-delete-role{
+	color: #cb0707;
+
+	
+}
+body .button-eye , .button-eye-role{
+	color: #c05d00;
+}
+
+body .button-delete-multi{
+	color: #db2222;
+	font-size: 20px;
+	padding: 3px;
+	cursor: pointer;
+}
+.card-body {
+    -ms-flex: 1 1 auto !important;
+    flex: 1 1 auto !important;
+    min-height: 1px !important;
+    padding: 1.25rem !important;
+}
+.card-header {
+    padding: 0.75rem 1.25rem !important;
+    margin-bottom: 0 !important;
+	
+    background-color: #fafafa !important;
+	border-bottom: 1px solid #00b3ff54 !important;
+}
+.title-header{
+	font-size: 17px;
+	color: #252525;
+	padding: 10px 0;
+	line-height: 1.2;
+	display: inline;
+	padding: 5px;
+	border-radius: 5px;
+	
+}
+.title-header i{
+	font-family: 'Roboto', sans-serif !important;
+	font-weight: 500;
+	
+}
+.box-card{
+	overflow: hidden;
+	border: 1px solid #00b3ff54;
+    border-radius: 10px;
+   
+
+}
+.button-submit-admin{
+	display: block;
+	width: 100%;
+	padding: 10px;
+	border: none;
+	color: #fff;
+	background: #5dcaf9;
+	border-radius: 5px;
+	font-weight: 600;
+}
+.button-submit-admin:hover{
+	background: #35b9f1;
+}
+body .tox-statusbar{
+	display: none !important;
+}
+.title-main-admin{
+	font-size: 25px;
+	font-weight: 600;
+	margin-bottom: 10px;
+	text-align: center;
+}
+.ant-checkbox-checked .ant-checkbox-inner {
+	background-color: #35b9f1 ; 
+	border-color: #35b9f1 ;
+  }
+  .ant-checkbox-disabled .ant-checkbox-inner{
+	  background: #f5f5f5;
+	  border-color: #f5f5f5;
+  }
+  .ReactMapGL{
+	border-radius: 10px !important;
+  }

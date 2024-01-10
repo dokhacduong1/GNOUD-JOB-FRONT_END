@@ -1,0 +1,135 @@
+.header {
+   
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    background: #fff;
+    &__logo {
+
+        padding: 13px;
+
+        a {
+            font-size: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            color: #5dcaf9;
+            margin-bottom: 0;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            border-radius: 10px;
+            background-color: #F6F6F6;
+            transform: rotate(-6deg);
+            
+
+        }
+    }
+
+    &__search {
+        span{
+            font-family: 'Roboto', sans-serif !important;
+        }
+        input {
+            
+            border-radius: 50px;
+            border: none !important;
+            padding: 15px;
+
+            :focus {
+                border-color: red !important;
+            }
+
+            :focus-within {
+                background-color: red !important;
+            }
+        }
+
+        .ant-input-group-addon button {
+            border-radius: 0px 50px 50px 0px !important;
+            border: none !important;
+            padding: 26px !important;
+           
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+
+
+        }
+    }
+
+    &__boxUsers {
+        a{
+            font-family: 'Roboto', sans-serif !important;
+        }
+        &-user{
+            
+            font-size: 15px;
+            &:nth-child(1){
+                border-right: 1px solid #e8e8e8;
+            }
+            
+        }
+      
+    }
+
+    &__employer {
+        div{
+            font-family: 'Roboto', sans-serif !important;
+        }
+          
+       
+        background: #f5f5f5;
+      
+        cursor: pointer;
+        color: #000000;
+        font-size: 15px;
+      
+    }
+
+    .ant-input:focus,
+    .ant-input:focus-within {
+        box-shadow: none;
+    }
+
+    .ant-collapse {
+        position: fixed;
+        top: 71px;
+
+        z-index: 999;
+        left: 0;
+        border: none;
+        width: 100%;
+        padding: 0;
+        background: #fff;
+
+        .ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer):hover .ant-select-selector {
+            border: 1px solid #5dcaf9;
+        }
+    }
+
+    .ant-collapse-header {
+        display: none !important;
+    }
+
+    .ant-collapse-item,
+    .ant-collapse-content {
+        border: none !important;
+
+    }
+
+    .ant-collapse-content-box {
+        border-bottom: 1px solid #ddd;
+    }
+    .ant-menu-title-content{
+        font-size: 15px;
+        font-weight: 500;
+    }
+    .ant-menu-light.ant-menu-horizontal >.ant-menu-item-selected , .ant-menu-light.ant-menu-horizontal >.ant-menu-item:hover::after{
+        border-bottom-color:#59a3f7 !important;
+        color: #59a3f7 !important;
+    }
+
+    .ant-menu-light.ant-menu-horizontal >.ant-menu-item-selected::after {
+        border-bottom-color:#83daff !important;
+    }
+}

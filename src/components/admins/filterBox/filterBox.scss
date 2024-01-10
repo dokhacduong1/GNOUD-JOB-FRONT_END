@@ -1,0 +1,55 @@
+.filterBox {
+    .ant-radio-button-wrapper>.ant-radio-button {
+        background: #32bdf8 !important;
+        border: none !important;
+    }
+
+    .ant-radio-group-solid .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+        border: 1px solid #28bbfa !important;
+
+    }
+
+    .ant-radio-button-wrapper:hover {
+
+        color: #28bbfa;
+    }
+
+    .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled)::before {
+        background-color: #28bbfa !important;
+    }
+
+    .ant-radio-group-solid .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+        background: #28bbfa !important;
+        border-color: #28bbfa !important;
+    }
+
+    .ant-input-search .ant-input-group .ant-input-affix-wrapper:not(:last-child) {
+        padding: 10px;
+        border-radius: 20px;
+    }
+
+    .ant-input-search>.ant-input-group>.ant-input-group-addon:last-child .ant-input-search-button:not(.ant-btn-primary) {
+     
+        z-index: 99;
+        border: none;
+        background: transparent;
+         color:rgb(255, 255, 255);
+    }
+    .ant-input-search >.ant-input-group >.ant-input-group-addon:last-child{
+        left: -38px;
+        z-index: 99;
+        background: #28bbfa;
+        padding: 0px 5px;
+        border-radius: 0 20px 20px 0;
+       
+    }
+    .ant-input-affix-wrapper:hover {
+        border-color: #28bbfa;
+    }
+    .ant-input-affix-wrapper{
+        &:focus , &:focus-within{
+            border-color: #28bbfa;
+        }
+       
+    }
+}

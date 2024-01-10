@@ -1,0 +1,26 @@
+.slick-box-image{
+    outline: none !important;
+    img{
+       object-fit: cover;
+        width: 100% !important;
+        height: 540px;
+        &:focus-visible{
+            outline: none;
+        }
+    }
+}
+.slick-prev , .slick-next{
+    z-index: 2 !important;
+    font-size: 30px !important;
+   
+    color: #83daff;
+    &:hover , &:focus{
+        color: #83daff;
+    }
+    &::before{
+        content: none;
+    }
+}
+.slick-next{
+    margin-right: 9px;
+}

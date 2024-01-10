@@ -1,0 +1,30 @@
+.employer{
+    
+    &__top{
+       
+        &-item {
+            cursor: pointer;
+           
+            &:hover {
+                border-radius: 5px;
+                box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+               
+             
+            }
+            .image{
+               
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 5px 0;
+               
+            }
+            img {
+              
+                width: 160px;
+                height: 90px;
+                object-fit: cover;
+            }
+        }
+    }
+}

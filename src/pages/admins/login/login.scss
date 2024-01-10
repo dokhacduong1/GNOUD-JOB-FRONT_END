@@ -1,0 +1,31 @@
+.login {
+    &__form {
+       
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+    }
+    span{
+        &:focus , &:hover , &:focus-within{
+            border: 1px solid #5dcaf9 !important;
+        }
+    }
+    input , button {
+        padding: 10px !important;
+       
+        
+    }
+    button{
+        outline: none;
+        border-radius: 5px;
+        border: none;
+        background: #5dcaf9;
+        color: #ffff;
+        font-size: 25px;
+        font-weight: 500;
+        &:hover{
+            background: #2fb9f3;
+        }
+    }
+}

@@ -1,0 +1,32 @@
+.ant-layout-sider-children{
+    background: #fff !important;
+}
+.ant-layout-sider{
+    background: #fff !important;
+}
+
+.ant-layout-sider{
+    z-index: 888 !important;
+    position: relative !important;
+
+}
+.layout_slider-collab , .layout_slider-collab-no-active{
+    position: absolute !important;
+    top: 1px;
+    right: -6px;
+    
+}
+.layout_slider-collab span{
+    color: #5dcaf9;
+    font-size: 24px !important;
+    cursor: pointer;  
+    box-shadow: rgba(55, 55, 56, 0.2) 0px 7px 29px 0px;
+   border-radius: 50%;
+}
+.layout_slider-collab-no-active span{
+    color: #5dcaf9;
+    font-size: 24px !important;
+    cursor: pointer;  
+    box-shadow: rgba(55, 55, 56, 0.2) 0px 7px 29px 0px;
+   border-radius: 50%;
+}

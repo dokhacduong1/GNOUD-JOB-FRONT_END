@@ -1,0 +1,21 @@
+.managementCategories{
+  
+    img{
+        width: 80px;
+        height: auto;
+        object-fit: cover;
+    }
+    .ant-pagination .ant-pagination-item-active{
+        background: #ffffff !important;
+        color: #9a9a9a;
+        font-weight: normal;
+        border: 1px solid #727272;
+        color: #000000 !important;
+    }
+    .ant-pagination .ant-pagination-item:hover , .ant-pagination .ant-pagination-item:active{
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        border: 1px solid #919191;
+        
+    }
+}
