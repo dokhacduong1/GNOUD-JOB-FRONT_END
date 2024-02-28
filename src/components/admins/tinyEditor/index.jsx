@@ -1,7 +1,7 @@
 import { Editor } from '@tinymce/tinymce-react';
-import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react';
+import { forwardRef, memo, useEffect, useImperativeHandle, useRef, useState } from 'react';
 
-const TinyMce = forwardRef((props, ref) => {
+const TinyMce = forwardRef(function TinyMce(props, ref) {
 
   const [editorContent, setEditorContent] = useState('');
   const editorRef = useRef(null);
@@ -26,7 +26,7 @@ const TinyMce = forwardRef((props, ref) => {
 
       value={editorContent}
       init={{
-        images_upload_url: "http://localhost:3001/api/v1/uploads/image",
+        images_upload_url: "http://localhost:2709/api/v1/admin/uploads/image",
         height: 500,
         menubar: false,
         plugins: [
@@ -41,4 +41,9 @@ const TinyMce = forwardRef((props, ref) => {
   );
 });
 
-export default TinyMce;
+TinyMce.displayName = 'TinyMce';
+
+
+
+const MemoizedTinyMce= memo(TinyMce);
+export default MemoizedTinyMce;

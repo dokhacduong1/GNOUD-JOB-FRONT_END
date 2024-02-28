@@ -22,11 +22,11 @@
 	background: #fff !important;
 }
 a{
-	text-decoration: none !important;
+	text-decoration: none ;
 	color: #000 ;
 	cursor: pointer;
 }
-html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -73,7 +73,7 @@ html {overflow-y: scroll;}
 
 /* we use a lot of ULs that aren't bulleted.
 	don't forget to restore the bullets within content. */
-ul {list-style: none;}
+// ul {list-style: none;}
 
 blockquote, q {quotes: none;}
 

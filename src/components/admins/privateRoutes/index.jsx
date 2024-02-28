@@ -12,7 +12,6 @@ import { CheckAuthAdmin } from "../../../helpers/checkAuthAdmin";
 
 
 function PrivateRoutes() {
-    console.log("PrivateRoutes");
     //Lấy ra trạng thái của authenticationReducerAdmin false là chưa đăng nhập true là đã đăng nhập
     // const authenMainAdmin = useSelector((status) => status.authenticationReducerAdmin);
     const [authen, setAuthen] = useState(true);

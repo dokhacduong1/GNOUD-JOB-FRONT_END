@@ -1,0 +1,105 @@
+.heading-title{
+  margin: 20px 0 0 16px ;
+  color: #212f3f;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+}
+.may-be-interested {
+  padding: 20px 16px 20px;
+  
+ 
+  .padding-set {
+    background: var(
+      --lo,
+      linear-gradient(
+        94deg,
+        rgba(180, 253, 255, 0.06) 0,
+        rgba(20, 128, 189, 0.06) 100.16%
+      )
+    );
+    padding: 16px 16px 20px;
+  }
+  &__box {
+    background: #fff;
+    border: 1px solid #29b7f3;
+    border-radius: 8px;
+    overflow: hidden;
+    .banner {
+      img {
+        border-radius: 0 !important;
+        height: 68px !important;
+        max-height: 250px !important;
+        -o-object-fit: cover;
+        object-fit: cover;
+        width: 100% !important;
+      }
+    }
+    .header_box {
+      display: flex;
+     
+      gap: 10px;
+      align-items: center;
+      .image {
+        background: #fff;
+        border: 2px solid #70b7f1;
+        border-radius: 74px;
+        flex-shrink: 0;
+        height: 76px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 76px;
+        img {
+          border-radius: 5px;
+          max-height: 100%;
+          max-width: 100%;
+        }
+      }
+      .title {
+        .title-text {
+          text-transform: uppercase;
+          color: #ff5e00;
+          display: -webkit-box;
+          font-size: 15px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 24px;
+          margin-bottom: 8px;
+          overflow: hidden;
+          text-decoration: none;
+          word-break: break-word;
+        }
+      }
+    }
+    .body_box{
+      .box-slary-city{
+        display: flex;
+       gap: 20px;
+      }
+      margin-top: 10px;
+      .text-head{
+        margin-bottom: 10px;
+      }
+      &-item{
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        svg{
+          margin-right: 10px;
+          color: #27abe4;
+          font-size: 15px;
+        }
+        .title-span{
+        
+        
+          color: #263a4d;
+          font-size: 14px;
+          font-weight: 500;
+        }
+        
+      }
+    }
+  }
+}

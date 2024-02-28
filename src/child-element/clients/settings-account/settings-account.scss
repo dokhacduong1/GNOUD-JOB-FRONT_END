@@ -1,0 +1,98 @@
+.box-settings-info {
+  &__h2 {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    svg {
+      align-items: center;
+      background: #f4f5f5;
+      border-radius: 50px;
+      color: #646d79 !important;
+      display: flex;
+      justify-content: center;
+      margin-right: 10px;
+      width: 15px;
+      height: 15px;
+      padding: 5px;
+    }
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #212f3f;
+    }
+  }
+  &__form {
+    .box-helper {
+      text-align: center;
+      p:first-child {
+        font-weight: 600;
+      }
+    }
+    .flast-login {
+      color: #6f7882;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 22px;
+      margin-bottom: 16px;
+      margin-top: 16px;
+      text-align: center;
+    }
+    .box-register {
+      text-align: center;
+    }
+
+    .button-submit {
+      margin-top: 8px;
+      border: none;
+      width: 100%;
+      padding: 11px;
+      border-radius: 5px;
+      background-color: #69b5d6;
+      color: #fff;
+      font-weight: 500;
+      &:hover {
+        background-color: #47aad4;
+      }
+    }
+    .ant-input-affix-wrapper {
+      padding: 11px 11px;
+    }
+    .ant-input-affix-wrapper > input.ant-input {
+      background-color: #fff !important ;
+      color: #000000 !important;
+    }
+    .ant-input-affix-wrapper-disabled .ant-input[disabled] {
+      background-color: transparent !important;
+    }
+    svg {
+      color: #47aad4;
+    }
+    .ant-form-item {
+      margin-bottom: 10px;
+    }
+    // .ant-form-item
+    //   .ant-form-item-label
+    //   > label.ant-form-item-required:not(
+    //     .ant-form-item-required-mark-optional
+    //   )::before {
+    //   display: none;
+    // }
+    .ant-form-item-label > label,
+    :where(.css-dev-only-do-not-override-dkbvqv).ant-col-24.ant-form-item-label
+      > label,
+    :where(
+        .css-dev-only-do-not-override-dkbvqv
+      ).ant-col-xl-24.ant-form-item-label
+      > label,
+    .ant-checkbox + span {
+      color: #6f7882;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+    }
+    .ant-input-affix-wrapper {
+      border: 1px solid #eee;
+    }
+  }
+}

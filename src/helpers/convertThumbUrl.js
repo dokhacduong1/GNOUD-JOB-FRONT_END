@@ -1,4 +1,5 @@
 export const convertThumbUrl = (data)=>{
+ 
     if(data){
         return data.split("base64,")[1];
     }

@@ -1,0 +1,86 @@
+.contact-users {
+  .box-image {
+    img {
+      max-width: 100%;
+      height: 100%;
+      border-radius: 10px 0 0 10px;
+      object-fit: cover;
+    }
+  }
+  .box-content {
+    background: #fff;
+    border-radius: 0 10px 10px 0;
+    .text-heading {
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 32px;
+      letter-spacing: -0.24px;
+      color: #fa5899;
+      margin-bottom: 12px;
+    }
+    .form-contact {
+      padding: 40px;
+      .ant-form-item
+        .ant-form-item-label
+        > label.ant-form-item-required:not(
+          .ant-form-item-required-mark-optional
+        )::before {
+        display: none;
+      }
+      .ant-form-vertical .ant-form-item-label > label,
+      :where(
+          .css-dev-only-do-not-override-1xg9z9n
+        ).ant-col-24.ant-form-item-label
+        > label,
+      :where(
+          .css-dev-only-do-not-override-1xg9z9n
+        ).ant-col-xl-24.ant-form-item-label
+        > label {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 22px;
+        letter-spacing: 0.175px;
+        color: #5e6368;
+      }
+      .ant-input-outlined:hover,
+      .ant-select-outlined:not(.ant-select-disabled):not(
+          .ant-select-customize-input
+        ):not(.ant-pagination-size-changer):hover
+        .ant-select-selector,
+      .ant-select-outlined:not(.ant-select-disabled):not(
+          .ant-select-customize-input
+        ):not(.ant-pagination-size-changer)
+        .ant-select-selector,
+      .ant-input-outlined:focus, .ant-input-outlined:focus, :where(.css-dev-only-do-not-override-1xg9z9n).ant-input-outlined:focus-within {
+        border-color: #faaaca !important;
+        box-shadow: none !important;
+      }
+      .ant-input-affix-wrapper .ant-input-prefix{
+        margin-inline-end:15px !important;
+        color: #a8a8a8;
+      }
+      .form-submit {
+        text-align: center;
+        button {
+          background: #fa5899;
+          border-radius: 10px;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 24px;
+          letter-spacing: -0.16px;
+          color: #fff;
+          padding: 12px 24px;
+          border: none;
+          cursor: pointer;
+          transition: all 0.3s;
+          &:hover {
+            background: #f73f7d;
+          }
+        }
+      }
+    }
+  }
+}

@@ -4,7 +4,8 @@ import "./home.scss";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import imageSlider from "./images/1.jpg"
+import imageSlider from "./images/1.png"
+import imageSlider2 from "./images/2.png"
 import { useEffect, useState } from "react";
 import { getListEmployers } from "../../../services/clients/employersApi";
 import SliderBanner from "../../../components/clients/sliderBanner";
@@ -37,7 +38,7 @@ function Home() {
   return (
     <>
       <div className="home">
-        <SliderBanner images={[imageSlider]} />
+        <SliderBanner images={[imageSlider,imageSlider2]} />
         <EmployerTop listEmployers={listEmployers} />
         <hr></hr>
         <JobsHot />

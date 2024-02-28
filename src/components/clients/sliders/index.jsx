@@ -5,6 +5,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import "./sliders.scss"
 import { LeftCircleOutlined,RightCircleOutlined } from '@ant-design/icons';
+import { memo } from 'react';
 // eslint-disable-next-line
 function Sliders(props) {
     const { arrayImage, custom, settings } = props;
@@ -59,4 +60,6 @@ function Sliders(props) {
 
     );
 }
-export default Sliders;
+
+const MemoizedSliders = memo(Sliders);
+export default MemoizedSliders;

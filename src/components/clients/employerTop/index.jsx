@@ -5,6 +5,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import "./employerTop.scss"
 
 import Sliders from '../sliders';
+import { memo } from 'react';
 
 
 function EmployerTop(props) {
@@ -41,4 +42,5 @@ function EmployerTop(props) {
         </div>
     );
 }
-export default EmployerTop;
+const MemoizedEmployerTop= memo(EmployerTop);
+export default MemoizedEmployerTop;

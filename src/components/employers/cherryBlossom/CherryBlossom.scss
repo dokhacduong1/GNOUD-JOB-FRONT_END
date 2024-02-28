@@ -1,0 +1,15 @@
+@keyframes fall {
+    0% { transform: translate(100vw, -100vh); }
+    100% { transform: translate(-100vw, 100vh); }
+  }
+  
+  .cherry-blossom {
+    position: absolute;
+    opacity: 0.6;
+    z-index: 1;
+    animation: fall 6s linear infinite;
+  }
+  
+  .cherry-blossom img {
+    width: 50px;
+  }

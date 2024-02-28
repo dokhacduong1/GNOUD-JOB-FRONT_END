@@ -1,6 +1,6 @@
 
 
-import { useEffect } from 'react';
+import { memo, useEffect } from 'react';
 import goongjs from '@goongmaps/goong-js';
 const token = "hppDf6CgR3Ol9Qn71FfSzb04MhhncUrF9QLwCuB3"
 function MapView(props) {
@@ -95,4 +95,6 @@ function MapView(props) {
         </>
     );
 }
-export default MapView;
+
+const MemoizedMapView= memo(MapView);
+export default MemoizedMapView;

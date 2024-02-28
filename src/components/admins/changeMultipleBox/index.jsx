@@ -1,5 +1,6 @@
 import { Button, Form, Select} from "antd";
 import "./changeMultiple.scss"
+import { memo } from "react";
 
 function ChangeMultipleBox(props) {
     const { options, handleSubmit, checkActiveButton } = props
@@ -37,4 +38,6 @@ function ChangeMultipleBox(props) {
         </>
     )
 }
-export default ChangeMultipleBox;
+
+const MemoizedChangeMultipleBox= memo(ChangeMultipleBox);
+export default MemoizedChangeMultipleBox;

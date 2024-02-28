@@ -27,7 +27,7 @@ function AddGroupPermission() {
             //Hàm này để lấy dữ liệu từ tinymce
             if (getContentTiny(tinyMceRef)) {
                 valueForm.description = getContentTiny(tinyMceRef);
-            };
+            }
 
             const result = await createRoles(valueForm);
             if (result.code === 201) {

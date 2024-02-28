@@ -1,5 +1,5 @@
 
-import { useEffect } from 'react';
+import { memo, useEffect } from 'react';
 import goongjs from '@goongmaps/goong-js';
 const token = "hppDf6CgR3Ol9Qn71FfSzb04MhhncUrF9QLwCuB3"
 
@@ -50,4 +50,6 @@ function MapViewNoChange(props) {
     );
 }
 
-export default MapViewNoChange;
+
+const MemoizedMapViewNoChange= memo(MapViewNoChange);
+export default MemoizedMapViewNoChange;

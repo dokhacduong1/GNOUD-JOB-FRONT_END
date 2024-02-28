@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate, Outlet} from "react-router-dom";
 import { deleteAllCookies} from "../../../helpers/cookie";
-import { useEffect } from "react";
+import { memo, useEffect } from "react";
 import { CheckAuthAdmin } from "../../../helpers/checkAuthAdmin";
 import { authenticationAdmin } from "../../../stores/admins/actions/auth";
 
@@ -37,4 +37,6 @@ function CheckRoutes() {
     )
 }
 
-export default CheckRoutes;
+
+const MemoizedCheckRoutes= memo(CheckRoutes);
+export default MemoizedCheckRoutes;

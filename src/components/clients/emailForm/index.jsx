@@ -2,6 +2,7 @@
 
 import { Input } from 'antd';
 import "./emailForm.scss"
+import { memo } from 'react';
 function EmailForm(props) {
     const { Search } = Input;
     const handleFormSearch = (value) => {
@@ -33,4 +34,7 @@ function EmailForm(props) {
         </div>
     );
 }
-export default EmailForm;
+
+
+const MemoizedEmailForm = memo(EmailForm);
+export default MemoizedEmailForm;

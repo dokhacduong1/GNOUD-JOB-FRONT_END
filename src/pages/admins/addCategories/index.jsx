@@ -48,7 +48,7 @@ function AddCategories() {
       //Hàm này để lấy dữ liệu từ tinymce
       if (getContentTiny(tinyMceRef)) {
         valueForm.description = getContentTiny(tinyMceRef);
-      };
+      }
 
       // Chuyển mã tách thành base64
       valueForm.thumbUrl = convertThumbUrl(fileImage);

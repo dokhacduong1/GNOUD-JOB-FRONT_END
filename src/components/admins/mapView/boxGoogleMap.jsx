@@ -1,3 +1,4 @@
+import { memo } from "react";
 
 function BoxGoogleMap(props) {
   const { latitude, longitude } = props;
@@ -5,7 +6,7 @@ function BoxGoogleMap(props) {
   return (
     < >
       {
-        // eslint-disable-next-line jsx-a11y/iframe-has-title
+
         <iframe className='ReactMapGL' src={`https://www.google.com/maps/embed/v1/place?q=${latitude},${longitude}&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8`}></iframe>
       }
 
@@ -13,4 +14,6 @@ function BoxGoogleMap(props) {
 
   )
 }
-export default BoxGoogleMap;
+
+const MemoizedBoxGoogleMap= memo(BoxGoogleMap);
+export default MemoizedBoxGoogleMap;

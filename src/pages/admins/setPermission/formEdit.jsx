@@ -3,7 +3,7 @@ import { EditOutlined, LoadingOutlined } from '@ant-design/icons';
 import { useState } from 'react';
 import { Card, Checkbox, Col, Form, Modal, Row, Spin, notification } from 'antd';
 import { handleCancel, handleShowModal } from '../../../helpers/modelHelper';
-import { dataPermission } from './options';
+import { dataPermission } from './js/options';
 import { editRolesPermissions } from '../../../services/admins/rolesApi';
 
 function FormEdit(props) {

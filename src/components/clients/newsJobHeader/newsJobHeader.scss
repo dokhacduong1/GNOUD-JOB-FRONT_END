@@ -1,0 +1,70 @@
+.news__job-header{
+     background: linear-gradient(90deg,#263238,#31afe6 105.53%);
+    border-radius: 5px 5px 0 0;
+    min-height: 180px;
+    padding: 5px 32px 0;
+    position: relative;   
+    display: flex;
+
+    .box-item{
+        z-index: 1;
+        .title{
+            color: #fff;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 30px;
+            margin: initial;
+            margin-bottom: 8px;
+            margin-top: 26px;
+        }
+        .description{
+            color: #fff;
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 20px;
+            margin: initial;
+            margin-bottom: 18px;
+            width: 90%;
+        }
+        .label-tag{
+            display: flex;
+            gap: 10px;
+            .label-tag-remove{
+              display: flex;
+              gap: 5px;
+              align-items: center;
+              background: #fff;
+              border-radius: 12px;
+              color: #31afe6;
+              font-size: 12px;
+              font-weight: 700;
+              line-height: 16px;
+              min-width: 80px;
+              padding: 4px 8px;
+              svg{
+                background: #31afe6;
+                border-radius: 50%;
+                color: #fff;
+                padding: 2px;
+                font-size: 8px;
+              }
+            }
+        }
+    }
+    .box-iamge{
+        position: absolute;
+        right: 20%;
+        top: 0%;
+        z-index: 1;
+        img{
+          z-index: 1;
+          width: 100%;
+          object-fit: cover;
+          opacity: 0.5;
+          rotate: 90deg;
+          
+        }
+    }
+}

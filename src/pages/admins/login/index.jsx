@@ -1,7 +1,6 @@
 import { Form, Input, notification } from "antd";
 import "./login.scss"
 
-import { useNavigate } from "react-router-dom";
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { useDispatch } from "react-redux";
 import { loginAdmin } from "../../../services/admins/adminsApi";
@@ -17,7 +16,7 @@ function LoginAdmin() {
 
 
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+
 
   const handleFornm = async (valueForm) => {
     const newDataLoign = {
@@ -30,7 +29,8 @@ function LoginAdmin() {
       Cookies.set('token-admin', result.token, { expires: 7 }); // expires: số ngày cookie sẽ hết hạn
       const CheckAuth = await CheckAuthAdmin();
       dispatch(authenticationAdmin(true,CheckAuth.infoUser));
-      navigate("/admin");
+      window.location.href = "/admin";
+      // navigate("/admin");
     } else {
       api.error({
         message: <span style={{ color: "red" }}>Failed</span>,

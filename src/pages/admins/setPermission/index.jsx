@@ -35,12 +35,10 @@ function SetPermission() {
                 renderItem={(item, index) => (
                     <List.Item
                         actions={[
-                            <FormEdit record={item} fetchApiLoad ={()=>fectApi()}/>,
-                            <ViewPermission record={item} />,
-
+                            <FormEdit  key={item._id}  record={item} fetchApiLoad ={()=>fectApi()}/>,
+                            <ViewPermission key={item._id} prop record={item} />,
                         ]}
                     >
-
                         <List.Item.Meta
                             avatar={<Avatar src={`https://api.dicebear.com/7.x/miniavs/svg?seed=${index}`} />}
                             title={<a href="https://ant.design">{item.title} {""} {roleId === item._id ?  <Tag  color="geekblue">Đây Là Quyền Của Bạn</Tag> : ""}</a>}

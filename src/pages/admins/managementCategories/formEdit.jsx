@@ -8,7 +8,7 @@ import { editCategories, getTreeCategories } from '../../../services/admins/jobs
 import { SelectTree } from '../../../helpers/selectTree';
 import { convertThumbUrl } from '../../../helpers/convertThumbUrl';
 import { decData } from '../../../helpers/decData';
-import { handleCancel, handleShowModal } from '../../../helpers/modelHelper';
+import { handleCancel, handleUpdateDataCategories } from '../../../helpers/modelHelper';
 import { handleFileChange } from '../../../helpers/imagesHelper';
 import { getContentTiny } from '../../../helpers/getContentTinymce';
 
@@ -51,7 +51,8 @@ function FormEdit(props) {
             //Hàm này để lấy dữ liệu từ tinymce
             if (getContentTiny(tinyMceRef)) {
                 valueForm.description = getContentTiny(tinyMceRef);
-            };
+            }
+
             // Chuyển mã tách thành base64
             valueForm.thumbUrl = convertThumbUrl(fileImage);
             const result = await editCategories(id, valueForm);
@@ -86,26 +87,18 @@ function FormEdit(props) {
                 ),
             });
         }
-
+        setFileImage(null);
         fetchApiLoad();
         setIsModalOpen(false);
         //Khi chạy xong ta cho loading = false
         setLoading(false);
     }
 
-    //Lấy giá trị măc định cho form
-    const defaultValue = {
-        title: record.title,
-        status: record.status,
-        parent_id: record.parent_id,
-        description: record.description,
-        position: record.position,
-
-    }
     return (
         <>
             {contextHolder}
-            <span onClick={() => handleShowModal(form, setIsModalOpen)} className="button-edit">
+            {/* //Do đoạn này ta truyển form và record lên ta sẽ không cần setDefaultForm nữa vì bên handleUpdateDataJobs đã setDefaultForm rồi */}
+            <span onClick={() => handleUpdateDataCategories(form, setIsModalOpen,record)} className="button-edit">
                 <EditOutlined />
             </span>
             <Modal
@@ -137,7 +130,7 @@ function FormEdit(props) {
                                 encType='multipart/form-data'
                                 onFinish={handleForm}
                                 form={form}
-                                initialValues={defaultValue}
+                              
                             >
                                 <Form.Item
                                     label="Tiêu Đề Danh Mục"

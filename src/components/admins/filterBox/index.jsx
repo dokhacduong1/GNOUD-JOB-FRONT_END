@@ -1,5 +1,6 @@
 import { Radio, Input } from "antd";
 import "./filterBox.scss"
+import { memo } from "react";
 
 function FilterBox(props) {
     const { handleChange, handleSearch, optionsFilter } = props;
@@ -39,4 +40,6 @@ function FilterBox(props) {
         </>
     )
 }
-export default FilterBox
+
+const MemoizedFilterBox= memo(FilterBox);
+export default MemoizedFilterBox;

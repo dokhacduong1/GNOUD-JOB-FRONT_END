@@ -5,19 +5,21 @@ import 'slick-carousel/slick/slick-theme.css';
 import "./sliderBanner.scss"
 import Sliders from '../sliders';
 import { Form, Input } from "antd";
+import { memo } from 'react';
 
 function SliderBanner(props) {
     const { images } = props;
     const settingSliders = {
         dots: true,
-        arrows: true, // Đảm bảo rằng arrows đã được đặt là true
         infinite: true,
         speed: 2000,
         slidesToShow: 1,
         slidesToScroll: 1,
-        
+        arrows: false,
+        autoplay: true,
+        autoplaySpeed: 5000,
     }
-    const handlFormSearch = (valueForm) => {
+    const handlFormSearch = () => {
   
     };
     return (
@@ -37,7 +39,7 @@ function SliderBanner(props) {
                                 <Input prefix={<SearchOutlined />} placeholder="Nhập từ khóa..." className="mt-3 col-12 input-silder" />
                             </Form.Item>
                             <Form.Item>
-                                <button className="col-12" type="submit" htmltype="submit" >
+                                <button className="col-12" type="submit"  >
                                     TÌM VIỆC NGAY
                                 </button>
                             </Form.Item>
@@ -46,17 +48,14 @@ function SliderBanner(props) {
                     </div>
                 </div>
             </div>
-            <div className="banner__slider-descrip">
-                <div className="box-desc">
-                    <h1 className="mb-4 ">HỆ SINH THÁI NGHỀ NGHIỆP <span>DÀNH CHO</span></h1>
-                    <h2 className="mb-4">SINH VIÊN - THỰC TẬP SINH - <span>MỚI TỐT NGHIỆP</span></h2>
-                    <button className="button-container ">TÌM HIỂU NGAY</button>
-                </div>
-            </div>
+            
         </div>
 
     );
 }
-export default SliderBanner;
 
+
+
+const MemoizedSliderBanner= memo(SliderBanner);
+export default MemoizedSliderBanner;
 

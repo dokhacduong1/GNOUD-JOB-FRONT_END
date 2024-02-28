@@ -3,8 +3,8 @@ import { EyeOutlined } from '@ant-design/icons';
 import { useEffect, useState } from 'react';
 import { Card, Checkbox, Col, Form, Modal, Row } from 'antd';
 
-import {  handleCancel, handleUpdateData } from '../../../helpers/modelHelper';
-import { dataPermission } from './options';
+import {  handleCancel, handleUpdateDataViewPermission } from '../../../helpers/modelHelper';
+import { dataPermission } from './js/options';
 
 function ViewPermission(props) {
     const { record } = props;
@@ -26,7 +26,7 @@ function ViewPermission(props) {
     return (
         <>
 
-            <span onClick={() => handleUpdateData(form, setIsModalOpen,record)} className="button-eye-role">
+            <span onClick={() => handleUpdateDataViewPermission(form, setIsModalOpen,record)} className="button-eye-role">
                 <EyeOutlined />
             </span>
             <Modal

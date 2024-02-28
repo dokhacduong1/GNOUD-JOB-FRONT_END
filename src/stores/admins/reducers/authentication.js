@@ -1,4 +1,4 @@
-const authenticationReducerAdmin = (state = false, action) => {
+const authenticationReducerAdmin = (state = {}, action) => {
    switch (action.type) {
       case "CHECK_AUTH":
          return action.dataCheck;

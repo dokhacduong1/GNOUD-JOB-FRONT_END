@@ -1,0 +1,78 @@
+.news__job {
+  &-body {
+    background: #fff;
+    padding: 20px 0;
+    border-radius: 0 0 5px 5px;
+  }
+  .form-ok{
+    padding:  0 0 0 16px;;
+    justify-content: center;
+    align-items: center;
+    .col-custom{
+      flex: 0 0 auto;
+      width: 20%;
+    }
+  }
+  .button-search-job {
+    width: 100%;
+    background: #6ccbf3;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    outline: none !important;
+    padding: 9px 16px;
+    outline: none;
+    &:hover {
+      background: #3dbff7;
+    }   
+    &:active {
+      background: #8bd2f0;
+    }
+  }
+  .news__jobs-searchIcon {
+    color: #999;
+    z-index: 1;
+  }
+  input {
+    &::placeholder {
+      font-size: 13px;
+      color: #b9b9b9;
+    }
+  }
+  .job-full-search{
+    display: flex;
+  }
+  .job-sort-news{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .switch{
+      .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):hover{
+       
+      }
+      .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled){
+        color: #fff;
+        background: #6ccbf3;
+        border: none;
+        border: 1px solid #6ccbf3;
+      }
+      .ant-radio-button-wrapper{
+        border: none;
+        border: 1px solid #6ccbf3;
+      }
+      .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled)::before{
+        background-color: transparent;
+      }
+      .ant-radio-button-wrapper:hover{
+       
+        color: #2dace2;
+      
+      }
+    }
+  }
+}

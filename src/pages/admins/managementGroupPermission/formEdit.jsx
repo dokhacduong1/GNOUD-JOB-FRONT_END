@@ -5,7 +5,7 @@ import { Card, Form, Input, Modal, Spin, notification } from 'antd';
 import TinyMce from '../../../components/admins/tinyEditor';
 import { LoadingOutlined } from '@ant-design/icons';
 
-import { handleCancel, handleShowModal } from '../../../helpers/modelHelper';
+import { handleCancel, handleUpdateDataPermission } from '../../../helpers/modelHelper';
 import { getContentTiny } from '../../../helpers/getContentTinymce';
 
 import { editRoles } from '../../../services/admins/rolesApi';
@@ -32,7 +32,7 @@ function FormEdit(props) {
             //Hàm này để lấy dữ liệu từ tinymce
             if (getContentTiny(tinyMceRef)) {
                 valueForm.description = getContentTiny(tinyMceRef);
-            };
+            }
 
             const result = await editRoles(id, valueForm);
             if (result.code === 200) {
@@ -79,7 +79,8 @@ function FormEdit(props) {
     return (
         <>
             {contextHolder}
-            <span onClick={() => handleShowModal(form, setIsModalOpen)} className="button-edit">
+            {/* //Do đoạn này ta truyển form và record lên ta sẽ không cần setDefaultForm nữa vì bên handleUpdateDataJobs đã setDefaultForm rồi */}
+            <span onClick={() =>  handleUpdateDataPermission(form, setIsModalOpen,record)} className="button-edit">
                 <EditOutlined />
             </span>
             <Modal

@@ -6,10 +6,10 @@ import "./managementCategories.scss"
 import { deleteSingleId } from "./deleteSingle";
 import ChangeMultipleBox from "../../../components/admins/changeMultipleBox";
 import FilterBox from "../../../components/admins/filterBox";
-import { optionsChangeMultiple, optionsSort } from "./options";
+import { optionsChangeMultiple, optionsSort } from "./js/options";
 import SortBox from "../../../components/admins/sortBox";
 import FormEdit from "./formEdit";
-import { fetchApiRoleManage } from "./fetchApi";
+import { fetchApiRoleManage } from "./js/fetchApi";
 import { changeMultipleRoles } from "../../../services/admins/rolesApi";
 import { useSelector } from "react-redux";
 function ManagementGroupPermission() {

@@ -1,3 +1,4 @@
+import { memo } from "react";
 import "./notFound.scss";
 
 function NotFound() {
@@ -8,4 +9,6 @@ function NotFound() {
     </div>
   );
 }
-export default NotFound;
+
+const MemoizedNotFound = memo(NotFound);
+export default MemoizedNotFound;

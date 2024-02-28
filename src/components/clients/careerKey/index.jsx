@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { memo, useEffect, useState } from "react"
 import Sliders from "../sliders"
 
 import "./careerKey.scss"
@@ -61,4 +61,5 @@ function CareerKey() {
         </>
     )
 }
-export default CareerKey
+const MemoizedCareerKey = memo(CareerKey);
+export default MemoizedCareerKey;

@@ -1,6 +1,7 @@
 import { Select } from "antd"
 
 import "./sortBox.scss"
+import { memo } from "react";
 function SortBox(props) {
     const {options,handleChange} = props;
 
@@ -28,4 +29,6 @@ function SortBox(props) {
         </>
     )
 }
-export default SortBox
+
+const MemoizedSortBox = memo(SortBox);
+export default MemoizedSortBox;

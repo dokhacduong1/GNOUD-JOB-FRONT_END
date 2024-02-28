@@ -12,12 +12,12 @@ import {
 } from '@ant-design/icons';
 import { changeSingleStatusId } from "./changeSingleStatus";
 import { deleteSingleId } from "./deleteSingle";
-import { fetchApiCategorieManage } from "./fetchApi";
+import { fetchApiCategorieManage } from "./js/fetchApi";
 import ChangeMultipleBox from "../../../components/admins/changeMultipleBox";
 import { changeMultipleCategories } from "../../../services/admins/jobsCategoriesApi";
 import FilterBox from "../../../components/admins/filterBox";
 
-import { optionsChangeMultiple, optionsFilterStartus, optionsSort } from "./options";
+import { optionsChangeMultiple, optionsFilterStartus, optionsSort } from "./js/options";
 import SortBox from "../../../components/admins/sortBox";
 import FormEdit from "./formEdit";
 import { useSelector } from "react-redux";

@@ -1,5 +1,5 @@
 
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import "./talentNetwork.scss"
 import { getListEmployers } from "../../../services/clients/employersApi";
 import { decData } from "../../../helpers/decData";
@@ -63,4 +63,6 @@ function TalentNetwork() {
         </>
     )
 }
-export default TalentNetwork
+
+const MemoizedTalentNetwork = memo(TalentNetwork);
+export default MemoizedTalentNetwork;

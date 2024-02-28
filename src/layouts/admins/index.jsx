@@ -13,7 +13,8 @@ const { Content } = Layout;
 function LayoutMainAdmin() {
   //Lấy ra trạng thái của authenticationReducerAdmin false là chưa đăng nhập true là đã đăng nhập
   const authenMainAdmin = useSelector((status) => status.authenticationReducerAdmin);
-
+  const authenMainClient = useSelector((status) => status);
+ 
   const [collapsed, setCollapsed] = useState(false);
 
   return (
