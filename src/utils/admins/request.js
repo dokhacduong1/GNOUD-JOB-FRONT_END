@@ -1,5 +1,5 @@
 // const API_DOMAIN = "http://localhost:2709/api/v1/admin";
-const API_DOMAIN = "http://34.124.230.237:2709/api/v1/admin";
+const API_DOMAIN = "http://34.87.54.148:2709/api/v1/admin";
 
 export const Get = async (path, options ,link = API_DOMAIN) => {
   const response = await fetch(link + path, options);
