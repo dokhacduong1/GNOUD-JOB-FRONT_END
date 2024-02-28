@@ -1,4 +1,6 @@
-const API_DOMAIN = "http://34.87.54.148:2709/api/v1/client";
+import { DOMAIN } from "../api-domain";
+
+const API_DOMAIN = `http://${DOMAIN}:2709:2709/api/v1/client`;
 
 export const Get = async (path, options ,link = API_DOMAIN) => {
   const response = await fetch(link + path, options);
