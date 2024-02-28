@@ -1,7 +1,9 @@
 import { DOMAIN } from "../api-domain";
 
 const API_DOMAIN = `http://${DOMAIN}:2709:2709/api/v1/admin`;
+
 export const AuthGet = async (path, token, link = API_DOMAIN) => {
+
   const response = await fetch(link + path, {
     method: "GET",
     headers: {
