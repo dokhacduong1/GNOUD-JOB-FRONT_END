@@ -61,3 +61,7 @@ export const getCityApiDuong = async ()=>{
     const result = await Get("",{},"https://duongshop.id.vn/api/v1/duongits/city");
     return result;
 }
+export const getDistrictApiDuong = async (value)=>{
+    const result = await Get("",{},`https://duongshop.id.vn/api/v1/duongits/district/${value}`);
+    return result;
+}

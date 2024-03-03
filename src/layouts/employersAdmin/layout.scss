@@ -1,0 +1,40 @@
+@media (max-width: 992.9px){
+    .layout{
+        &__slider{
+            display: none;
+        }
+    }
+}
+.sider-fixed{
+    position: fixed !important;
+    top: 64px;
+    z-index: 1000 !important;
+    min-height: 100%;
+    transition: all .1s ease-in-out;
+    width: 260px !important;
+    background: #fff;
+    flex: 0 0 260px !important;
+    max-width: 260px !important;
+    min-width: 260px !important;
+}
+.ant-layout.layout__employer-admin .ant-layout-sider{
+    transition: all 0.1s,background 0s ;
+}
+.ant-layout.layout__employer-admin .ant-layout-sider-collapsed.sider-fixed{
+    width: 70px !important;
+    flex: 0 0 70px !important;
+    max-width: 70px !important;
+    min-width: 70px !important;
+}
+
+.ant-layout.layout__employer-admin .layout__main{
+    padding-left: 0;
+    padding-top: 64px;
+    margin-left: 265px;
+    transition: all .2s ease-in-out;
+    height: 100%;
+    background: rgba(211, 211, 211, 0.301);
+}
+.ant-layout.layout__employer-admin .ant-layout-sider-collapsed + .layout__main{
+    margin-left: 80px !important;
+}

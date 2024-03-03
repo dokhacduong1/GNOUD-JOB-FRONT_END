@@ -54,7 +54,7 @@ function SliderHome(props) {
   return (
     <>
 
-      <Menu className="layout__slider-menu"
+      <Menu className="layout__slider-menu-admin"
 
         defaultSelectedKeys={location.pathname}
         defaultOpenKeys={['categories']}

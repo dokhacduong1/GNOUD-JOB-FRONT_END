@@ -9,7 +9,7 @@ const CherryBlossom = () => {
     const randomLeft = Math.random() * 100;
     const randomRight = Math.random() * 50 +Math.random() * 50;
     const randomSize = Math.floor(Math.random() * 6) + 50;
-    console.log(randomSize);
+
 
     setStyle({
         left: `${randomLeft}%`,

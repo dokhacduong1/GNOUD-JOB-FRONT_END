@@ -27,6 +27,9 @@ body .title-text {
 .cb-section {
   padding: 60px 0 0 0;
 }
+.cb-section-padding-bottom {
+  padding-bottom: 60px;
+}
 a {
   text-decoration: none;
   color: #000;
@@ -122,6 +125,11 @@ a:hover {
 .button-edit-role:hover,
 .button-eye-role:hover {
   background: #e7e7e7;
+}
+.content-container{
+  padding: 40px;
+  margin: auto;
+  max-width: 850px
 }
 body .button-edit,
 .button-edit-role {
@@ -406,4 +414,46 @@ input[type="radio"] , .ant-radio-wrapper .ant-radio-checked .ant-radio-inner {
   position: sticky;
   top: 51px;
  
+}
+.sticky-item-ok{
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  width: 100%;
+}
+.sitcky-item{
+  position: relative;
+  float: left;
+  width: 100%;
+  margin-right: -100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition: transform .6s ease-in-out;
+  height: 100vh;
+}
+.scroll-css::-webkit-scrollbar{
+  width: 5px !important;
+  background: none !important;
+}
+.scroll-css::-webkit-scrollbar-thumb {
+  background: #ff0000 !important;
+  border-radius: 5px !important;
+}
+body::-webkit-scrollbar {
+    width: 3px;
+    background: none;
+}
+body::-webkit-scrollbar-thumb {
+  background: #b3e3f8;
+   border-radius: 50px;
+}
+.page-content{
+  padding: 20px 20px 80px;
+  max-width: 1296px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+}
+.ml-10{
+  margin-left: 10px;
 }

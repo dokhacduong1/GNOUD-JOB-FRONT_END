@@ -1,0 +1,108 @@
+.headerEmployer {
+  background-color: #080106 !important;
+  min-width: 1133px;
+  height: 64px;
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  padding: 13px 0 0 0;
+  z-index: 1030;
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .flex-div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__logo {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 600;
+  }
+  &__button {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    color: #ffffff;
+    padding: 5px 10px;
+    margin-left: 15px;
+    background-color: transparent;
+    font-size: 16px;
+  }
+
+  &__navbar {
+    .navbar {
+      &__ul {
+        justify-content: flex-end;
+        list-style: none;
+        align-items: center;
+        display: flex;
+        margin: 0;
+        padding: 0;
+      }
+      &__item {
+        margin-right: 20px;
+        color: #fff;
+        font-size: 14px;
+       
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        cursor: pointer;
+        span{
+          font-weight: 500;
+        
+        }
+        &.no-check {
+          .ant-avatar {
+            background-color: #3b546f;
+            border-radius: 50%;
+            font-size: 16px;
+          }
+          .ant-badge .ant-scroll-number {
+            min-width: 15px;
+            height: 15px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+        &.check {
+          border-radius: 30px;
+          padding: 5px 15px;
+          background-color: #3b546f;
+         
+          svg {
+            background: #fff;
+            color: #3b546f;
+            font-size: 8px;
+            padding: 3px 5px;
+            border-radius: 50%;
+          }
+        }
+        &.main{
+          color: #fff;
+          background: linear-gradient(90deg,#000000 .62%,#ff16738c 99.38%);
+          border: 1px solid #ff3384;
+          border-radius: 100px;
+          padding: 4px 10px;
+          width: -webkit-fit-content;
+          width: -moz-fit-content;
+          width: fit-content;
+          height: -webkit-fit-content;
+          height: -moz-fit-content;
+          height: fit-content;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+  }
+}

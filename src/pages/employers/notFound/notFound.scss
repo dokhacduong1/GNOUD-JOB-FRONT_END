@@ -1,0 +1,33 @@
+.not-found-employer{
+  
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    .not-found-ok{
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        span{
+            color: #fda4c8;
+            font-size: 100px;
+            font-weight: 600;
+            border-radius: 10px;
+            border: 6px solid #fda4c8;
+            padding: 10px;
+        }
+        .content{
+            position: relative;
+            img{
+                position: absolute;
+                top: -68%;
+                left: -10%;
+                opacity: 0.8;
+                width: 100px;
+                height: 100px;
+            }
+        }
+    }
+}

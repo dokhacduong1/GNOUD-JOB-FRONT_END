@@ -1,0 +1,98 @@
+.layout__sliderEmployer{
+  &-menu {
+    border: none !important;
+    li.ant-menu-item {
+      background-color: transparent !important;
+      gap: 5px;
+      color: #363636 !important;
+   
+      height: 41px;
+      line-height: 41px;
+      span {
+        font-weight: 500 !important;
+
+      }
+     
+    }
+  }
+  &-item{
+  
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    background-color: #fda4c809;
+    justify-content: center;
+    svg {
+      font-size: 14px;
+    }
+  }
+  &-box{
+    height: 100% !important;
+    line-height: 21px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .content{
+        span , a{
+            color: #424242 ;
+           
+            width: calc(100% - 20px);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-weight: 500!important;
+        }
+        .role, .name{
+            display: block;
+        }
+        .role , .role-check{
+            font-size: 12px;
+        }
+       
+    }
+  }
+  &-shield{
+    gap: 0px !important;
+    align-items: center;
+    justify-content: center;
+    .layout__slider-item.shield{
+        background-color: #ebf3ff !important;
+        border-radius: 50% !important;
+    }
+    svg{
+        color: #2d7cf1 !important;
+       
+    }
+    .ant-menu-title-content{
+        color: #2d7cf1 !important;
+        background-color: #ebf3ff !important;
+        font-size: 12px;
+        font-weight: 500;
+       border-radius: 99999px;
+     
+        height: 32px;
+       display: flex;
+       padding:  0 0 0 10px;
+       justify-content: space-around;
+       align-items: center;
+        svg{
+            font-size: 10px;
+        }
+       
+    }
+    .anmation-css{
+        padding: 0 8px ;
+        display: inline-block;
+        animation: move 1s infinite;
+    
+    }
+  }
+}
+
+
+@keyframes move {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(4px); }
+    100% { transform: translateX(0); }
+  }

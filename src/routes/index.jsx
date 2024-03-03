@@ -29,9 +29,21 @@ import SuggestedClientSettings from "../pages/clients/suggestedClientSettings";
 import Test from "../pages/clients/Test";
 import EmailSuggestions from "../pages/clients/emailSuggestions";
 import NewJob from "../pages/clients/newsJob";
-import LayoutMainEmployers from "../layouts/employers";
-import HomeEmployers from "../pages/employers/home";
 
+import HomeEmployers from "../pages/employers/home";
+import LoginEmployers from "../pages/employers/login";
+import RegisterEmployers from "../pages/employers/register";
+
+import ForgotPasswordEmployer from "../pages/employers/forgotPassword";
+import ResetPasswordEmployer from "../pages/employers/resetPassword";
+import InfoUserEmployer from "../components/employers/infoUser";
+import CheckRoutesEmployer from "../components/employers/checkRoutes";
+import DashboardEmployer from "../pages/employers/dasboard";
+import PrivateRoutesEmployer from "../components/employers/privateRoutes";
+import LayoutMainEmployersNoHeaderAndNoFooter from "../layouts/employers/layout-home";
+import LayoutMainEmployers from "../layouts/employers/layout-login";
+import LayoutMainEmployerAdmin from "../layouts/employersAdmin";
+import ManagementJobsEmployer from "../pages/employers/managementJobs";
 
 export const routes = [
   //client
@@ -54,7 +66,7 @@ export const routes = [
           {
             path: "viec-lam/tat-ca-viec-lam",
             element: <NewJob />,
-          }
+          },
         ],
       },
 
@@ -84,9 +96,9 @@ export const routes = [
         element: <PrivateRoutesClient />,
         children: [
           {
-            path:"tai-khoan",
+            path: "tai-khoan",
             element: <SettingsAccount />,
-            children:[
+            children: [
               {
                 path: "mat-khau",
                 element: <PasswordClient />,
@@ -104,12 +116,12 @@ export const routes = [
                 element: <EmailSuggestions />,
               },
               {
-                path:"test",
-                element:<Test/>
-              }
-            ]
-          }
-        ]
+                path: "test",
+                element: <Test />,
+              },
+            ],
+          },
+        ],
       },
 
       {
@@ -180,12 +192,63 @@ export const routes = [
   //employers
   {
     path: "/nha-tuyen-dung",
+    element: <LayoutMainEmployersNoHeaderAndNoFooter />,
+    children: [
+      {
+        element: <CheckRoutesEmployer />,
+        children: [
+          {
+            path: "login",
+            element: <LoginEmployers />,
+          },
+          {
+            path: "register",
+            element: <RegisterEmployers />,
+          },
+          {
+            path: "forgot-password",
+            element: <ForgotPasswordEmployer />,
+          },
+          {
+            path: "reset-password/:token",
+            element: <ResetPasswordEmployer />,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    path: "/nha-tuyen-dung",
     element: <LayoutMainEmployers />,
     children: [
       {
-        index: true,
-        element: <HomeEmployers />,
-      }
-    ]
-  }
+        element: <InfoUserEmployer />,
+        children: [
+          {
+            index: true,
+            element: <HomeEmployers />,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    path: "/nha-tuyen-dung/app",
+    element: <LayoutMainEmployerAdmin />,
+    children: [
+      {
+        element: <PrivateRoutesEmployer />,
+        children: [
+          {
+            path: "dashboard",
+            element: <DashboardEmployer />,
+          },
+          {
+            path: "management-jobs",
+            element: <ManagementJobsEmployer />,
+          }
+        ],
+      },
+    ],
+  },
 ];

@@ -1,0 +1,21 @@
+.box-info-color{
+    border-radius: 5px;
+    padding: 15px;
+    &__row{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .box-content{
+        h4{
+            font-weight: 500!important;
+            font-size: 1.1428rem;
+            margin-bottom: 0.5rem;
+        }
+        p{
+            font-weight: 400!important;
+            font-size: 14px;
+        }
+    }
+ 
+}

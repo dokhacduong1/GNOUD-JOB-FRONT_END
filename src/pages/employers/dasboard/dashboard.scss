@@ -1,0 +1,85 @@
+.dashboar-employer {
+    .box-head{
+        padding: 1.14rem!important;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h3{
+            font-size: 1.1428rem;
+        }
+        svg{
+            cursor: pointer;
+            background: #ddd;
+            border-radius: 50%;
+            padding: 2px 5px;
+            font-size: 8px;
+            color: #ffffff;
+        }
+    }
+  .title {
+    h3 {
+      font-size: 1.5rem;
+    }
+  }
+  .banner-slick {
+    position: relative;
+    .slick-list {
+      .slick-track {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .slick-slide {
+        margin-left: 15px;
+      }
+
+      .slick-box {
+        height: 270px;
+      }
+      img {
+        height: 100% !important;
+        border-radius: 10px;
+        width: 100%;
+        object-fit: cover;
+      }
+      // [tabindex="-1"]{
+      //     display: flex;
+      //     justify-content: center;
+      //     align-items: center;
+      // }
+    }
+    .button-pre,
+    .button-next {
+      position: absolute;
+      top: 50% !important;
+      background: rgba(255, 179, 210, 0.993);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      cursor: pointer;
+      svg {
+        font-size: 18px;
+      }
+    }
+    .button-pre {
+      left: -10px;
+    }
+    .button-next {
+      right: -20px;
+    }
+  }
+  .box-content{
+    .item-box{
+        border-radius: 10px;
+        background: #fff;
+        
+    }
+    .box-body{
+        padding: 0 15px;
+    }
+  }
+}

@@ -9,6 +9,7 @@ import { memo } from 'react';
 // eslint-disable-next-line
 function Sliders(props) {
     const { arrayImage, custom, settings } = props;
+
     const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
         <button
             {...props}

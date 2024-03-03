@@ -1,7 +1,7 @@
 import "./header.scss";
 import { DownloadOutlined } from "@ant-design/icons";
 
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { Collapse, Button, Select, Menu, Dropdown } from "antd";
 import { useEffect, useState } from "react";
 
@@ -146,44 +146,7 @@ function Header() {
     }
   };
 
-  const itemsDropdown = [
-    {
-      key: "1",
-      label: (
-        <NavLink
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://www.antgroup.com"
-        >
-          Đăng nhập
-        </NavLink>
-      ),
-    },
-    {
-      key: "2",
-      label: (
-        <NavLink
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://www.antgroup.com"
-        >
-          Đăng ký
-        </NavLink>
-      ),
-    },
-    {
-      key: "3",
-      label: (
-        <NavLink
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://www.antgroup.com"
-        >
-          Sản phẩm và dịch vụ
-        </NavLink>
-      ),
-    },
-  ];
+  
   const itemsMenuNav = [
     {
       label: (
@@ -263,10 +226,11 @@ function Header() {
                     </div>
                   </div>
                 </div>
-                <div className="header__employer text-center col-2">
-                  <Dropdown menu={{ items: itemsDropdown }} placement="bottom">
-                    <div style={{ padding: "24px" }}>Nhà tuyển dụng</div>
-                  </Dropdown>
+                <div style={{ padding: "24px" }} className="header__employer text-center col-2">
+                  
+                      <a href={"/nha-tuyen-dung"} >Nhà tuyển dụng</a>
+                  
+
                 </div>
               </>
             ) : (

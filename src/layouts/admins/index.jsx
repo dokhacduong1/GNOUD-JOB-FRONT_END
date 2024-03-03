@@ -19,7 +19,7 @@ function LayoutMainAdmin() {
 
   return (
     <>
-      <Layout>
+      <Layout className="layout__admin">
         <Header className="layout__header" />
         <Layout>
           {

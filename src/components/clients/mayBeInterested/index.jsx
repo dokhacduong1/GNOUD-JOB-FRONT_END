@@ -28,7 +28,7 @@ function MayBeInterested() {
     if (infoUser?.["job_categorie_id"]) {
       objectValue.jobCategoriesId = infoUser["job_categorie_id"];
     }
-    console.log(objectValue);
+  
     const result = await getMayBeInterested(objectValue);
     if (result.code === 200) {
       setRecordItem(result.data);
