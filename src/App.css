@@ -457,3 +457,43 @@ body::-webkit-scrollbar-thumb {
 .ml-10{
   margin-left: 10px;
 }
+.button-employer-bold{
+  display: flex;
+  height: 32px;
+  padding: 10px 16px;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 10px;
+  gap: 10px;
+  border-radius: 4px;
+  background: rgb(247, 97, 157);
+  color: #fff;
+ 
+}
+.button-employer-bold:hover{
+  color: #fff;
+}
+.button-employer-normal{
+  padding: 6px 16px;
+ 
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  background: #ffeaf3;
+  min-width: 124px;
+  color: rgb(247, 97, 157);
+  cursor: pointer;
+}
+.button-employer-normal:hover{
+  color: rgb(247, 97, 157);
+}
+.aplayer {
+  border-radius: 10px !important;
+  overflow: hidden;
+}
+.aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-played{
+  background: rgb(250, 167, 200) !important;
+}
+.aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-played .aplayer-thumb{
+  background:rgb(250, 167, 200) !important;
+}

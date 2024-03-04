@@ -10,19 +10,29 @@ import "./layout.scss";
 const { Content } = Layout;
 
 function LayoutMainEmployerAdmin() {
-  const[isCollapsed, setIsCollapsed] = useState(false)
+  const [isCollapsed, setIsCollapsed] = useState(false);
   return (
     <>
       <Layout className="layout__employer-admin">
-        <Header setIsCollapsed={setIsCollapsed} isCollapsed={isCollapsed} className="layout__header" />
+        <Header
+          setIsCollapsed={setIsCollapsed}
+          isCollapsed={isCollapsed}
+          className="layout__header"
+        />
         <Layout>
-          <Sider collapsed={isCollapsed} className="mt-3 mb-3 sider-fixed">
+          <Sider
+            breakpoint="xxl"
+    
+            onBreakpoint={(boolean) => {
+              setIsCollapsed(boolean);
+            }}
+           
+            collapsed={isCollapsed}
+            className="mt-3 mb-3 sider-fixed"
+          >
             <SliderHome />
           </Sider>
-          <Content
-            className="layout__main"
-          
-          >
+          <Content className="layout__main">
             <Outlet />
           </Content>
         </Layout>

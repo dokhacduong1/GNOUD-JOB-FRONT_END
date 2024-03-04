@@ -1,22 +1,27 @@
-.layout__sliderEmployer{
+.layout__sliderEmployer {
   &-menu {
+    transition: all 0.3s ease-in-out;
+   
+    .ant-menu-item-selected{
+      span {
+        color: rgb(250, 122, 173) !important;
+      }
+    }
+  
     border: none !important;
     li.ant-menu-item {
       background-color: transparent !important;
       gap: 5px;
       color: #363636 !important;
-   
+
       height: 41px;
       line-height: 41px;
       span {
         font-weight: 500 !important;
-
       }
-     
     }
   }
-  &-item{
-  
+  &-item {
     width: 32px;
     height: 32px;
     border-radius: 50%;
@@ -28,71 +33,75 @@
       font-size: 14px;
     }
   }
-  &-box{
+  &-box {
     height: 100% !important;
     line-height: 21px !important;
     display: flex;
     align-items: center;
     justify-content: center;
-    .content{
-        span , a{
-            color: #424242 ;
-           
-            width: calc(100% - 20px);
-            overflow: hidden;
-            text-overflow: ellipsis;
-            font-weight: 500!important;
-        }
-        .role, .name{
-            display: block;
-        }
-        .role , .role-check{
-            font-size: 12px;
-        }
-       
+    .content {
+      span,
+      a {
+        color: #424242;
+
+        width: calc(100% - 20px);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-weight: 500 !important;
+      }
+      .role,
+      .name {
+        display: block;
+      }
+      .role,
+      .role-check {
+        font-size: 12px;
+      }
     }
   }
-  &-shield{
+  &-shield {
     gap: 0px !important;
     align-items: center;
     justify-content: center;
-    .layout__slider-item.shield{
-        background-color: #ebf3ff !important;
-        border-radius: 50% !important;
+    .layout__slider-item.shield {
+      background-color: #ebf3ff !important;
+      border-radius: 50% !important;
     }
-    svg{
-        color: #2d7cf1 !important;
-       
+    svg {
+      color: #23cef8 !important;
     }
-    .ant-menu-title-content{
-        color: #2d7cf1 !important;
-        background-color: #ebf3ff !important;
-        font-size: 12px;
-        font-weight: 500;
-       border-radius: 99999px;
-     
-        height: 32px;
-       display: flex;
-       padding:  0 0 0 10px;
-       justify-content: space-around;
-       align-items: center;
-        svg{
-            font-size: 10px;
-        }
-       
+    .ant-menu-title-content {
+      color: #23cef8 !important;
+      background-color: #76e1fc21 !important;
+      font-size: 12px;
+      font-weight: 500;
+      border-radius: 99999px;
+
+      height: 32px;
+      display: flex;
+      padding: 0 0 0 10px;
+      justify-content: space-around;
+      align-items: center;
+      svg {
+        font-size: 10px;
+      }
     }
-    .anmation-css{
-        padding: 0 8px ;
-        display: inline-block;
-        animation: move 1s infinite;
-    
+    .anmation-css {
+      padding: 0 8px;
+      display: inline-block;
+      animation: move 1s infinite;
     }
   }
 }
 
-
 @keyframes move {
-    0% { transform: translateX(0); }
-    50% { transform: translateX(4px); }
-    100% { transform: translateX(0); }
+  0% {
+    transform: translateX(0);
   }
+  50% {
+    transform: translateX(4px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

@@ -16,12 +16,15 @@ function SliderHome() {
   //Lấy thông tin quyền từ store của  redux
 
   const location = useLocation();
-
+  console.log(location.pathname);
   return (
     <>
       <Menu
+      
+     
         className="layout__sliderEmployer-menu"
         defaultSelectedKeys={location.pathname}
+        selectedKeys={[location.pathname]}
         defaultOpenKeys={["dashboard"]}
         mode="inline"
         // items={items}
@@ -29,7 +32,7 @@ function SliderHome() {
       >
         <Menu.Item
           className="layout__sliderEmployer-box"
-          key={LINK_URL + "dashboard"}
+          key={"avatar"}
           icon={
             <span className="layout__sliderEmployer-item">
               <img src={avatar} alt="" />
@@ -49,14 +52,14 @@ function SliderHome() {
         </Menu.Item>
         <Menu.Item
           className="layout__sliderEmployer-shield"
-          key={LINK_URL + "dashboard2"}
+          key={"verify"}
           icon={
             <span className="layout__sliderEmployer-item shield">
               <FontAwesomeIcon icon={faShieldHalved} />
             </span>
           }
         >
-          <a to={LINK_URL + "dashboard2"}>Xác thực tài khoản </a>
+          <a to={LINK_URL + "verify"}>Xác thực tài khoản </a>
           <span className="anmation-css">
             <FontAwesomeIcon icon={faChevronRight} />
             <FontAwesomeIcon icon={faChevronRight} />
@@ -68,24 +71,24 @@ function SliderHome() {
         </Menu.Item>
 
         <Menu.Item
-          key={LINK_URL + "dashboard3"}
+          key={LINK_URL+"dashboard"}
           icon={
             <span className="layout__sliderEmployer-item">
               <AppstoreOutlined />
             </span>
           }
         >
-          <Link to={LINK_URL + "dashboard3"}>Bảng tin</Link>
+          <Link to={LINK_URL + "dashboard"}>Bảng tin</Link>
         </Menu.Item>
         <Menu.Item
-          key={LINK_URL + "add-job"}
+          key={LINK_URL+"management-jobs"}
           icon={
             <span className="layout__sliderEmployer-item">
               <FontAwesomeIcon icon={faFileLines} />
             </span>
           }
         >
-          <Link to={LINK_URL + "add-job"}>Tin tuyển dụng</Link>
+          <Link to={LINK_URL + "management-jobs"}>Tin tuyển dụng</Link>
         </Menu.Item>
       </Menu>
     </>
