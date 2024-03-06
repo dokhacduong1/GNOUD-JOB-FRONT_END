@@ -33,3 +33,23 @@ export const authenEmployer = async (valueForm={})=>{
     const result = await AuthPost(`/users/authen`,valueForm,checkToken);
     return result;
 }
+export const uploadAvatarEmployer = async (valueForm)=>{
+    const result = await AuthPost(`/users/upload-avatar`,valueForm,checkToken);
+    return result;
+}
+export const changeInfoEmployer = async (valueForm)=>{
+    const result = await AuthPost(`/users/change-info-employer`,valueForm,checkToken);
+    return result;
+}
+export const verifyPassword = async (valueForm)=>{
+    const result = await AuthPost(`/users/verify-password`,valueForm,checkToken);
+    return result;
+}
+export const sendEmsPhoneEmployer = async (valueForm)=>{
+    const result = await AuthPost(`/users/send-sms`,valueForm,checkToken);
+    return result;
+}
+export const verifyPhoneEmployer = async (valueForm)=>{
+    const result = await AuthPost(`/users/verify-code-sms`,valueForm,checkToken);
+    return result;
+}

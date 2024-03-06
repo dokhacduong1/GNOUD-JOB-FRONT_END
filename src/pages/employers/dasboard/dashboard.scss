@@ -75,9 +75,7 @@
     }
   }
   .box-content {
-    .w-d-100{
-      
-    }
+
     .item-box {
       border-radius: 10px;
       background: #fff;
@@ -304,6 +302,28 @@
           }
         }
       }
+    }
+    .box-3{
+      padding: 15px 0 !important;
+      h5{
+        font-size: 1.1428rem;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        line-height: 1.2;
+      }
+      .text-color{
+        color: #5e6368!important;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+       
+    
+      }
+
     }
   }
   .pd-item-d {

@@ -44,6 +44,8 @@ import LayoutMainEmployersNoHeaderAndNoFooter from "../layouts/employers/layout-
 import LayoutMainEmployers from "../layouts/employers/layout-login";
 import LayoutMainEmployerAdmin from "../layouts/employersAdmin";
 import ManagementJobsEmployer from "../pages/employers/managementJobs";
+import SettingEmployer from "../pages/employers/settings-employer";
+import PhoneVerify from "../pages/employers/phoneVerify";
 
 export const routes = [
   //client
@@ -246,6 +248,14 @@ export const routes = [
           {
             path: "management-jobs",
             element: <ManagementJobsEmployer />,
+          },
+          {
+            path: "account/settings",
+            element: <SettingEmployer />,
+          },
+          {
+            path: "account/phone-verify",
+            element: <PhoneVerify />,
           }
         ],
       },

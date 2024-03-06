@@ -3,23 +3,35 @@ import { Menu } from "antd";
 
 import { AppstoreOutlined } from "@ant-design/icons";
 import { Link, useLocation } from "react-router-dom";
-import avatar from "./images/avatar.svg";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronRight,
+  faGear,
   faShieldHalved,
 } from "@fortawesome/free-solid-svg-icons";
 import { faFileLines } from "@fortawesome/free-regular-svg-icons";
+import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 
 const LINK_URL = "/nha-tuyen-dung/app/";
 function SliderHome() {
   //Lấy thông tin quyền từ store của  redux
-
+  const [infoUserEmployer, setInfoUserEmployer] = useState({});
   const location = useLocation();
-  console.log(location.pathname);
+  const authenMainEmployer = useSelector(
+    (status) => status.authenticationReducerEmployer
+  );
+  useEffect(() => {
+    const {infoUserEmployer} = authenMainEmployer;
+    setInfoUserEmployer(infoUserEmployer);
+  },[authenMainEmployer]);
+
   return (
     <>
-      <Menu
+    {
+      authenMainEmployer?.status === true && (
+        <Menu
       
      
         className="layout__sliderEmployer-menu"
@@ -35,13 +47,13 @@ function SliderHome() {
           key={"avatar"}
           icon={
             <span className="layout__sliderEmployer-item">
-              <img src={avatar} alt="" />
+              <img src={infoUserEmployer?.image} alt="" />
             </span>
           }
         >
           <div className="content">
             <span className="name">
-              <a href="#!">Đỗ Khắc Dương</a>
+              <a href="#!">{infoUserEmployer?.fullName} </a>
             </span>
             <span className="role">Employer</span>
             <div className="role-check">
@@ -90,7 +102,20 @@ function SliderHome() {
         >
           <Link to={LINK_URL + "management-jobs"}>Tin tuyển dụng</Link>
         </Menu.Item>
+        <Menu.Item
+          key={LINK_URL+"account/settings"}
+          icon={
+            <span className="layout__sliderEmployer-item">
+             <FontAwesomeIcon icon={faGear} />
+            </span>
+          }
+        >
+          <Link to={LINK_URL + "account/settings"}>Cài đặt tài khoản</Link>
+        </Menu.Item>
       </Menu>
+      )
+    }
+   
     </>
   );
 }

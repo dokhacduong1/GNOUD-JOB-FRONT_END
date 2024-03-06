@@ -4,9 +4,14 @@ import { MenuOutlined } from "@ant-design/icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { faBell, faChartLine, faPen, faQuestion } from "@fortawesome/free-solid-svg-icons";
+import Cookies from "js-cookie";
 function Header({setIsCollapsed,isCollapsed}) {
     const handleCollapsed = () => {
         setIsCollapsed(!isCollapsed);
+    }
+    const handleLogout = () => {
+        Cookies.remove("token-employer");
+        window.location.href = "/nha-tuyen-dung/login";
     }
   return (
     <>
@@ -47,8 +52,8 @@ function Header({setIsCollapsed,isCollapsed}) {
                   />
                 </Badge>
               </li>
-              <li className="navbar__item check">
-                <span>Hi Dương</span>
+              <li className="navbar__item check" onClick={handleLogout}>
+                <span>Đăng xuất</span>
               </li>
             </ul>
           </div>

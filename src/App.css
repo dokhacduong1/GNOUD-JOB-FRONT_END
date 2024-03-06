@@ -439,13 +439,17 @@ input[type="radio"] , .ant-radio-wrapper .ant-radio-checked .ant-radio-inner {
   background: #ff0000 !important;
   border-radius: 5px !important;
 }
-body::-webkit-scrollbar {
+body::-webkit-scrollbar,
+body::-webkit-scrollbar-horizontal {
     width: 3px;
+    height: 3px;
     background: none;
 }
-body::-webkit-scrollbar-thumb {
-  background: #b3e3f8;
-   border-radius: 50px;
+
+body::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-horizontal-thumb {
+    background: #b3e3f8;
+    border-radius: 50px;
 }
 .page-content{
   padding: 20px 20px 80px;

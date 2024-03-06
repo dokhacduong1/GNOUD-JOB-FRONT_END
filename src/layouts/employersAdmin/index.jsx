@@ -19,7 +19,7 @@ function LayoutMainEmployerAdmin() {
           isCollapsed={isCollapsed}
           className="layout__header"
         />
-        <Layout>
+        <Layout className="employer-full">
           <Sider
             breakpoint="xxl"
     

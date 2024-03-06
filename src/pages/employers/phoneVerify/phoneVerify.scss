@@ -1,0 +1,107 @@
+.phone-verify {
+  &__bg {
+    background: #fff;
+    .box-image {
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+    }
+    .heading {
+      margin-bottom: 0.5rem;
+
+      h4 {
+        font-weight: 600;
+        line-height: 1.2;
+        font-size: 1.5rem;
+        color: #333;
+      }
+    }
+    .form-verify-phone {
+      button {
+        border: none;
+        text-align: center;
+        width: 50%;
+        padding: 9px 11px;
+        border-radius: 5px;
+        background-color: #fda4c8;
+        color: #fff;
+        font-weight: 500;
+        &:hover {
+          background-color: #f771a7;
+        }
+      }
+    }
+    .box-help {
+      h5 {
+        font-size: 1.1428rem;
+        font-weight: 500;
+        line-height: 1.2;
+      }
+      .mr-3 {
+        margin-right: 0.75rem;
+      }
+      .text-des {
+        font-weight: 500 !important;
+        color: #4b4b4b;
+      }
+    }
+   
+  }
+
+  .ant-input-outlined:hover,
+  .ant-input-outlined:focus-within,
+  .ant-select-outlined:not(.ant-select-disabled):not(
+      .ant-select-customize-input
+    ):not(.ant-pagination-size-changer):hover
+    .ant-select-selector,
+  .ant-select-outlined:not(.ant-select-disabled):not(
+      .ant-select-customize-input
+    ):not(.ant-pagination-size-changer)
+    .ant-select-selector {
+    border-color: #fda4c8 !important;
+    box-shadow: none;
+  }
+  .ant-radio-wrapper .ant-radio-checked::after,
+  .ant-input-outlined:focus {
+    border: 1px solid #fda4c8 !important;
+    box-shadow: none;
+  }
+  .ant-radio-wrapper .ant-radio-inner {
+    border: 1px solid #ddd !important;
+  }
+  input[type="radio"],
+  .ant-radio-wrapper .ant-radio-checked .ant-radio-inner {
+    border-color: #fda4c8 !important;
+    background: #fda4c8 !important;
+  }
+  .ant-input-outlined:hover {
+    border-color: #fda4c8 !important;
+  }
+  .ant-checkbox-checked .ant-checkbox-inner {
+    background-color: #fda4c8;
+    border-color: #fda4c8;
+  }
+  .ant-checkbox:not(.ant-checkbox-disabled):hover .ant-checkbox-inner {
+    border-color: #fda4c8 !important;
+  }
+  .ant-checkbox-checked:not(.ant-checkbox-disabled):hover .ant-checkbox-inner,
+  .ant-checkbox-wrapper:not(.ant-checkbox-wrapper-disabled):hover
+    .ant-checkbox-checked:not(.ant-checkbox-disabled)
+    .ant-checkbox-inner {
+    background-color: #fda4c8;
+    border-color: #fda4c8;
+  }
+  .ant-form-item
+    .ant-form-item-label
+    > label.ant-form-item-required:not(
+      .ant-form-item-required-mark-optional
+    )::before {
+    display: none;
+  }
+  svg {
+    color: #fda4c8;
+  }
+
+}

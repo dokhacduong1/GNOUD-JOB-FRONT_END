@@ -1,0 +1,88 @@
+.model-change-image-employer {
+ 
+  .ant-upload-list-item {
+    display: none !important;
+  }
+  h4 {
+    margin-bottom: 15px;
+    color: #4b4b4b;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: 1.2px;
+  }
+  &__avatar {
+    button {
+      border: none;
+      padding: 50px 100px;
+      background: transparent;
+      border: 2px dotted #d9d9d9;
+    }
+  }
+  &__submit {
+    button {
+      border: none;
+
+      border-radius: 5px;
+      background: rgb(248, 169, 200);
+      color: #ffffff;
+    }
+    .ant-btn-default:not(:disabled):not(.ant-btn-disabled):hover {
+      color: #ffffff !important;
+      background: rgb(252, 110, 167);
+    }
+    .image {
+      position: relative;
+      z-index: 1;
+      cursor: pointer;
+      display: inline-block; /* Đảm bảo rằng phần tử con không bị bao bọc theo chiều ngang */
+      img {
+        width: 100px;
+        height: 100px;
+        -o-object-fit: cover;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+      span {
+        display: none;
+      }
+
+      &:hover {
+        &::before {
+          position: absolute;
+          z-index: 2;
+          content: "";
+          background-color: rgba(0, 0, 0, 0.925);
+          opacity: 0.5;
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+        }
+        span {
+          display: block;
+          position: absolute;
+          z-index: 3;
+          color: #ffffff;
+          font-weight: 800;
+          font-size: 15px;
+          top: 43%;
+          left: 45%;
+          content: "";
+        }
+      }
+    }
+  }
+}
+.change-avatar-employer{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 14px !important;
+    color: rgb(253, 109, 166);
+    span{
+      font-weight: 500;
+    }
+   
+    &:hover{
+      color: rgb(253, 109, 166);
+    }
+}

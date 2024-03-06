@@ -1,0 +1,200 @@
+.setting-employer {
+  .title {
+    h3 {
+      font-size: 1.5rem;
+    }
+  }
+  .box-tab {
+    background: #fff;
+    border-radius: 10px;
+    .ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn,
+    .ant-tabs .ant-tabs-tab-btn {
+      font-size: 1rem !important;
+    }
+    .ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+      color: rgb(253, 144, 188);
+    }
+    .ant-tabs-left
+      > .ant-tabs-content-holder
+      > .ant-tabs-content
+      > .ant-tabs-tabpane {
+      padding-left: 0;
+    }
+    .ant-tabs-tab,
+    .ant-tabs-tab-active {
+      border: none;
+      margin: 0 !important;
+      padding: 20px;
+      border-radius: 0 !important;
+    }
+    .ant-tabs-tab {
+      background: #eeeeee;
+      color: #555555;
+    }
+    .ant-tabs-tab-active {
+      background: #fff;
+    }
+    .ant-tabs-nav-list {
+    }
+    .ant-tabs-left > .ant-tabs-content-holder,
+    :where(.css-dev-only-do-not-override-1k979oh).ant-tabs-left
+      > div
+      > .ant-tabs-content-holder {
+      border: none;
+    }
+    .ant-tabs-nav {
+      height: auto;
+      background: #eeeeee;
+      width: 230px;
+    }
+    .box-text-ok {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      font-size: 15px;
+    }
+  }
+}
+
+.info-employer {
+  .box-settings {
+    label {
+      color: #626263;
+   
+      margin-bottom: 0;
+      font-size: inherit;
+      line-height: 1.5;
+      font-weight: 500 !important;
+    }
+    .box-avatar {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      img {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+      }
+      button {
+        border: none;
+        padding: 5px 10px;
+        border-radius: 10px;
+      }
+    }
+  }
+  .form-settings-employer {
+    .button-v{
+      text-align: center;
+      button{
+        border: none;
+        text-align: center;
+        width: 50%;
+        padding: 11px;
+        border-radius: 5px;
+        background-color: #fda4c8;
+        color: #fff;
+        font-weight: 500;
+        &:hover {
+          background-color: #f771a7;
+        }
+      }
+    }
+   
+    [for="phoneNumber"] {
+      width: 100%;
+      .box-phone {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        .verify {
+          display: flex;
+          a {
+            color: #fd428d;
+            font-weight: 500;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+          a:first-child {
+            padding-right: 0.57rem;
+            border-right: 1px solid #ececec;
+          }
+          a:last-child {
+            padding-left: 0.57rem;
+          }
+        }
+      }
+    }
+
+    .ant-input-outlined:hover,
+    .ant-input-outlined:focus-within,
+    .ant-select-outlined:not(.ant-select-disabled):not(
+        .ant-select-customize-input
+      ):not(.ant-pagination-size-changer):hover
+      .ant-select-selector,
+    .ant-select-outlined:not(.ant-select-disabled):not(
+        .ant-select-customize-input
+      ):not(.ant-pagination-size-changer)
+      .ant-select-selector {
+      border-color: #fda4c8 !important;
+      box-shadow: none;
+    }
+    .ant-radio-wrapper .ant-radio-checked::after,
+    .ant-input-outlined:focus {
+      border: 1px solid #fda4c8 !important;
+      box-shadow: none;
+    }
+    .ant-radio-wrapper .ant-radio-inner {
+      border: 1px solid #ddd !important;
+    }
+    input[type="radio"],
+    .ant-radio-wrapper .ant-radio-checked .ant-radio-inner {
+      border-color: #fda4c8 !important;
+      background: #fda4c8 !important;
+    }
+    .ant-input-outlined:hover {
+      border-color: #fda4c8 !important;
+    }
+    .ant-checkbox-checked .ant-checkbox-inner {
+      background-color: #fda4c8;
+      border-color: #fda4c8;
+    }
+    .ant-checkbox:not(.ant-checkbox-disabled):hover .ant-checkbox-inner {
+      border-color: #fda4c8 !important;
+    }
+    .ant-checkbox-checked:not(.ant-checkbox-disabled):hover .ant-checkbox-inner,
+    .ant-checkbox-wrapper:not(.ant-checkbox-wrapper-disabled):hover
+      .ant-checkbox-checked:not(.ant-checkbox-disabled)
+      .ant-checkbox-inner {
+      background-color: #fda4c8;
+      border-color: #fda4c8;
+    }
+    .ant-form-item
+      .ant-form-item-label
+      > label.ant-form-item-required:not(
+        .ant-form-item-required-mark-optional
+      )::before {
+      display: none;
+    }
+    svg {
+      color: #fda4c8;
+    }
+  }
+}
+
+.card-setting-form-employer {
+  margin: 0 1.25rem 1.25rem;
+  border: 1px solid #e8edf2;
+  border-radius: 10px;
+}
+.card-body-employer {
+  min-height: 1px;
+  padding: 1.25rem;
+}
+.card-employer {
+  padding: 15px;
+}
+.title-settings {
+  font-weight: 600;
+}

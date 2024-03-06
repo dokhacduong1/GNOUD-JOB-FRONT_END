@@ -60,7 +60,7 @@ function RegisterEmployers() {
         setNoti(true);
         window.scrollTo(0, 0);
         setTimeout(() => {
-          window.location.href = "/nha-tuyen-dung/login";
+          window.location.href = "/nha-tuyen-dung/app/dashboard";
         }, 1000);
       } else {
         setMessage(result.error);

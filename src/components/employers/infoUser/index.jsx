@@ -21,7 +21,7 @@ function InfoUserEmployer() {
   useEffect(() => {
     const checkAuthen = async () => {
       const CheckAuth = await CheckAuthEmployer();
-      console.log(CheckAuth);
+   
       //if check token đúng thì gán lại token không rỗng
       if (CheckAuth.status) {
         dispatch(authenticationEmployer(true, CheckAuth.infoUserEmployer));

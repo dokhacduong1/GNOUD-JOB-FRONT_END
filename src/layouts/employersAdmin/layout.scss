@@ -38,3 +38,22 @@
 .ant-layout.layout__employer-admin .ant-layout-sider-collapsed + .layout__main{
     margin-left: 80px !important;
 }
+
+
+    .ant-layout.layout + .ant-message .ant-message-notice-wrapper .ant-message-success>.anticon{
+        color: #fda4c8 !important;
+    }
+.icon-message-employer-success{
+    color: #fff;
+    margin-right: 10px;
+    background: #fda4c8;
+    border-radius: 50%;
+   padding: 3px 6px;
+}
+.icon-message-employer-error{
+    color: #fff;
+    margin-right: 10px;
+    background: #ff0000;
+    border-radius: 50%;
+   padding: 3px 6px;
+}

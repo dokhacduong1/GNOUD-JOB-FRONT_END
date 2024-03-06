@@ -22,7 +22,7 @@ function LoginEmployers() {
       const result = await loginUserEmployer(valueForm);
       if (result.code === 200) {
         Cookies.set("token-employer", result.token, { expires: 3 }); // expires: số ngày cookie sẽ hết hạn
-
+        
         window.location.href = "/nha-tuyen-dung/app/dashboard";
       } else {
         setMessage(result.error);
