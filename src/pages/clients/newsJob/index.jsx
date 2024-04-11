@@ -47,7 +47,7 @@ function NewJob() {
       job_level,
       salary_min,
       salary_max,
-      setCoutJob,
+      setCoutJob
     );
   }, []);
 
@@ -73,6 +73,7 @@ function NewJob() {
         objectNew.salary_min,
         objectNew.salary_max
       );
+
       if (result.code === 200) {
         setJob_categorie(objectNew.job_categories);
         setJob_level(objectNew.job_level);
@@ -80,67 +81,57 @@ function NewJob() {
         setSalary_min(objectNew.salary_min);
         setSalary_max(objectNew.salary_max);
         const data = decData(result.data);
+
         setRecordItem(data);
+        setCoutJob(result.countJobs);
       }
     },
     [sort_key, sort_value]
   );
 
-  const onChangeRaido = useCallback(
-    (e) => {
-      const value = e.target.value;
-      switch (value) {
-        case 1:
-          reloadData(
-            setJobCategories,
-            setRecordItem,
-            page,
-            limit,
-            "createdAt",
-            "desc",
-            keyword,
-            job_categorie,
-            job_type,
-            job_level,
-            salary_min,
-            salary_max
-          );
-          setSort_key("createdAt");
-          setSort_value("desc");
-          break;
-        case 2:
-          reloadData(
-            setJobCategories,
-            setRecordItem,
-            page,
-            limit,
-            "salaryMax",
-            "desc",
-            keyword,
-            job_categorie,
-            job_type,
-            job_level,
-            salary_min,
-            salary_max
-          );
-          setSort_key("salaryMax");
-          setSort_value("desc");
-          break;
-      }
-      setValue(value);
-    },
-    [
-      page,
-      limit,
-      keyword,
-      job_categorie,
-      job_type,
-      job_level,
-      salary_min,
-      salary_max,
-    ]
-  );
-  const handleChangePreview = useCallback((e) => {
+  const onChangeRaido = (e) => {
+    const value = e.target.value;
+    switch (value) {
+      case 1:
+        reloadData(
+          setJobCategories,
+          setRecordItem,
+          page,
+          limit,
+          "createdAt",
+          "desc",
+          keyword,
+          job_categorie,
+          job_type,
+          job_level,
+          salary_min,
+          salary_max
+        );
+        setSort_key("createdAt");
+        setSort_value("desc");
+        break;
+      case 2:
+        reloadData(
+          setJobCategories,
+          setRecordItem,
+          page,
+          limit,
+          "salaryMax",
+          "desc",
+          keyword,
+          job_categorie,
+          job_type,
+          job_level,
+          salary_min,
+          salary_max
+        );
+        setSort_key("salaryMax");
+        setSort_value("desc");
+        break;
+    }
+    setValue(value);
+  };
+  const handleChangePreview = (e) => {
     const value = e.target.value;
     const element = document.querySelector(".may-be-interested");
     if (value === "sticky") {
@@ -148,9 +139,10 @@ function NewJob() {
     } else {
       element.classList.remove("sticky-add");
     }
-  }, []);
- 
-  const handleChangePagination = useCallback((value)=>{
+  };
+
+  const handleChangePagination = (value) => {
+    console.log("value", keyword);
     reloadData(
       setJobCategories,
       setRecordItem,
@@ -165,7 +157,7 @@ function NewJob() {
       salary_min,
       salary_max
     );
-  },[])
+  };
   return (
     <div className="cb-section bg-grey2">
       <div className="container">
@@ -254,7 +246,11 @@ function NewJob() {
               </div>
             </div>
             <div className="job-full-search">
-              <ItemBoxNews recordItem={recordItem} handleChangePagination ={handleChangePagination} countPagination = {coutJob}/>
+              <ItemBoxNews
+                recordItem={recordItem}
+                handleChangePagination={handleChangePagination}
+                countPagination={coutJob}
+              />
               <div className="suggested-job col-md-4">
                 <MayBeInterested />
                 <hr />

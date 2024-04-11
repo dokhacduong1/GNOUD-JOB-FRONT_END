@@ -26,7 +26,7 @@ function ContactUsers() {
       fetchApi();
     },[])
     const handleFormSubmit = (values) => {
-      console.log(values);
+    
     }
   return (
     <div className="contact-users row gx-0">
@@ -36,7 +36,7 @@ function ContactUsers() {
       <div className="box-content col-6">
         <div className="form-contact">
           <div className="text-heading">Đăng ký nhận tư vấn</div>
-          <Form onFinish={handleFormSubmit} layout="vertical" name="contact-users">
+          <Form  onFinish={handleFormSubmit} layout="vertical" name="contact-users">
             <Form.Item
 
               label="Họ và tên"

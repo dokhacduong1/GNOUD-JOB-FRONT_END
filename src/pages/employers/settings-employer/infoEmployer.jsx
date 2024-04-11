@@ -10,6 +10,8 @@ import { Link } from "react-router-dom";
 import { changeInfoEmployer } from "../../../services/employers/employer-userApi";
 import { UpdateDataAuthEmployer } from "../../../update-data-reducer/employers/updateDataEmployers";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import icon_A from "./images/icon.png";
+import icon_B from "./images/icon-2.png";
 const genderOK = [
   {
     label: "Nam",
@@ -84,118 +86,188 @@ function InfoEmployer() {
     <>
       {contextHolder}
       {authenMainEmployer.status === true && (
-        <div className="card-employer">
-          <div className="info-employer card-setting-form-employer card-body-employer">
-            <div className="title-settings mb-3">
-              Cập nhật thông tin cá nhân
-            </div>
-            <div className="box-settings">
-              <div className="row align-items-center justify-content-between">
-                <div className="col-6">
-                  <div className="box-avatar">
-                    <label>Avatar</label>
-                    <img src={avatar} alt="avatar" />
-                    <button>
-                      <ModelChangeImage avatar={avatar} />
-                    </button>
+        <>
+          <div className="card-employer">
+            <div className="demo-employer card-setting-form-employer card-body-employer">
+              <div className="title-settings mb-3">
+                Tài khoản xác thực:{" "}
+                <strong style={{ color: "rgb(253, 109, 166)" }}>Cấp 2/2</strong>
+              </div>
+              <div className="demo-employer__body">
+                <div className="box-item">
+                  <div className="icon">
+                    <img src={icon_A} alt="icon" />
+                  </div>
+                  <div className="text">
+                    Tài khoản quý khách đang đạt:{" "}
+                    <strong style={{ color: "rgb(253, 109, 166)" }}>
+                      Cấp 2/2
+                    </strong>
                   </div>
                 </div>
-                <div className="col-6">
-                  <div className="box-email">
-                    <label>Email: {infoUserEmployer?.email}</label>
+                <div className="box-item">
+                  <div className="icon">
+                    <img src={icon_B} alt="icon" />
+                  </div>
+                  <div className="text">
+                    Quyền lợi: Tận hưởng nhiều{" "}
+                    <strong style={{ color: "rgb(253, 109, 166)" }}>
+                      đặc quyền
+                    </strong>{" "}
+                    khi xác thực tài khoản.
                   </div>
                 </div>
               </div>
-              <div className="form-settings-employer mt-3">
-                <Form
-                  onFinish={handleForm}
-                  form={form}
-                  layout="vertical"
-                  className="row"
-                >
-                  <Form.Item
-                    className="col-6"
-                    label="Họ và tên"
-                    name="fullName"
-                    rules={[
-                      { required: true, message: "Vui lòng nhập họ tên!" },
-                    ]}
-                  >
-                    <Input style={{ width: "100%" }} />
-                  </Form.Item>
-                  <Form.Item className="col-6" label="Giới tính" name="gender">
-                    <Select options={genderOK} style={{ width: "100%" }} />
-                  </Form.Item>
-                  <Form.Item
-                    className="col-6"
-                    label={
-                      <div className="box-phone">
-                        <label>Số điện thoại</label>
-                        {infoUserEmployer?.activePhone === false && (
-                          <div className="verify">
-                            <Link to={"../account/phone-verify"}>Cập nhật</Link>
-                            <Link to={"../account/phone-verify"}>Xác thực</Link>
-                          </div>
-                        )}
-                      </div>
-                    }
-                    name="phoneNumber"
-                    rules={[
-                      {
-                        validator: async (_, value) => {
-                          await phoneCheck(value);
-                        },
-                      },
-                    ]}
-                  >
-                    <Input disabled style={{ width: "100%" }} />
-                  </Form.Item>
-                  <Form.Item
-                    className="col-6"
-                    label="Vị trí"
-                    name="level"
-                    rules={[
-                      {
-                        required: true,
-                        message: "Vui lòng chọn vị trí làm việc!",
-                      },
-                    ]}
-                  >
-                    <Select
-                      placeholder="Chọn vị trí công tác của bạn"
-                      options={dataLevel}
-                    />
-                  </Form.Item>
-                  <hr />
-                  <div className="mb-3" style={{ fontWeight: "650" }}>
-                    Thông tin thêm
+              <div className="demo-employer__footer">
+                <button className="button-left  button-all">
+                  Cập nhật thông tin xác thực
+                </button>
+                <button className="button-right button-all">
+                  Tìm hiểu thêm
+                </button>
+              </div>
+            </div>
+            <div className="info-employer card-setting-form-employer card-body-employer">
+              <div className="title-settings mb-3">
+                Cập nhật thông tin cá nhân
+              </div>
+              <div className="box-settings">
+                <div className="row align-items-center justify-content-between">
+                  <div className="col-6">
+                    <div className="box-avatar">
+                      <label>Avatar</label>
+                      <img src={avatar} alt="avatar" />
+                      <button>
+                        <ModelChangeImage avatar={avatar} />
+                      </button>
+                    </div>
                   </div>
-                  <Form.Item
-                    label="Linkedin"
-                    name="linkedin"
-                    className="col-12"
+                  <div className="col-6">
+                    <div className="box-email">
+                      <label>Email: {infoUserEmployer?.email}</label>
+                    </div>
+                  </div>
+                </div>
+                <div className="form-settings-employer mt-3">
+                  <Form
+                    onFinish={handleForm}
+                    form={form}
+                    layout="vertical"
+                    className="row"
                   >
-                    <Input
-                      size="large"
-                      placeholder="Nhập địa chỉ linkedin của bạn"
-                      prefix={
-                        <FontAwesomeIcon
-                          icon={faLinkedin}
-                          style={{ padding: "0 10px 0 0" }}
-                        />
+                    <Form.Item
+                      className="col-6"
+                      label="Họ và tên"
+                      name="fullName"
+                      rules={[
+                        { required: true, message: "Vui lòng nhập họ tên!" },
+                      ]}
+                    >
+                      <Input style={{ width: "100%" }} />
+                    </Form.Item>
+                    <Form.Item
+                      className="col-6"
+                      label="Giới tính"
+                      name="gender"
+                    >
+                      <Select
+                        options={genderOK}
+                        style={{ width: "100%" }}
+                        dropdownRender={(menu) => {
+                          return (
+                            <>
+                              <div className="search-custom-info-company">
+                                <span className="item">{menu}</span>
+                              </div>
+                            </>
+                          );
+                        }}
+                      />
+                    </Form.Item>
+                    <Form.Item
+                      className="col-6"
+                      label={
+                        <div className="box-phone">
+                          <label>Số điện thoại</label>
+                          {infoUserEmployer?.activePhone === false && (
+                            <div className="verify">
+                              <Link to={"../account/phone-verify"}>
+                                Cập nhật
+                              </Link>
+                              <Link to={"../account/phone-verify"}>
+                                Xác thực
+                              </Link>
+                            </div>
+                          )}
+                        </div>
                       }
-                    />
-                  </Form.Item>
-                  <Form.Item className="col-12 button-v">
-                    <button className="button-submit" type="submit">
-                      Lưu thông tin
-                    </button>
-                  </Form.Item>
-                </Form>
+                      name="phoneNumber"
+                      rules={[
+                        {
+                          validator: async (_, value) => {
+                            await phoneCheck(value);
+                          },
+                        },
+                      ]}
+                    >
+                      <Input disabled style={{ width: "100%" }} />
+                    </Form.Item>
+                    <Form.Item
+                      className="col-6"
+                      label="Vị trí"
+                      name="level"
+                      rules={[
+                        {
+                          required: true,
+                          message: "Vui lòng chọn vị trí làm việc!",
+                        },
+                      ]}
+                    >
+                      <Select
+                        placeholder="Chọn vị trí công tác của bạn"
+                        options={dataLevel}
+                        dropdownRender={(menu) => {
+                          return (
+                            <>
+                              <div className="search-custom-info-company">
+                                <span className="item">{menu}</span>
+                              </div>
+                            </>
+                          );
+                        }}
+                      />
+                    </Form.Item>
+                    <hr />
+                    <div className="mb-3" style={{ fontWeight: "650" }}>
+                      Thông tin thêm
+                    </div>
+                    <Form.Item
+                      label="Linkedin"
+                      name="linkedin"
+                      className="col-12"
+                    >
+                      <Input
+                        size="large"
+                        placeholder="Nhập địa chỉ linkedin của bạn"
+                        prefix={
+                          <FontAwesomeIcon
+                            icon={faLinkedin}
+                            style={{ padding: "0 10px 0 0" }}
+                          />
+                        }
+                      />
+                    </Form.Item>
+                    <Form.Item className="col-12 button-v">
+                      <button className="button-submit" type="submit">
+                        Lưu thông tin
+                      </button>
+                    </Form.Item>
+                  </Form>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </>
       )}
     </>
   );

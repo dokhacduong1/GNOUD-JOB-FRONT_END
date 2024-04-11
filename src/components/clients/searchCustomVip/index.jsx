@@ -48,11 +48,12 @@ function SearchCustomVip(props) {
   );
   return (
     <Select
+    
       options={items}
       style={{ width: "100%" }}
       onChange={onChange}
       value={value}
-    size="large"
+      size="large"
       suffixIcon={<FontAwesomeIcon icon={faCaretDown} />}
       dropdownRender={(menu) => {
         return (

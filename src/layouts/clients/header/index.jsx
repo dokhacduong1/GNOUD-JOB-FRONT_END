@@ -1,7 +1,7 @@
 import "./header.scss";
 import { DownloadOutlined } from "@ant-design/icons";
 
-import { Link, NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { Collapse, Button, Select, Menu, Dropdown } from "antd";
 import { useEffect, useState } from "react";
 
@@ -9,13 +9,14 @@ import { useSelector } from "react-redux";
 
 import DropMenu from "./dropMenu";
 import { getCityApiDuong } from "../../../services/clients/user-userApi";
-import { searchJob } from "./js/options";
+import { searchCv, searchJob } from "./js/options";
 
 function Header() {
   const authenMainClient = useSelector(
     (status) => status.authenticationReducerClient
   );
-
+  const location = useLocation();
+  const[linkLocation,setLinkLocation] = useState(location.pathname)
   const [isCollapseVisible, setIsCollapseVisible] = useState(0);
 
   const [city, setCity] = useState([]);
@@ -145,21 +146,37 @@ function Header() {
       setIsCollapseVisible(0);
     }
   };
-
+  useEffect(()=>{
   
+    setLinkLocation(location.pathname)
+  },[location.pathname])
   const itemsMenuNav = [
     {
       label: (
-        <Dropdown  overlayClassName="drop-menu-ok" menu={{ items: searchJob }} placement="bottomLeft">
+        <Dropdown
+      
+          overlayClassName="drop-menu-ok"
+          menu={{ items: searchJob, selectedKeys:linkLocation }}
+          placement="bottomLeft"
+        >
           <div>Tìm Việc Làm</div>
         </Dropdown>
       ),
-      key: "1",
+      key: "viec-lam",
       icon: null,
     },
     {
-      label: "CV Đẹp",
-      key: "2",
+      label: (
+        <Dropdown
+      
+          overlayClassName="drop-menu-ok"
+          menu={{ items: searchCv, selectedKeys:linkLocation }}
+          placement="bottomLeft"
+        >
+          <div>Hồ sơ & CV</div>
+        </Dropdown>
+      ),
+      key: "cv",
       icon: null,
     },
     {
@@ -195,6 +212,7 @@ function Header() {
             </div>
             <div className="header__search col-5 text-center">
               <Menu
+                selectedKeys={location.pathname.split("/")[1]}
                 onClick={handleClickMenu}
                 mode="horizontal"
                 items={itemsMenuNav}
@@ -226,11 +244,11 @@ function Header() {
                     </div>
                   </div>
                 </div>
-                <div style={{ padding: "24px" }} className="header__employer text-center col-2">
-                  
-                      <a href={"/nha-tuyen-dung"} >Nhà tuyển dụng</a>
-                  
-
+                <div
+                  style={{ padding: "24px" }}
+                  className="header__employer text-center col-2"
+                >
+                  <a href={"/nha-tuyen-dung"}>Nhà tuyển dụng</a>
                 </div>
               </>
             ) : (

@@ -8,7 +8,13 @@
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+
+  
 }
+*:not(.no-font) {
+  font-family: "Roboto", sans-serif;
+}
+
 button:focus-visible {
   outline: none !important;
 }
@@ -500,4 +506,14 @@ body::-webkit-scrollbar-horizontal-thumb {
 }
 .aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-played .aplayer-thumb{
   background:rgb(250, 167, 200) !important;
+}
+.title-employer-setting{
+  font-size: 1.1rem !important;
+ 
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+.title-employer-setting h3{
+  font-weight: 500 !important;
 }

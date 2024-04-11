@@ -1,0 +1,153 @@
+.management-cvs {
+ .segemment{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+ }
+    .box-candidate {
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      .images {
+        img {
+          object-fit: cover;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+        }
+      }
+      .box-content {
+        div {
+          &:first-child {
+            font-weight: 600;
+          }
+          &:last-child {
+            display: inline-block;
+            border-radius: 5px;
+            padding: 0 10px;
+          }
+        }
+        .cv-seen {
+          background: rgba(233, 233, 233, 0.473);
+          color: #868181;
+        }
+        .cv-no-seen {
+          background: rgb(83, 215, 255);
+          color: #ffffff;
+        }
+      }
+    }
+    .box-campaign {
+      font-size: 13px;
+      div {
+        &:first-child {
+          width: 100px;
+          overflow: hidden;
+          -webkit-line-clamp: 1;
+          color: #414141;
+          text-overflow: ellipsis;
+          -webkit-box-orient: vertical;
+          display: -webkit-box;
+          overflow: hidden;
+        }
+        &:last-child {
+          width: 100px;
+          -webkit-line-clamp: 1;
+          background: #f0efef8c;
+          color: #b8b6b6 !important;
+          overflow: hidden;
+          display: inline-block;
+          border-radius: 5px;
+          color: #172642;
+          text-overflow: ellipsis;
+          -webkit-box-orient: vertical;
+          display: -webkit-box;
+          overflow: hidden;
+        }
+      }
+    }
+    .box-contact {
+      div {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 13px;
+        svg {
+          color: rgb(247, 97, 157);
+        }
+        span {
+          font-weight: 500;
+        }
+      }
+    }
+    .box-insights {
+      font-size: 13px;
+      div {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 13px;
+        svg {
+          color: rgb(172, 172, 172);
+        }
+        span {
+          color: rgb(0, 0, 0);
+        }
+      }
+    }
+    .box-action {
+      text-align: left;
+      display: flex;
+      gap: 8px;
+  
+      button {
+        width: 90px;
+        font-size: 13px;
+        border: none;
+        padding: 5px 8px;
+        border-radius: 5px;
+        transition: all 0.3s ease-in-out;
+      }
+      .btn-seen-cv {
+        button {
+          background: #f76197 !important;
+          color: #fff !important;
+          &:hover {
+            background: #fd307b !important;
+            color: #fff !important;
+          }
+        }
+      }
+      .btn-accept-cv button {
+        background: #36d2ee !important;
+        color: #fff !important;
+        &:hover {
+          background: #03bcdd;
+          color: #fff !important;
+        }
+      }
+      .btn-reject-cv button {
+        background: #fa4949 !important;
+        color: #fff !important;
+        &:hover {
+          background: #ff0000 !important;
+          color: #fff !important;
+        }
+      }
+      .ant-btn-default:disabled {
+        cursor: not-allowed !important;
+        border-color: #d9d9d9 !important;
+        color: rgba(0, 0, 0, 0.25) !important;
+        background: rgba(0, 0, 0, 0.04) !important;
+        box-shadow: none !important;
+        &:hover {
+          border-color: #d9d9d9 !important;
+          color: rgba(0, 0, 0, 0.25) !important;
+          background: rgba(0, 0, 0, 0.04) !important;
+          box-shadow: none !important;
+        }
+      }
+    }
+  }

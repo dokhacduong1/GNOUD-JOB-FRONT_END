@@ -82,7 +82,7 @@ function JobsOccupation() {
                     >
                       <div className="job__occupation-boxImage col-3">
                         <img
-                          src={dataMapOne.employerId.image}
+                          src={dataMapOne.employerId.logoCompany}
                           alt="testok"
                         ></img>
                       </div>
@@ -123,7 +123,7 @@ function JobsOccupation() {
                     >
                       <div className="job__occupation-boxImage col-3">
                         <img
-                          src={dataMapOne.employerId.image}
+                          src={dataMapOne.employerId.logoCompany}
                           alt="testok"
                         ></img>
                       </div>
@@ -164,7 +164,7 @@ function JobsOccupation() {
                     >
                       <div className="job__occupation-boxImage col-3">
                         <img
-                          src={dataMapOne.employerId.image}
+                          src={dataMapOne.employerId.logoCompany}
                           alt="testok"
                         ></img>
                       </div>

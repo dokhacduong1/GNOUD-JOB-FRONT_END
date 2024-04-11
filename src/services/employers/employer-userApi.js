@@ -41,6 +41,11 @@ export const changeInfoEmployer = async (valueForm)=>{
     const result = await AuthPost(`/users/change-info-employer`,valueForm,checkToken);
     return result;
 }
+export const changeInfoCompany = async (valueForm)=>{
+    const result = await AuthPost(`/users/change-info-company`,valueForm,checkToken);
+    return result;
+}
+
 export const verifyPassword = async (valueForm)=>{
     const result = await AuthPost(`/users/verify-password`,valueForm,checkToken);
     return result;
@@ -51,5 +56,9 @@ export const sendEmsPhoneEmployer = async (valueForm)=>{
 }
 export const verifyPhoneEmployer = async (valueForm)=>{
     const result = await AuthPost(`/users/verify-code-sms`,valueForm,checkToken);
+    return result;
+}
+export const changePasswordEmployer = async (valueForm)=>{
+    const result = await AuthPost(`/users/change-password`,valueForm,checkToken);
     return result;
 }

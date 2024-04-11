@@ -1,0 +1,52 @@
+.add-jobs-employer{
+  .title-employer-setting{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .card-step{
+    position: sticky;
+    top: 60px;
+    z-index: 98;
+   border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    border: none;
+  }
+  .form-button{
+    display: block;
+    text-align: right;
+    button ,a{
+      outline: none;
+      border: none;
+      padding: 20px 20px;
+    
+      border-radius: 10px;
+      color: #fff;
+      background: #fda4c8;
+      transition: all 0.3s ease-in-out;
+      &:hover{
+        background: #f771a7;
+      }
+    }
+    a{
+    
+      display: inline-block;
+     
+      background: #fff;
+      color: #000;
+      border: 1px solid #ddd;
+      &:hover{
+        background: #f3f3f3;
+        color: #000;
+      
+      }
+    }
+    
+  }
+  .group-pre-next{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 20px;
+  }
+ 
+}

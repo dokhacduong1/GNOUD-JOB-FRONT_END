@@ -13,42 +13,108 @@
 
 /* Let's default this puppy out
 -------------------------------------------------------------------------------*/
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-*{
-	font-family: 'Roboto', sans-serif !important;
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+
+.ant-layout {
+  background: #fff !important;
 }
-.ant-layout{
-	background: #fff !important;
+a {
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
 }
-a{
-	text-decoration: none ;
-	color: #000 ;
-	cursor: pointer;
-}
-html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font-weight: normal;
-	vertical-align: baseline;
-	background: transparent;
+html,
+body,
+body div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+fieldset,
+form,
+label,
+legend,
+caption,
+tfoot,
+article,
+aside,
+figure,
+footer,
+header,
+menu,
+nav,
+section,
+time,
+mark,
+audio,
+video,
+details,
+summary {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
+  background: transparent;
 }
 
-article, aside, figure, footer, header, nav, section, details, summary {display: block;}
+article,
+aside,
+figure,
+footer,
+header,
+nav,
+section,
+details,
+summary {
+  display: block;
+}
 
 /* Handle box-sizing while better addressing child elements:
    https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
 html {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 *,
 *:before,
 *:after {
-	box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 /* consider resetting the default cursor: https://gist.github.com/murtaugh/5247154 */
@@ -57,7 +123,9 @@ html {
 */
 img,
 object,
-embed {max-width: 100%;}
+embed {
+  max-width: 100%;
+}
 
 /*
    Note: keeping IMG here will cause problems if you're using foreground images as sprites.
@@ -70,81 +138,151 @@ embed {max-width: 100%;}
 */
 
 /* force a vertical scrollbar to prevent a jumpy page */
-html {overflow-y: scroll;}
+html {
+  overflow-y: scroll;
+}
 
 /* we use a lot of ULs that aren't bulleted.
 	don't forget to restore the bullets within content. */
 // ul {list-style: none;}
 
-blockquote, q {quotes: none;}
+blockquote,
+q {
+  quotes: none;
+}
 
 blockquote:before,
 blockquote:after,
 q:before,
-q:after {content: ''; content: none;}
-
-a {margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
-
-del {text-decoration: line-through;}
-
-abbr[title], dfn[title] {border-bottom: 1px dotted #000; cursor: help;}
-
-/* tables still need cellspacing="0" in the markup */
-table {border-collapse: collapse; border-spacing: 0;}
-th {font-weight: bold; vertical-align: bottom;}
-td {font-weight: normal; vertical-align: top;}
-
-hr {display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0;}
-
-input, select {vertical-align: middle;}
-
-pre {
-    white-space: pre; /* CSS2 */
-    white-space: pre-wrap; /* CSS 2.1 */
-    white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
-    word-wrap: break-word; /* IE */
+q:after {
+  content: "";
+  content: none;
 }
 
-input[type="radio"] {vertical-align: text-bottom;}
-input[type="checkbox"] {vertical-align: bottom;}
-.ie7 input[type="checkbox"] {vertical-align: baseline;}
-.ie6 input {vertical-align: text-bottom;}
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
 
-select, input, textarea {font: 99% sans-serif;}
+del {
+  text-decoration: line-through;
+}
 
-table {font-size: inherit; font: 100%;}
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted #000;
+  cursor: help;
+}
 
-small {font-size: 85%;}
+/* tables still need cellspacing="0" in the markup */
 
-strong {font-weight: bold;}
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
 
-td, td img {vertical-align: top;}
+input,
+select {
+  vertical-align: middle;
+}
+
+pre {
+  white-space: pre; /* CSS2 */
+  white-space: pre-wrap; /* CSS 2.1 */
+  white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+  word-wrap: break-word; /* IE */
+}
+
+input[type="radio"] {
+  vertical-align: text-bottom;
+}
+input[type="checkbox"] {
+  vertical-align: bottom;
+}
+.ie7 input[type="checkbox"] {
+  vertical-align: baseline;
+}
+.ie6 input {
+  vertical-align: text-bottom;
+}
+
+select,
+input,
+textarea {
+  font: 99% sans-serif;
+}
+
+small {
+  font-size: 85%;
+}
+
+strong {
+  font-weight: bold;
+}
+
+td,
+td img {
+  vertical-align: top;
+}
 
 /* Make sure sup and sub don't mess with your line-heights https://gist.github.com/413930 */
-sub, sup {font-size: 75%; line-height: 0; position: relative;}
-sup {top: -0.5em;}
-sub {bottom: -0.25em;}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
 
 /* standardize any monospaced elements */
-pre, code, kbd, samp {font-family: monospace, sans-serif;}
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace, sans-serif;
+}
 
 /* hand cursor on clickable elements */
 .clickable,
 label,
-input[type=button],
-input[type=submit],
-input[type=file],
-button {cursor: pointer;}
+input[type="button"],
+input[type="submit"],
+input[type="file"],
+button {
+  cursor: pointer;
+}
 
 /* Webkit browsers add a 2px margin outside the chrome of form elements */
-button, input, select, textarea {margin: 0;}
+button,
+input,
+select,
+textarea {
+  margin: 0;
+}
 
 /* make buttons play nice in IE */
 button,
-input[type=button] {width: auto; overflow: visible;}
+input[type="button"] {
+  width: auto;
+  overflow: visible;
+}
 
 /* scale images in IE7 more attractively */
-.ie7 img {-ms-interpolation-mode: bicubic;}
+.ie7 img {
+  -ms-interpolation-mode: bicubic;
+}
 
 /* prevent BG image flicker upon hover
    (commented out as usage is rare, and the filter syntax messes with some pre-processors)
@@ -152,6 +290,304 @@ input[type=button] {width: auto; overflow: visible;}
 */
 
 /* let's clear some floats */
-.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
-.clearfix:after { clear: both; }
-.clearfix { zoom: 1; }
+.clearfix:before,
+.clearfix:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+.clearfix:after {
+  clear: both;
+}
+.clearfix {
+  zoom: 1;
+}
+
+.reset-button-employer {
+  .ant-form-item .ant-form-item-label > label[for="address"] {
+    display: block;
+  }
+  .ant-btn-default:not(:disabled):not(.ant-btn-disabled):hover {
+    color: #fd4a92;
+    border-color: #f8a4c5;
+    background: #ffffff;
+  }
+  /* Border color and box-shadow */
+  .ant-input-outlined:hover,
+  .ant-input-outlined:focus-within,
+  .ant-select-outlined:not(.ant-select-disabled):not(
+      .ant-select-customize-input
+    ):not(.ant-pagination-size-changer):hover
+    .ant-select-selector,
+  .ant-select-outlined:not(.ant-select-disabled):not(
+      .ant-select-customize-input
+    ):not(.ant-pagination-size-changer)
+    .ant-select-selector,
+  .ant-input-number-input-wrap:focus,
+  .ant-picker-outlined:hover,
+  .ant-input-number-outlined:focus-within,
+  .ant-input-number-outlined:hover,
+  .ant-checkbox-wrapper:not(.ant-checkbox-wrapper-disabled):hover
+    .ant-checkbox-inner,
+  .ant-checkbox:not(.ant-checkbox-disabled):hover .ant-checkbox-inner,
+  .ant-input-outlined:focus,
+  .ant-steps .ant-steps-item-process .ant-steps-item-icon {
+    border-color: #fda4c8 !important;
+    box-shadow: none;
+  }
+
+  /* Border for radio and checkbox */
+  .ant-radio-wrapper .ant-radio-checked::after,
+  input[type="radio"],
+  .ant-radio-wrapper .ant-radio-checked .ant-radio-inner,
+  .ant-checkbox-checked .ant-checkbox-inner {
+    border-color: #fda4c8 !important;
+  }
+
+  /* Background color for radio and checkbox */
+  input[type="radio"],
+  .ant-radio-wrapper .ant-radio-checked .ant-radio-inner,
+  .ant-steps .ant-steps-item-process .ant-steps-item-icon {
+    background: #fda4c8 !important;
+  }
+
+  /* Border for ant-radio-wrapper */
+  .ant-radio-wrapper .ant-radio-inner {
+    border: 1px solid #ddd !important;
+  }
+
+  /* Background color for checked checkbox */
+  .ant-checkbox-checked .ant-checkbox-inner,
+  .ant-steps-item-content > .ant-steps-item-title::after {
+    background-color: #fda4c8 !important;
+  }
+
+  /* Checkbox border color on hover */
+  .ant-checkbox:not(.ant-checkbox-disabled):hover .ant-checkbox-inner {
+    border-color: #fda4c8 !important;
+  }
+
+  /* Additional checkbox hover background and border color */
+  .ant-checkbox-checked:not(.ant-checkbox-disabled):hover .ant-checkbox-inner,
+  .ant-checkbox-wrapper:not(.ant-checkbox-wrapper-disabled):hover
+    .ant-checkbox-checked:not(.ant-checkbox-disabled)
+    .ant-checkbox-inner {
+    background-color: #fda4c8;
+    border-color: #fda4c8;
+  }
+  .ant-steps .ant-steps-item-finish .ant-steps-item-icon {
+    background-color: #fda4c83b;
+    border-color: transparent;
+    color: #fff;
+  }
+  .ant-steps .ant-steps-item-finish .ant-steps-item-icon > .ant-steps-icon {
+    color: #fff;
+  }
+  /* Hide required mark */
+  .ant-form-item
+    .ant-form-item-label
+    > label.ant-form-item-required:not(
+      .ant-form-item-required-mark-optional
+    )::before {
+    display: none;
+  }
+  .ant-select-dropdown
+    .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+    background-color: #fda4c8 !important;
+  }
+  /* Color for svg */
+
+  .ant-steps-finish-icon svg {
+    color: #fd4a92;
+  }
+  .ant-switch.ant-switch-checked {
+    background: #fda4c8 !important;
+  }
+  .ant-btn-primary {
+    background: #fda4c8 !important;
+    border-color: #fda4c8 !important;
+  }
+  .ant-pagination .ant-pagination-item-active {
+    background: #fda4c8 !important;
+    color: #fff;
+    font-weight: normal;
+    border: 1px solid #fda4c8;
+    color: #fff !important;
+  }
+  .ant-table-wrapper .ant-table-filter-trigger.active,
+  .ant-table-wrapper .ant-table-column-sorter-down.active,
+  .ant-table-wrapper .ant-table-column-sorter-up.active,
+  .ant-table-wrapper
+    .ant-table-thead
+    th.ant-table-column-has-sorters:focus-visible {
+    color: #f8a4c5;
+  }
+  .ant-pagination .ant-pagination-item-active:hover a {
+    color: #fff !important;
+  }
+  .ant-menu-light.ant-menu-horizontal > .ant-menu-item-selected {
+    .ant-menu-title-content {
+      color: #303235 !important;
+      font-weight: 500;
+    }
+    svg {
+      color: #303235;
+      font-weight: 500;
+    }
+  }
+
+  .ant-menu-light.ant-menu-horizontal > .ant-menu-item-active::after {
+    border-bottom-color: transparent;
+  }
+  .ant-menu-light.ant-menu-horizontal > .ant-menu-item-selected::after {
+    border-bottom-color: #303235 !important;
+  }
+  .ant-menu-light.ant-menu-horizontal > .ant-menu-item-active {
+    .ant-menu-title-content {
+    }
+  }
+  .ant-menu-light.ant-menu-horizontal > .ant-menu-item {
+    .ant-menu-title-content {
+      color: #9b9b9b;
+      font-weight: 500;
+    }
+  }
+  .ant-menu-light
+    .ant-menu-item:not(.ant-menu-item-selected):not(
+      .ant-menu-submenu-selected
+    ):hover {
+    .ant-menu-title-content {
+      color: #000000;
+      font-weight: 500;
+    }
+  }
+}
+.ant-tooltip .ant-tooltip-inner:contains("Click to sort ascending") {
+  display: none !important;
+}
+.search-custom-info-company {
+  /* Handle on hover */
+
+  .rc-virtual-list-scrollbar {
+    background: transparent !important;
+    width: 3px !important;
+  }
+  .rc-virtual-list-scrollbar-thumb {
+    background: #fdc3da !important;
+  }
+  .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+    background-color: #f8a4c5 !important;
+    color: #fff;
+  }
+  .ant-select-item-option-selected:not(.ant-select-item-option-disabled)
+    .ant-select-item-option-state {
+    color: #fff !important;
+  }
+}
+
+.share-model-popup {
+ 
+  .title-share {
+    font-size: 15px;
+   
+  }
+  .ant-input-outlined:hover,
+  .ant-input-outlined:focus , .ant-input-affix-wrapper:focus-within {
+    border-color: #fda4c8 !important;
+    box-shadow: none;
+  }
+  .ant-input-affix-wrapper > input.ant-input {
+    &::selection {
+      background: #f094b7 !important;
+     
+      color: #ffffff !important;
+    }
+
+    &::-moz-selection {
+      background: #f094b7 !important;
+    
+      color: #ffffff;
+    }
+
+    &::-webkit-selection {
+      background: #f094b7 !important;
+   
+      color: #ffffff !important;
+    }
+  }
+  .share-link-via {
+    border-top: 1px solid #f5f5f5;
+    padding: 10px 0;
+    .box-icon {
+      a {
+        display: inline-flex;
+        align-items: center;
+        margin-right: 10px;
+        padding:  8px 9px;
+        font-size: 15px;
+        border: 1px solid #ddd;
+        border-radius: 50%;
+        &:first-child {
+          border: 1px solid #3b5999;
+          color: #3b5999;
+          &:hover {
+            background: #3b5999;
+            color: #fff;
+          }
+        }
+        &:nth-child(2) {
+          border: 1px solid #55acee;
+          color: #55acee;
+          &:hover {
+            background: #55acee;
+            color: #fff;
+          }
+        }
+        &:last-child {
+          border: 1px solid #e4405f;
+          color: #e4405f;
+          &:hover {
+            background: #e4405f;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+  .share-copy {
+    .box-item {
+      display: flex;
+      gap: 10px;
+      button {
+        background: #fda4c8;
+        border: 1px solid #fda4c8;
+        color: #fff;
+        font-size: 14px;
+        padding: 5px 10px;
+        border-radius: 5px;
+        &:hover {
+          background: #f8a4c5;
+          border: 1px solid #f8a4c5;
+        }
+      }
+    }
+  }
+}
+
+.line-spead{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  div{
+    font-size: 13px;
+    color: #808080;
+    &:nth-child(2){
+      width: 1px;
+      flex: 1;
+      height: 1px;
+      background: #dddddd9a;
+    }
+  }
+}

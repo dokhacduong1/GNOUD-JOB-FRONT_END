@@ -15,10 +15,11 @@ import {
   faLock,
 } from "@fortawesome/free-solid-svg-icons";
 
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Cookies from "js-cookie";
 function DropMenu(props) {
   const { infoUser } = props;
+const location = useLocation();
 
   const logout = () => {
     Cookies.remove("token-user");
@@ -48,8 +49,9 @@ function DropMenu(props) {
         </>
       ),
     },
+ 
     {
-      key: "2",
+      key: "/tai-khoan/thong-tin",
       label: (
         <Link className="info-drop__button" to="/tai-khoan/thong-tin">
           <FontAwesomeIcon icon={faPenToSquare} />
@@ -58,7 +60,7 @@ function DropMenu(props) {
       ),
     },
     {
-      key: "3",
+      key: "/tai-khoan/cai-dat-goi-y-viec-lam",
       label: (
         <Link
           className="info-drop__button"
@@ -70,7 +72,7 @@ function DropMenu(props) {
       ),
     },
     {
-      key: "4",
+      key: "/tai-khoan/test",
       label: (
         <>
           <Link className="info-drop__button" to="/tai-khoan/test">
@@ -81,7 +83,9 @@ function DropMenu(props) {
         </>
       ),
     },
-   
+    {
+      type: "divider",
+    },
     {
       key: "5",
       label: (
@@ -92,7 +96,7 @@ function DropMenu(props) {
       ),
     },
     {
-      key: "7",
+      key: "/tai-khoan/mat-khau",
       label: (
         <Link className="info-drop__button" to="/tai-khoan/mat-khau">
           <FontAwesomeIcon icon={faLock} />
@@ -101,7 +105,7 @@ function DropMenu(props) {
       ),
     },
     {
-      key: "8",
+      key: "/tai-khoan/cai-dat-thong-bao-email",
       label: (
         <>
           <Link
@@ -115,7 +119,9 @@ function DropMenu(props) {
         </>
       ),
     },
-   
+    {
+      type: "divider",
+    },
     {
       key: "9",
       label: (
@@ -136,15 +142,18 @@ function DropMenu(props) {
           </a>
         </li>
         <li className="header__user-chat">
-          <a href="#!">
+          <Link to="/chat-box">
             <FontAwesomeIcon icon={faMessage} />
-          </a>
+          </Link>
         </li>
         <Dropdown
+       
           className="dropdown-infod"
+          overlayClassName="dropdown-infod__overlay"
           menu={{
             items,
             selectable: true,
+            selectedKeys: [location.pathname],
           }}
           placement="bottomLeft"
         >

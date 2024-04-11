@@ -8,9 +8,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronRight,
   faGear,
+  faPlus,
   faShieldHalved,
 } from "@fortawesome/free-solid-svg-icons";
-import { faFileLines } from "@fortawesome/free-regular-svg-icons";
+import { faCircleUser, faFileLines } from "@fortawesome/free-regular-svg-icons";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 
@@ -101,6 +102,29 @@ function SliderHome() {
           }
         >
           <Link to={LINK_URL + "management-jobs"}>Tin tuyển dụng</Link>
+        </Menu.Item>
+        <Menu.Item
+          key={LINK_URL+"add-jobs-employer"}
+          icon={
+            <span className="layout__sliderEmployer-item">
+              <FontAwesomeIcon icon={faPlus} />
+            </span>
+          }
+        >
+          <Link to={LINK_URL + "add-jobs-employer"}>Thêm chiến dịch</Link>
+        </Menu.Item>
+        <Menu.Item
+          key={LINK_URL+"management-cvs"}
+          icon={
+            <span className="layout__sliderEmployer-item">
+              <FontAwesomeIcon icon={faCircleUser} />
+            </span>
+          }
+        >
+          <Link to={LINK_URL + "management-cvs"}>Quản lý CV</Link>
+        </Menu.Item>
+        <Menu.Item key={"hr-2"}>
+          <hr />
         </Menu.Item>
         <Menu.Item
           key={LINK_URL+"account/settings"}

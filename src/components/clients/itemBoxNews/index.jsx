@@ -15,6 +15,7 @@ function ItemBoxNews({ recordItem,handleChangePagination,countPagination }) {
   const hoverItem = (value) => {
     //
   }
+  console.log("recordItem",countPagination)
   return (
     <div  className="items-box__news col-md-8">
       {recordItem.length > 0 &&
@@ -23,7 +24,7 @@ function ItemBoxNews({ recordItem,handleChangePagination,countPagination }) {
             <div className="items-box__avatar">
               <Link  to={`/tim-viec-lam/${item?.slug}`}>
                 <img
-                  src={item?.companyImage}
+                  src={item?.logoCompany}
                   alt={item?.companyName}
                   title={item.title}
                 />

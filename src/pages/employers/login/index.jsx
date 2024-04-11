@@ -78,6 +78,7 @@ function LoginEmployers() {
                     ]}
                   >
                     <Input
+                      autoComplete="off"
                       prefix={
                         <FontAwesomeIcon
                           icon={faEnvelope}
@@ -90,6 +91,7 @@ function LoginEmployers() {
                   <Form.Item
                     label="Mật khẩu"
                     name="password"
+                    
                     rules={[
                       {
                         required: true,
@@ -98,6 +100,8 @@ function LoginEmployers() {
                     ]}
                   >
                     <Input.Password
+                  
+                      autoComplete="off"
                       prefix={<KeyOutlined style={{ padding: "0 10px 0 0" }} />}
                     />
                   </Form.Item>

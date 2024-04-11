@@ -46,6 +46,13 @@ import LayoutMainEmployerAdmin from "../layouts/employersAdmin";
 import ManagementJobsEmployer from "../pages/employers/managementJobs";
 import SettingEmployer from "../pages/employers/settings-employer";
 import PhoneVerify from "../pages/employers/phoneVerify";
+import AddJobsEmployer from "../pages/employers/addJobs";
+import DetailJob from "../pages/employers/deltailJob";
+import UploadCv from "../pages/clients/uploadCv";
+import ManagementCv from "../pages/clients/managementCv";
+import ChatBox from "../pages/employers/chatBox";
+import ChatBoxClient from "../pages/clients/chatBox";
+import ManagementCvs from "../pages/employers/managementCvs";
 
 export const routes = [
   //client
@@ -64,6 +71,10 @@ export const routes = [
           {
             path: "tim-viec-lam/:slug",
             element: <JobSearch />,
+          },
+          {
+            path: "viec-lam/tat-ca-viec-lam",
+            element: <NewJob />,
           },
           {
             path: "viec-lam/tat-ca-viec-lam",
@@ -123,6 +134,21 @@ export const routes = [
               },
             ],
           },
+          {
+            path: "cv/upload-cv",
+            element: <UploadCv />,
+          },
+
+          {
+            path: "cv",
+            element: <SettingsAccount />,
+            children: [
+              {
+                path: "quan-ly-cv",
+                element: <ManagementCv />,
+              },
+            ],
+          },
         ],
       },
 
@@ -132,7 +158,16 @@ export const routes = [
       },
     ],
   },
-
+  {   
+    element: <PrivateRoutesClient />,
+    children: [
+      {
+        path: "chat-box",
+        element: <ChatBoxClient />,
+      }
+    ]
+   
+  },
   //admin
   {
     path: "admin",
@@ -250,14 +285,40 @@ export const routes = [
             element: <ManagementJobsEmployer />,
           },
           {
+            path: "detail-jobs/:id",
+            element: <DetailJob />,
+          },
+          {
+            path: "add-jobs-employer",
+            element: <AddJobsEmployer />,
+          },
+          {
+            path: "management-cvs",
+            element: <ManagementCvs />,
+          },
+          {
             path: "account/settings",
             element: <SettingEmployer />,
           },
           {
             path: "account/phone-verify",
             element: <PhoneVerify />,
-          }
+          },
         ],
+      },
+    ],
+  },
+  {
+    path: "/nha-tuyen-dung/app",
+    element: <PrivateRoutesEmployer />,
+    children: [
+      {
+        path: "chat-box",
+        element: <ChatBox />,
+      },
+      {
+        path: "chat-box/:idRoom",
+        element: <ChatBox />,
       },
     ],
   },

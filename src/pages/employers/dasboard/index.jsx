@@ -81,7 +81,7 @@ function DashboardEmployer() {
     autoFit: true,
     shapeField: "column25D",
     style: {
-      // 圆角样式
+
 
       maxWidth: 20,
       fill: "rgb(241 150 187 / 90%)",
@@ -123,14 +123,15 @@ function DashboardEmployer() {
     }
 
     const { infoUserEmployer } = authenMainEmployer;
+
     setInfoUserEmployer(infoUserEmployer);
   }, [authenMainEmployer]);
-console.log("infoUserEmployer",infoUserEmployer);
+
   return (
     <>
       {authenMainEmployer?.status === true && (
         <div className="container-fluid page-content dashboar-employer mt-4">
-          <div className="title ml-10 mb-4">
+          <div className=" title-employer-setting  ml-10 mb-4">
             <h3>Bảng tin</h3>
           </div>
           <div className="banner-slick ">
@@ -251,7 +252,7 @@ console.log("infoUserEmployer",infoUserEmployer);
                           <div className="user-box">
                             <div className="images">
                               <img
-                                src="http://localhost:3000/src/layouts/employersAdmin/SliderHome/images/avatar.svg"
+                                src={infoUserEmployer?.image}
                                 alt="avatar"
                               />
                             </div>

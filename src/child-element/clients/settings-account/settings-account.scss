@@ -95,4 +95,44 @@
       border: 1px solid #eee;
     }
   }
+  &__banner {
+    background: linear-gradient(86deg, #316d86 7.25%, #2cbefd 94.78%);
+    border-radius: 8px 8px 0 0;
+    padding: 30px;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    .left{
+      .title {
+        color: #fff;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        letter-spacing: -0.2px;
+        line-height: 28px;
+        margin: 0 0 8px;
+      }
+      .sub-title {
+        color: #fff;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        letter-spacing: -.16px;
+        line-height: 24px;
+        margin: 0;
+      }
+    }
+    .right{
+      position: absolute;
+      top: 0px;
+      right: 0;
+      height: 140px;
+      width: 149px;
+      img{
+       height: 100%;
+       width: 100%;
+      }
+    }
+    
+  }
 }

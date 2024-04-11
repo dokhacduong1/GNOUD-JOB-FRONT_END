@@ -8,6 +8,9 @@
     font-size: 14px;
     padding: 7px 15px;
     width: 100%;
+    .message{
+        margin-bottom: 0 !important;
+    }
     .icon-succect{
         svg{
             color: rgb(37, 166, 221) !important;
@@ -42,7 +45,9 @@
     font-size: 14px;
     padding: 7px 15px;
     width: 100%;
-   
+    .message{
+        margin-bottom: 0 !important;
+    }
     .icon-close{
         svg{
             width: 20px;

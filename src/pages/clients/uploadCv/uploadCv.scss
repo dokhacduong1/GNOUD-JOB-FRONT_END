@@ -1,0 +1,199 @@
+.box-upload-cv {
+  background: #fff;
+  border-radius: 0 0 8px 8px;
+  font-style: normal;
+  padding: 20px 20px 16px;
+  .head-upload-cv {
+    .desc {
+      color: #212f3f;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      letter-spacing: 0.13px;
+      line-height: 22px;
+    }
+  }
+  .body-upload-cv {
+    .form-ok {
+      padding: 20px;
+      border: 2px dashed #dfe6e9;
+      .form-upload {
+        margin-bottom: 10px;
+        .box-css {
+          max-width: 404px;
+          margin: 0 auto;
+          text-align: center;
+          .headt {
+            align-items: center;
+            color: #263a4d;
+            display: flex;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 600;
+            gap: 12px;
+            justify-content: center;
+            letter-spacing: 0.175px;
+            line-height: 135%;
+            margin-top: auto;
+            img {
+              height: 28px;
+              width: 41.778px;
+              object-fit: cover;
+            }
+            span {
+              color: #263a4d;
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 500;
+              line-height: 20px;
+            }
+          }
+          .bodyt {
+            span {
+              color: #7f878f;
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 20px;
+            }
+          }
+          .footert {
+            .view-file {
+              background: #eaf6fc;
+              display: inline-flex;
+              padding: 5px 18px;
+              border-radius: 10px;
+              justify-content: center;
+              align-items: center;
+              gap: 10px;
+              color: #25beff;
+              span,
+              svg {
+                font-weight: 500;
+                font-size: 13px;
+              }
+            }
+            button {
+              border: none;
+              align-items: center;
+              background: #f2f4f5;
+              border-radius: 4px;
+              color: #263a4d;
+              display: flex;
+              flex-direction: row;
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 600;
+              gap: 8px;
+              height: 32px;
+              justify-content: center;
+              letter-spacing: 0.175px;
+              line-height: 22px;
+              margin: 0 auto;
+              padding: 0 24px;
+              transition: all 0.3s ease;
+              &:hover {
+                background: #85daff;
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+    .button-ok {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      button {
+        border: none;
+        padding: 8px 20px;
+        background: #5dcaf9;
+        color: #fff;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+        &:hover {
+          background: #17b2f5;
+        }
+      }
+    }
+  }
+  .footer-upload-cv {
+    .footer-grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(2, 1fr);
+      margin: 24px 0;
+    }
+    .item-box {
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      border: 1px solid #e6e7e8;
+      border-radius: 10px;
+      display: flex;
+      flex: 1 0 0;
+      flex-direction: column;
+      gap: 8px;
+
+      align-items: center;
+      padding: 20px;
+      .icon {
+        align-items: center;
+        border-radius: 50%;
+        display: flex;
+        font-size: 24px;
+        height: 60px;
+        justify-content: center;
+        margin-bottom: 12px;
+        width: 60px;
+        &.bg-1{
+          background: #25beff11;
+          svg{
+            color: #25beff;
+          }
+        }
+        &.bg-2{
+          background: #fff8f2;
+          svg{
+            color: #f70;
+          }
+        }
+        &.bg-3{
+          background: #f5f8fd;
+          svg{
+            color: #3b78dc;
+          }
+        }
+        &.bg-4{
+          background: #fdf5f5;
+          svg{
+            color: #dc2f2f;
+          }
+        }
+      }
+      .title {
+        color: #212f3f;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        letter-spacing: -0.16px;
+        line-height: 24px;
+        margin: 0;
+        text-align: center;
+      }
+      .sub-title {
+        color: #7f878f;
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        letter-spacing: 0.14px;
+        line-height: 22px;
+        margin: 0;
+        text-align: center;
+      }
+    }
+  }
+}

@@ -52,16 +52,19 @@
       height: 35px;
       border-radius: 5px;
       color: #fff !important;
-      background: #bd9579;
+      background: #5dcaf9;
       font-weight: 700;
       text-decoration: none;
       text-transform: uppercase;
       border: none;
+      transition: 0.4s all ease-in-out;
+      &:hover {
+        background: #41b4e6;
+      }
     }
   }
 }
 .deltail-job {
- 
   .ant-tabs-nav-list {
     width: 100% !important;
   }
@@ -81,19 +84,17 @@
       padding: 0;
       margin: 0;
       li {
-        
-        a{
+        a {
           display: flex;
           justify-content: center;
           align-items: center;
         }
-        svg{
+        svg {
           color: #5d677a !important;
           font-size: 1rem;
           text-decoration: none;
           cursor: pointer;
         }
-       
       }
     }
   }
@@ -135,10 +136,20 @@
     p {
       margin-bottom: 1rem;
     }
-    li {
+    ul {
+      padding: 0;
+      margin-left: calc(var(--bs-gutter-x) * 0.7);
+    }
+    ol {
+      margin-left: calc(var(--bs-gutter-x) * 0.7);
     }
   }
   &__detailOther {
+    ul {
+      padding: 0;
+      margin: 0;
+      margin-left: 3px;
+    }
     .list-item {
       display: flex;
       flex-wrap: wrap;
@@ -205,7 +216,7 @@
     &-content {
       display: flex;
       justify-content: space-between;
-      border: 1px solid #bd9579;
+      border: 1px solid #5dcaf9;
       border-radius: 5px;
       padding: 10px;
       &-desc {
@@ -264,7 +275,7 @@
         padding: 0;
         margin: 0;
         // Add these styles to change the scrollbar color
-       
+
         li {
           margin-bottom: 4px;
           a {
@@ -388,31 +399,234 @@
   bottom: 5px;
 }
 
-.tooltip-share{
+.tooltip-share {
   display: flex !important;
   justify-content: center;
   align-items: center;
   padding: 0;
   margin: 0;
   list-style: none;
-  gap:10px;
+  gap: 10px;
   padding: 10px;
-  li{
-   
+  li {
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 5px 10px;
-    svg{
+    svg {
       color: #5d677a !important;
       font-size: 1.2rem;
       text-decoration: none;
       cursor: pointer;
-      &:hover{
-        color: #bd9579 !important;
+      &:hover {
+        color: #5dcaf9 !important;
       }
     }
+  }
+}
+.model-job-search {
+  .box-title {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    p {
+      color: #263a4d;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 24px;
+      span{
+        color: #5dcaf9;
+        font-weight: 600;
+      }
+    }
+    svg {
+      font-size: 17px;
+      color: #5dcaf9;
+    }
+  }
+  .box-upload {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px dashed #5dcaf9;
+    .form-upload {
+      padding: 0 0 20px 0;
+      border-bottom: 1px solid #eef1f5;
+      margin-bottom: 10px;
+      .box-css {
+        max-width: 404px;
+        margin: 0 auto;
+        text-align: center;
+        .headt {
+          align-items: center;
+          color: #263a4d;
+          display: flex;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 600;
+          gap: 12px;
+          justify-content: center;
+          letter-spacing: 0.175px;
+          line-height: 135%;
+          margin-top: auto;
+          img {
+            height: 28px;
+            width: 41.778px;
+            object-fit: cover;
+          }
+          span {
+            color: #263a4d;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 20px;
+          }
+        }
+        .bodyt {
+          span {
+            color: #7f878f;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 20px;
+          }
+        }
+        .footert {
+          .view-file {
+            background: #eaf6fc;
+            display: inline-flex;
+            padding: 5px 18px;
+            border-radius: 10px;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            color: #25beff;
+            span,
+            svg {
+              font-weight: 500;
+              font-size: 13px;
+            }
+          }
+          button {
+            border: none;
+            align-items: center;
+            background: #f2f4f5;
+            border-radius: 4px;
+            color: #263a4d;
+            display: flex;
+            flex-direction: row;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 600;
+            gap: 8px;
+            height: 32px;
+            justify-content: center;
+            letter-spacing: 0.175px;
+            line-height: 22px;
+            margin: 0 auto;
+            padding: 0 24px;
+            transition: all 0.3s ease;
+            &:hover {
+              background: #85daff;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+    .form-post {
+      .content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        span {
+          &:first-child {
+            color: #5dcaf9;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            letter-spacing: 0.14px;
+            line-height: 22px;
+          }
+          &:last-child {
+            color: #d83324;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            letter-spacing: 0.12px;
+            line-height: 16px;
+          }
+        }
+      }
+      .formjs {
+        .ant-input-outlined:focus{
+          border-color: #5dcaf9;
+          box-shadow: none;
+        }
+        label {
+          color: #263a4d !important;
+          font-size: 14px !important;
+          font-style: normal !important;
+          font-weight: 400 !important;
+        }
+        input {
+          background: #fff;
+          border: 1px solid #eef1f5;
+          border-radius: 4px;
+          display: flex;
 
+        
+
+          padding: 8px 20px;
+        }
+      }
+      .button-submito {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        .ant-form-item {
+          margin-bottom: 0;
+        }
+        span {
+          background: #f2f4f5;
+          border: none;
+          border-radius: 6px;
+          border-radius: 4px;
+          color: #aaa9a9;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 500;
+          height: 40px;
+          letter-spacing: 0.175px;
+          line-height: 22px;
+          padding: 8px 16px;
+          position: unset;
+          width: 60px;
+          border-radius: 10px;
+          transition: 0.3s all ease-in-out;
+          &:hover {
+            color: #414141;
+          }
+        }
+        button{
+          font-weight: 500;
+          border-radius: 10px;
+          border: none;
+          width: 100%;
+        
+          padding: 8px 16px;
+          background: #8ad6f7;
+          color: #fff;
+          transition: 0.3s all ease-in-out;
+          &:hover{
+            background: #5dcaf9;
+          }
+        }
+      }
+    }
   }
 }

@@ -3,6 +3,8 @@ import "./settings-employer.scss";
 import MemoizedInfoEmployer from "./infoEmployer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLock, faUser, faBuilding } from "@fortawesome/free-solid-svg-icons";
+import ChangePassword from "./changePassword";
+import InfoCompany from "./infoCompany";
 
 
 function SettingEmployer() {
@@ -26,7 +28,7 @@ function SettingEmployer() {
         </div>
       ),
       key: "2",
-      children: "Content of Tab 2",
+      children: <ChangePassword />,
     },
     {
       label: (
@@ -36,12 +38,12 @@ function SettingEmployer() {
         </div>
       ),
       key: "3",
-      children: "Content of Tab 3",
+      children: <InfoCompany/>,
     },
   ];
   return (
     <div className="container-fluid page-content mt-4 setting-employer">
-      <div className="title ml-10 mb-4">
+      <div className="title-employer-setting  ml-10 mb-4">
         <h3>Cài đặt tài khoản</h3>
       </div>
       <div className="box-tab">

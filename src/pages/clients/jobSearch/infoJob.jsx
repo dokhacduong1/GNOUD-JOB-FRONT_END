@@ -36,6 +36,8 @@ import {
 } from "./js/dataJobsSearch";
 import { useEffect, useState } from "react";
 import { formatSalary } from "../../../helpers/salaryConvert";
+import ModelJobSearch from "./modelJobSearch";
+import { useSelector } from "react-redux";
 
 function InfoJob(props) {
   const { record } = props;
@@ -45,8 +47,16 @@ function InfoJob(props) {
   const [level, setLevel] = useState("");
   const [listWalare, setListWalare] = useState([]);
   const [educationalLevel, setEducationalLevel] = useState("");
-
+  const [infoUserC, setInfoUserC] = useState(null);
+  const authenMainClient = useSelector(
+    (status) => status.authenticationReducerClient
+  );
   useEffect(() => {
+    const { infoUser } = authenMainClient;
+    if(infoUser !== undefined){
+      setInfoUserC(infoUser);
+    }
+ 
     //Chuyển đổi jobType từ value sang label
     if (record?.jobType) {
       const jobType = dataJobType
@@ -83,7 +93,7 @@ function InfoJob(props) {
       ).label;
       setEducationalLevel(educational_Level);
     }
-  }, [record]);
+  }, [record,authenMainClient]);
 
   return (
     <section className="info-job">
@@ -293,9 +303,7 @@ function InfoJob(props) {
               </ul>
             </div>
             <div className="job-search-one__apply">
-              <button>
-                <a>Nộp Đơn Ứng Tuyển</a>
-              </button>
+              <ModelJobSearch infoUser={infoUserC} record={record}/>
             </div>
           </div>
         </div>

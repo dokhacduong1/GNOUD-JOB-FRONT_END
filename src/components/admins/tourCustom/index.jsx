@@ -5,7 +5,7 @@ function TourCustom(props) {
   const [openTour, setOpenTour] = useState(false);
   const ref = useRef(null);
   const [scrollPosition, setScrollPosition] = useState(0);
-  const { tourData } = props;
+  const { tourData,color="#5dcaf9" } = props;
   const steps = [
     {
       title: tourData.title,
@@ -28,7 +28,7 @@ function TourCustom(props) {
      
         <span >Tên Resume Tag</span>
         <p
-          style={{ marginLeft: "10px", color: "#5dcaf9", cursor: "pointer" }}
+          style={{ marginLeft: "10px", color: color, cursor: "pointer" }}
           onClick={openTourHandler}
         >
           <span style={{ fontSize: "15px", fontWeight: "600" }}>Resume Tag Là Gì ?</span>

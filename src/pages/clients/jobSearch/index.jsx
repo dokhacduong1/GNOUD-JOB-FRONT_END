@@ -16,10 +16,18 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { formatSalaryNoVND } from "../../../helpers/salaryConvert";
 import banner from "./images/banner.png";
+import ModelJobSearch from "./modelJobSearch";
+import { useSelector } from "react-redux";
+import { userViewJob } from "../../../services/clients/jobsApi";
+
 function JobSearch() {
   const { slug } = useParams();
   const [recordMain, setRecordMain] = useState({});
   const navigate = useNavigate();
+  const [infoUserC, setInfoUserC] = useState(null);
+  const authenMainClient = useSelector(
+    (status) => status.authenticationReducerClient
+  );
   const items = [
     {
       key: "1",
@@ -88,15 +96,40 @@ function JobSearch() {
       ),
     },
   ];
+  const loadViewJob = async () => {
+    const objectNew = {
+      idJob: recordMain._id,
+      idUser: infoUserC.id,
+    };
+    const result = await userViewJob(objectNew);
+    console.log(result);
+  };
   useEffect(() => {
+    const { infoUser } = authenMainClient;
+    if (!infoUser) return;
+    if (Object.keys(infoUser).length > 0) {
+      setInfoUserC(infoUser);
+    }
     window.scrollTo(0, 0);
-    fetchApiJobSearch(setRecordMain, slug,navigate);
-  }, []);
+    fetchApiJobSearch(setRecordMain, slug, navigate);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [authenMainClient?.infoUser]);
 
+  useEffect(() => {
+    
+    if (!recordMain || !infoUserC) return;
+    if (
+      Object.keys(recordMain).length > 0 &&
+      Object.keys(infoUserC).length > 0
+    ) {
+      loadViewJob();
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [infoUserC, recordMain]);
   return (
     <>
       {recordMain?.title && (
-        <section className="cb-section deltail-job">
+        <section className="cb-section cb-section-padding-bottom deltail-job">
           <div className="container">
             <div className="row">
               <div className="col-12 mb-15">
@@ -112,9 +145,10 @@ function JobSearch() {
                       <a href="#!">{recordMain.companyName}</a>
                     </div>
                     <div className="job-search-one__apply">
-                      <button>
-                        <a>Nộp Đơn Ứng Tuyển</a>
-                      </button>
+                      <ModelJobSearch
+                        infoUser={infoUserC}
+                        record={recordMain}
+                      />
                     </div>
                   </div>
                 </div>
@@ -201,7 +235,6 @@ function JobSearch() {
           </div>
         </section>
       )}
-      
     </>
   );
 }

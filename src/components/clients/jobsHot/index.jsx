@@ -37,7 +37,7 @@ function JobsHot() {
 
   //Lấy công việc có cần kinh nghiệm
   const getListJobsLevel = async (page) => {
-    const recordEmployersLevel = await getListJobsLevels(page,"slug title salaryMax salaryMin city employerId");
+    const recordEmployersLevel = await getListJobsLevels(page,"slug title salaryMax salaryMin city employerId logoCompany");
 
     if (recordEmployersLevel.code === 200) {
       setListJobsLevel({
@@ -53,7 +53,7 @@ function JobsHot() {
 
   //Lấy công việc lương trên 1000 đô
   const getListJobsSalary = async (page) => {
-    const recordEmployersSalary = await getListJobsSalarys(page,"slug title salaryMax salaryMin city employerId");
+    const recordEmployersSalary = await getListJobsSalarys(page,"slug title salaryMax salaryMin city employerId logoCompany");
     if (recordEmployersSalary.code === 200) {
       setListJobsSalary({
         record: decData(recordEmployersSalary.data),
@@ -68,8 +68,9 @@ function JobsHot() {
 
   //Lấy công việc nổi bật
   const getListJobsFature = async (page) => {
-    const recordEmployersFeture = await getListJobsFeatured(page,"slug title salaryMax salaryMin city employerId");
+    const recordEmployersFeture = await getListJobsFeatured(page,"slug title salaryMax salaryMin city employerId logoCompany");
     if (recordEmployersFeture.code === 200) {
+    
       setListJobsFatured({
         record: decData(recordEmployersFeture.data),
         //Nếu mà số lượng lớn hơn 5 thì cho nó là 5 thôi
@@ -110,7 +111,7 @@ function JobsHot() {
                       >
                         <div className="job__featured-boxImage col-2">
                           <img
-                            src={dataMap.employerId.image}
+                            src={dataMap.logoCompany}
                             alt={dataMap.employerId.companyName}
                           ></img>
                         </div>
@@ -172,7 +173,7 @@ function JobsHot() {
                       >
                         <div className="job__featured-boxImage col-2">
                           <img
-                            src={dataMap.employerId.image}
+                            src={dataMap.logoCompany}
                             alt={dataMap.employerId.companyName}
                           ></img>
                         </div>
@@ -234,7 +235,7 @@ function JobsHot() {
                       >
                         <div className="job__featured-boxImage col-2">
                           <img
-                            src={dataMap.employerId.image}
+                            src={dataMap.logoCompany}
                             alt={dataMap.employerId.companyName}
                           ></img>
                         </div>

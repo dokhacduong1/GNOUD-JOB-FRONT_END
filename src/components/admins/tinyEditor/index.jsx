@@ -1,17 +1,16 @@
 import { Editor } from '@tinymce/tinymce-react';
 import { forwardRef, memo, useEffect, useImperativeHandle, useRef, useState } from 'react';
 
-const TinyMce = forwardRef(function TinyMce(props, ref) {
+const TinyMce = forwardRef(function TinyMce({ value, height = 500 }, ref) {
 
   const [editorContent, setEditorContent] = useState('');
+
   const editorRef = useRef(null);
   useEffect(() => {
-    //Nếu có nội dung truyền vào thì coi như người dùng đang chỉnh sửa
-    if (props?.value) {
-      setEditorContent(props.value)
+    if (value) {
+      setEditorContent(value)
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [value]);
  
   useImperativeHandle(ref, () => ({
     getContent: () => {
@@ -23,11 +22,10 @@ const TinyMce = forwardRef(function TinyMce(props, ref) {
     <Editor
       onInit={(evt, editor) => editorRef.current = editor}
       apiKey='9yecvyh5m7fyb3z4mofetyifuc2ktpz5de78j55h483do465'
-
       value={editorContent}
       init={{
         images_upload_url: "http://localhost:2709/api/v1/admin/uploads/image",
-        height: 500,
+        height: height,
         menubar: false,
         plugins: [
           'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor', 'pagebreak',
@@ -42,8 +40,6 @@ const TinyMce = forwardRef(function TinyMce(props, ref) {
 });
 
 TinyMce.displayName = 'TinyMce';
-
-
 
 const MemoizedTinyMce= memo(TinyMce);
 export default MemoizedTinyMce;

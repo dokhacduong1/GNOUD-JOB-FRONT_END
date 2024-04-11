@@ -1,5 +1,6 @@
 import {
   faAddressCard,
+  faFile,
   faHeart,
   faSquareCheck,
 } from "@fortawesome/free-regular-svg-icons";
@@ -8,6 +9,7 @@ import {
   faDisplay,
   faLocationDot,
   faMagnifyingGlass,
+  faUpload,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
@@ -30,7 +32,7 @@ export const searchJob = [
         </div>
       </Link>
     ),
-    key: "0",
+    key: "/viec-lam/tat-ca-viec-lam",
   },
   {
     type: "divider",
@@ -41,7 +43,7 @@ export const searchJob = [
         className="item-ok"
         target="_blank"
         rel="noopener noreferrer"
-        href="https://www.antgroup.com"
+        href="#!"
       >
         <div className="item-flex">
           <FontAwesomeIcon icon={faLocationDot} />
@@ -61,7 +63,7 @@ export const searchJob = [
         className="item-ok"
         target="_blank"
         rel="noopener noreferrer"
-        href="https://www.antgroup.com"
+        href="#!"
       >
         <div className="item-flex">
           <FontAwesomeIcon icon={faHeart} />
@@ -84,7 +86,7 @@ export const searchJob = [
         className="item-ok"
         target="_blank"
         rel="noopener noreferrer"
-        href="https://www.antgroup.com"
+        href="#!"
       >
         <div className="item-flex">
           <FontAwesomeIcon icon={faSquareCheck} />
@@ -106,7 +108,7 @@ export const searchJob = [
         className="item-ok"
         target="_blank"
         rel="noopener noreferrer"
-        href="https://www.antgroup.com"
+        href="#!"
       >
         <div className="item-flex">
           <FontAwesomeIcon icon={faDisplay} />
@@ -128,7 +130,7 @@ export const searchJob = [
         className="item-ok"
         target="_blank"
         rel="noopener noreferrer"
-        href="https://www.antgroup.com"
+        href="#!"
       >
         <div className="item-flex">
           <FontAwesomeIcon icon={faAddressCard} />
@@ -145,3 +147,44 @@ export const searchJob = [
     key: "5",
   },
 ];
+
+export const searchCv = [
+  {
+    label: (
+      <Link
+        className="item-ok"
+       
+        rel="noopener noreferrer"
+        to={"/cv/quan-ly-cv"}
+      >
+        <div className="item-flex">
+        <FontAwesomeIcon icon={faFile} />
+          <span>Quản lý CV</span>
+        </div>
+        <div className="item-arrow">
+          <FontAwesomeIcon icon={faArrowRight} />
+        </div>
+      </Link>
+    ),
+    key: "/cv/quan-ly-cv",
+  },
+  {
+    label: (
+      <Link
+        className="item-ok"
+       
+        rel="noopener noreferrer"
+        to={"/cv/upload-cv"}
+      >
+        <div className="item-flex">
+        <FontAwesomeIcon icon={faUpload} />
+          <span>Tải CV lên</span>
+        </div>
+        <div className="item-arrow">
+          <FontAwesomeIcon icon={faArrowRight} />
+        </div>
+      </Link>
+    ),
+    key: "/cv/upload-cv",
+  },
+]

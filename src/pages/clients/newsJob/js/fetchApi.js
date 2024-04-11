@@ -23,14 +23,17 @@ export const fetchApi = async (setJobCategories, setRecordItem, page, limit, sor
 
     setCoutJob(resultgetJobAdvancedSearch.countJobs);
     const convertDataRecord = decData(resultgetJobAdvancedSearch.data);
+
     setRecordItem(convertDataRecord);
   }
 }
 
 export const reloadData = async (setJobCategories, setRecordItem, page, limit, sort_key, sort_value, keyword, job_categorie, job_type, job_level, salary_min, salary_max) => {
+ 
   const result = await getJobAdvancedSearch(page, limit, sort_key, sort_value, keyword, job_categorie, job_type, job_level, salary_min, salary_max);
   if (result.code === 200) {
     const data = decData(result.data);
+    console.log("reloadData",data)
     setRecordItem(data);
     window.scrollTo({
       top: 0,

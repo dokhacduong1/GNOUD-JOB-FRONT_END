@@ -7,7 +7,7 @@ function validateYouTubeUrl(url) {
   return pattern.test(url);
 }
 
-function ModelVideoYoutube({ link }) {
+function ModelVideoYoutube({ link,color="#5dcaf9" }) {
   const [validateYoutube, setValidateYoutube] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const playerRef = useRef(null);
@@ -41,7 +41,7 @@ function ModelVideoYoutube({ link }) {
       <span
         style={{
           marginLeft: "10px",
-          color: "#5dcaf9",
+          color: color,
           cursor: "pointer",
           fontWeight: "600",
         }}
@@ -51,7 +51,7 @@ function ModelVideoYoutube({ link }) {
       </span>
       <Modal
         style={{
-          top: 20,
+          
         }}
         title="YouTube Video Player"
         width={600}

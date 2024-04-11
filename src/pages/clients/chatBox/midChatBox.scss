@@ -1,0 +1,153 @@
+.mid-chat-client{
+   
+    border-right: 1px solid #ddd;
+    height: 965px;
+    &__slogan{
+        border-bottom: 1px solid #ddd;
+        .content{
+            font-weight: bold;
+            font-size: 0.9375rem;
+            span{
+                font-weight: 600;
+                color: #fda4c8;
+            }
+        }
+    }
+    &__header{
+        box-shadow: 0 4px 2px -2px rgba(128, 128, 128, 0.096);
+        .box-info{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            .image{
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                overflow: hidden;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            .info{
+                .name{
+                    font-weight: 600;
+                }
+                .status{
+                    &.online{
+                        color: #fda4c8;
+                    }
+                    color: #b0b3b8;
+                }
+            }
+        }
+    }
+    &__body {
+       
+        .box-chat-all{
+            height: 750px;
+            overflow-y: scroll;
+       
+            &::-webkit-scrollbar {
+                width: 1px;
+               
+              }
+        
+              /* Track */
+              &::-webkit-scrollbar-track {
+                background: transparent;
+              }
+        
+              /* Handle */
+              &::-webkit-scrollbar-thumb {
+                background: #5a5a5a3d;
+              }
+        
+              /* Handle on hover */
+              &::-webkit-scrollbar-thumb:hover {
+                background: transparent;
+              }
+            .friend{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                .image{
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+                .content{
+                   background: #31313191;
+                   font-size: 13px;
+                   padding: 6px 8px;
+                   border-radius: 99999px;
+                   color: #fff;
+                
+                }
+            }
+            .me{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                justify-content: flex-end;
+                .content{
+                    background: #fda4c8;
+                    font-size: 13px;
+                    padding: 6px 8px;
+                    border-radius: 99999px;
+                    color: #fff;
+                }
+            
+            }
+        }
+    }
+    &__footer{
+        .input-chat{
+            .box-icon{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                svg{
+                    color: #fda4c8;
+                    cursor: pointer;
+                    &:hover{
+                        color: #fc7fb1;
+                    }
+                }
+            }
+        }
+        .box-input{
+           .ant-form{
+            align-items: center;
+           }
+           input{
+                padding: 10px;
+                width: 100%;
+                outline: none;
+                border: none;
+                background: #ffffff0c;
+                border-radius: 999999px;
+                border: 1px solid #fda4c8;
+           }
+           button{
+            transition: all 0.3s ease-in-out ;
+                background: #fda4c8;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 999999px;
+                cursor: pointer;
+                &:hover{
+                    background: #fc92bc;
+                }
+           }
+        }
+    }
+}

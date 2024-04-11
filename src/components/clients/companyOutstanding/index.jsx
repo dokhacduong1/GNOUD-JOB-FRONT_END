@@ -28,7 +28,7 @@ function CompanyOutstanding() {
                     <a href="#!" title={item?.companyName}>
                       <img
                         className="img-box"
-                        src={item?.image}
+                        src={item?.logoCompany}
                         alt={item?.companyName}
                       />
                     </a>

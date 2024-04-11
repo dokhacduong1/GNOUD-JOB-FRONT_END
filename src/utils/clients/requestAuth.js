@@ -14,7 +14,18 @@ export const AuthPost = async (path, options, token, link = API_DOMAIN) => {
   return result;
 };
 
+export const AuthGet = async (path, token, link = API_DOMAIN) => {
 
+  const response = await fetch(link + path, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      'Authorization': `Bearer ${token}`, // Thêm token vào header Authorization
+    },
+  });
+  const result = await response.json();
+  return result;
+};
 export const AuthDel = async (path, token, link = API_DOMAIN) => {
 
   const response = await fetch(link + path, {

@@ -5,7 +5,7 @@ import "./settings-account.scss"
 function SettingsAccount() {
 
   return (
-    <div className="cb-section bg-grey2">
+    <div className="cb-section cb-section-padding-bottom bg-grey2">
         <div className="container">
             <div className="row gx-4  justify-content-center">
                 <Outlet/>

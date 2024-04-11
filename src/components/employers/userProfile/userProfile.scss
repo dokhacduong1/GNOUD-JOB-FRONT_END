@@ -1,0 +1,252 @@
+.modal-user-profile * {
+  font-size: 13px;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  .left-item {
+    .box-image {
+      img {
+        object-fit: cover;
+        width: 300px;
+        border-radius: 10px;
+        height: 300px;
+      }
+    }
+    .item-1 {
+      .content {
+        div {
+          font-size: 13px;
+          font-weight: 500;
+          &:first-child {
+            span {
+              margin-left: 12px;
+            }
+          }
+          span {
+            width: 130px;
+            font-weight: 600;
+            display: inline-block;
+
+            color: #ff277e;
+            padding: 10px;
+            background: #fda4c80a;
+            border-radius: 5px;
+          }
+          p {
+            margin-top: 8px;
+            font-size: 12px;
+            line-height: 1.6;
+            padding-right: 20px;
+            border-width: 2px;
+            padding-left: 10px;
+            border-style: solid;
+            border-color: transparent transparent transparent #f787b4;
+          }
+        }
+      }
+    }
+    .item-2 {
+      .content {
+        .skill {
+          font-weight: 600;
+          line-height: 1.8;
+        }
+      }
+    }
+  }
+
+  .right-item {
+    .title {
+      font-size: 10px !important;
+      color: #808080;
+    }
+    .head-info {
+      .adddress-name {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        h3 {
+          font-size: 25px;
+          font-weight: 600;
+        }
+        div {
+          color: #949494;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+
+          font-size: 13px;
+        }
+      }
+      .job_categorie_title {
+        color: #ff277e;
+        font-size: 14px;
+        font-weight: 500;
+      }
+    }
+    .body-info {
+      .ranking {
+        .content {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          span {
+            font-size: 20px;
+            font-weight: 600;
+          }
+          .rate-rank svg {
+            font-size: 20px;
+          }
+        }
+      }
+      .contact {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        div {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding: 10px 15px !important;
+          transition: all 0.3s ease-in-out;
+          span,
+          svg {
+            font-weight: 500;
+            font-size: 15px;
+          }
+        }
+        .send-mess {
+          background: #cecece23;
+          color: rgb(0, 0, 0);
+
+          border-radius: 5px;
+          font-weight: 600;
+          cursor: pointer;
+          &:hover {
+            background: #969696e5;
+            color: #ffffff;
+          }
+        }
+        .contacts {
+          background: #ff277d11;
+          color: #ff277d;
+
+          border-radius: 5px;
+          font-weight: 600;
+        }
+        .no-contacts {
+          background: #ff277d11;
+          color: #ff2727;
+          border-radius: 5px;
+          font-weight: 600;
+        }
+        .no-send-mess {
+          background: #cecece23;
+          color: rgb(0, 0, 0);
+
+          border-radius: 5px;
+          font-weight: 600;
+        }
+      }
+    }
+    .menu {
+      .ant-menu-light.ant-menu-horizontal > .ant-menu-item-selected::after {
+        border-bottom-color: #f57dad !important;
+      }
+      .ant-menu-item-selected svg {
+        color: #ff277d !important;
+      }
+      .ant-menu-light.ant-menu-horizontal
+        > .ant-menu-item-selected
+        .ant-menu-title-content {
+        color: #ff277d !important;
+      }
+      ul {
+        li {
+          padding: 13px;
+          &:first-child {
+            padding-left: 0;
+          }
+          span,
+          svg {
+            font-size: 13px;
+          }
+        }
+      }
+      .item-box {
+        padding: 15px 0;
+        background: #fff;
+      }
+    }
+  }
+}
+
+.contact-infomation {
+  font-size: 13px;
+  height: 509px;
+  .content {
+    div {
+      display: flex;
+      align-items: center;
+      span {
+        line-height: 2;
+        &:first-child {
+          width: 7rem;
+        }
+      }
+    }
+    .phone {
+      span {
+        &:last-child {
+          cursor: pointer;
+          color: #ff277d;
+        }
+      }
+    }
+    .email-c {
+      span {
+        &:last-child {
+          cursor: pointer;
+          color: #ff277d;
+        }
+      }
+    }
+  }
+  .short-des {
+    .dest {
+      border-width: 2px;
+      border-style: solid;
+      border-color: transparent transparent transparent #f787b4;
+      padding: 10px;
+      span {
+        font-style: italic;
+        font-size: 12px;
+        color: rgb(80, 80, 80);
+        line-height: 1.8;
+      }
+    }
+  }
+  .banner {
+    img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+  }
+}
+
+.model-view-cv-info {
+  .rpv-core__viewer {
+    height: 474px !important;
+    width: 100% !important;
+  }
+  .rpv-core__text-layer{
+    width: 0 !important;
+  }
+  .rpv-core__canvas-layer{
+    width: 623.952px !important; 
+  }
+
+}

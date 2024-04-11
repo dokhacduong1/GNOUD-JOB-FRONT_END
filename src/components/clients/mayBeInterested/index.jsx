@@ -61,7 +61,7 @@ function MayBeInterested() {
                 <div className="header_box">
                   <div className="image">
                     <a href="#!">
-                      <img src={recordItem?.companyImage} alt="" />
+                      <img src={recordItem?.logoCompany} alt="" />
                     </a>
                   </div>
                   <div className="title">

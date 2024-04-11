@@ -1,4 +1,4 @@
-import { Form, Radio, Select, Spin } from "antd";
+import { DatePicker, Form, Radio, Select, Spin } from "antd";
 import { LoadingOutlined } from "@ant-design/icons";
 import { useDebounce } from "use-debounce";
 import { useCallback, useEffect, useState } from "react";
@@ -15,6 +15,7 @@ import banner from "./images/banner.png";
 import { changeJobSuggestions } from "../../../services/clients/user-userApi";
 
 import { UpdateDataAuthClient } from "../../../update-data-reducer/clients/updateDataClient";
+import moment from "moment";
 function SuggestedClientSettings() {
   const [message, setMessage] = useState("");
   const [noti, setNoti] = useState(false);
@@ -24,9 +25,9 @@ function SuggestedClientSettings() {
   const [skill, setSkill] = useState([]);
   const [jobPosition, setJobPosition] = useState([]);
   const [text, setText] = useState("");
- 
+
   const MAX_COUNT = 5;
- 
+
   const [contentSelect, setContentSelect] = useState(
     "Vui lòng nhập tối thiểu 2 ký tự để tìm kiếm!"
   );
@@ -44,12 +45,14 @@ function SuggestedClientSettings() {
     const { infoUser } = authenMainClient;
     //Nếu đã đăng nhập thì sẽ set giá trị mặc định cho form
     setJobPosition(infoUser?.job_position);
- 
+
     const objectVlue = {
       ...infoUser,
       job_position: infoUser?.job_position.map((item) => item.value),
     };
-
+    if(infoUser?.dateOfBirth){
+      objectVlue.dateOfBirth = moment(infoUser?.dateOfBirth);
+    }
     form.setFieldsValue(objectVlue);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -58,10 +61,15 @@ function SuggestedClientSettings() {
     loadApi(setJobPosition, valueDebounce);
   }, [valueDebounce]);
 
-  const handleForm = useCallback(async (valueForm) => {
+  const handleForm = async (valueForm) => {
     try {
-      setLoading(true);
    
+     //Chuyển đổi thành dạng date của moment
+      //Chuyển đổi thành dạng iso
+      valueForm.dateOfBirth= valueForm.dateOfBirth.toISOString();
+    
+      setLoading(true);
+
       const result = await changeJobSuggestions(valueForm);
       if (result.code === 200) {
         await UpdateDataAuthClient(dispatch);
@@ -82,13 +90,11 @@ function SuggestedClientSettings() {
       setMessage("Lỗi server. Vui lòng thử lại sau!");
       setNoti(false);
     }
-  }, []);
+  };
 
   const changeValue = useCallback(async (input) => {
     if (input.length > 1) {
-      
       setText(input);
-     
     } else {
       //Nếu input nhỏ hơn 2 ký tự thì set lại giá trị rỗng
       setText("");
@@ -133,6 +139,7 @@ function SuggestedClientSettings() {
                 <FontAwesomeIcon icon={faUser} />
                 <h2 className="col-6">Thông tin cá nhân</h2>
               </div>
+
               <Form.Item
                 label="Giới tính"
                 name="gender"
@@ -149,6 +156,24 @@ function SuggestedClientSettings() {
                   <Radio value={3}>Không xác định</Radio>
                 </Radio.Group>
               </Form.Item>
+              <Form.Item
+                label="Ngày sinh"
+                name="dateOfBirth"
+                rules={[
+                  {
+                    required: true,
+                    message: "Vui lòng nhập ngày sinh",
+                  },
+                ]}
+              >
+                <DatePicker
+                  format={{
+                    format: "YYYY-MM-DD",
+                    type: "mask",
+                  }}
+                />
+              </Form.Item>
+
               <hr />
 
               <div className="box-settings-info__h2">

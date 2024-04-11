@@ -44,7 +44,7 @@ function TalentNetwork() {
                                                     <div key={index} className="col-3">
                                                         <div className="item">
                                                             <div className="image">
-                                                                <img src={`${data.image}`} alt="test.jpg"></img>
+                                                                <img src={`${data.logoCompany}`} alt="test.jpg"></img>
                                                             </div>
                                                         </div>
                                                     </div>

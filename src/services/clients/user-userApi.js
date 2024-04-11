@@ -2,8 +2,9 @@
 
 import { getCookie } from "../../helpers/cookie";
 import { Get } from "../../utils/admins/request";
+
 import { Post } from "../../utils/clients/request";
-import { AuthPost } from "../../utils/clients/requestAuth";
+import { AuthPost,AuthGet } from "../../utils/clients/requestAuth";
 const checkToken = getCookie("token-user") || "";
 
 export const allowSettingUser = async (valueForm)=>{
@@ -63,5 +64,21 @@ export const getCityApiDuong = async ()=>{
 }
 export const getDistrictApiDuong = async (value)=>{
     const result = await Get("",{},`https://duongshop.id.vn/api/v1/duongits/district/${value}`);
+    return result;
+}
+export const recruitmentJob = async (valueForm)=>{
+    const result = await AuthPost(`/users/recruitment-job`,valueForm,checkToken);
+    return result;
+}
+export const uploadCV = async (valueForm)=>{
+    const result = await AuthPost(`/users/upload-cv`,valueForm,checkToken);
+    return result;
+}
+export const getCvByUser = async ()=>{
+    const result = await AuthGet(`/users/get-cv-user`,checkToken);
+    return result;
+}
+export const editCvByUser = async (valueForm)=>{
+    const result = await AuthPost(`/users/edit-cv-user`,valueForm,checkToken);
     return result;
 }

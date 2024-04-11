@@ -1,0 +1,109 @@
+.change-info-company {
+  background: #fff;
+  padding: 0 40px;
+  border-radius: 10px;
+
+  .form-info {
+    .button-submit {
+      border: none;
+      text-align: center;
+      width: 100%;
+      padding: 11px;
+      border-radius: 5px;
+      background-color: #fda4c8;
+      color: #fff;
+      font-weight: 500;
+      &:hover {
+        background-color: #f771a7;
+      }
+    }
+  }
+
+  .ant-input {
+    border-radius: 3px;
+  }
+
+  .upload-image-form {
+    &__preview {
+      display: inline-block;
+      position: relative;
+      img {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+       
+      }
+    }
+    &__button {
+      position: absolute;
+      bottom: 10px;
+      right: 0%;
+      svg{
+        color: #fff;
+        border-radius: 50%;
+        background: #f7c2d7;
+        padding: 10px;
+      }
+    }
+  }
+
+  .ant-form-item
+    .ant-form-item-label
+    > label.ant-form-item-required:not(
+      .ant-form-item-required-mark-optional
+    )::before {
+    display: none;
+  }
+  .ant-input-outlined:hover,
+  .ant-input-outlined:focus-within,
+  .ant-select-outlined:not(.ant-select-disabled):not(
+      .ant-select-customize-input
+    ):not(.ant-pagination-size-changer):hover
+    .ant-select-selector,
+  .ant-select-outlined:not(.ant-select-disabled):not(
+      .ant-select-customize-input
+    ):not(.ant-pagination-size-changer)
+    .ant-select-selector {
+    border-radius: 5px !important;
+    border-color: #fda4c8 !important;
+    box-shadow: none;
+  }
+  .ant-radio-wrapper .ant-radio-checked::after,
+  .ant-input-outlined:focus {
+    border: 1px solid #fda4c8 !important;
+    box-shadow: none;
+  }
+  .ant-radio-wrapper .ant-radio-inner {
+    border: 1px solid #ddd !important;
+  }
+  input[type="radio"],
+  .ant-radio-wrapper .ant-radio-checked .ant-radio-inner {
+    border-color: #fda4c8 !important;
+    background: #fda4c8 !important;
+  }
+  .ant-input-outlined:hover {
+    border-color: #fda4c8 !important;
+  }
+  .ant-checkbox-checked .ant-checkbox-inner {
+    background-color: #fda4c8;
+    border-color: #fda4c8;
+  }
+  .ant-checkbox:not(.ant-checkbox-disabled):hover .ant-checkbox-inner {
+    border-color: #fda4c8 !important;
+  }
+  .ant-checkbox-checked:not(.ant-checkbox-disabled):hover .ant-checkbox-inner,
+  .ant-checkbox-wrapper:not(.ant-checkbox-wrapper-disabled):hover
+    .ant-checkbox-checked:not(.ant-checkbox-disabled)
+    .ant-checkbox-inner {
+    background-color: #fda4c8;
+    border-color: #fda4c8;
+  }
+}
+
+.change-info-company
+  + :where(.css-dev-only-do-not-override-1k979oh).ant-select-dropdown
+  .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+  background-color: #f7c2d7;
+  color: #fff;
+}
+

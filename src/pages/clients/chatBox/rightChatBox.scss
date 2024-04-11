@@ -1,0 +1,14 @@
+.right-chat-client{
+    &__header{
+        h4{
+            font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+        }
+        div{
+            color: #6c757d!important;
+            font-size: 80%;
+            font-weight: 400;
+        }
+    }
+}

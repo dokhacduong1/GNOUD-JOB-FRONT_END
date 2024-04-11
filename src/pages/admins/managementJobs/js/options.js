@@ -30,6 +30,16 @@ export const optionsFilterStartus = [
         label: "Dừng Hoạt Động",
         value: "inactive",
 
+    },
+    {
+        label: "Đang chờ phê duyệt",
+        value: "pending",
+
+    },
+    {
+        label: "Đã bị từ chối",
+        value: "refuse",
+
     }
 ]
 
