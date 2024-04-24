@@ -27,8 +27,8 @@
         img {
           border-radius: 5px;
           height: 100%;
-          -o-object-fit: contain;
-          object-fit: contain;
+          -o-object-fit: cover;
+          object-fit: cover;
           width: 100%;
         }
       }
@@ -73,10 +73,13 @@
       }
     }
     .company {
-      color: #646d79;
-      display: inline-block;
-      font-size: 15px;
-      margin-bottom: 4px;
+      a{
+        color: #646d79;
+      
+        font-size: 15px;
+        
+      }
+     
     }
     .updateAt {
       color: #646d79;
@@ -101,6 +104,7 @@
                 gap: 10px;
                 svg{
                     color: #3dbff7;
+                    
                 }
             }
         }
@@ -110,11 +114,18 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
+            a{
+              color: #fff;
+            }
             .box-heart{
                 padding: 6px 10px;
                 background: #3dbff725 ;
                 border-radius: 5px;
                 color: #3dbff7;
+                &:hover{
+                    background: #3dbff7;
+                    color: #fff;
+                }
             }
         }
     }

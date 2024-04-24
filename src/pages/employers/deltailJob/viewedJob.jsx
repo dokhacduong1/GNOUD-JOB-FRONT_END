@@ -90,7 +90,7 @@ function ViewedJob({ record }) {
 
   const saveProfileUser = async (idUser) => {
     try {
-      console.log(record);
+
       const objectNew = {
         idProfile: idUser,
         idJob: record?._id,

@@ -50,7 +50,7 @@ function InfoUserClient() {
     if (infoUser?.address?.city) {
       hanleChangeCity(infoUser?.address?.city, false);
     }
-    console.log(infoUser);
+
     form.setFieldsValue({
       fullName: infoUser?.fullName,
       email: infoUser?.email,

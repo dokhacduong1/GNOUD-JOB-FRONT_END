@@ -1,14 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import {
-
-  Form,
-
-  Input,
-  Select,
-  Spin,
-
-  message,
-} from "antd";
+import { Form, Input, Select, Spin, message } from "antd";
 import MemoizedTinyMce from "../../../components/admins/tinyEditor";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { getContentTiny } from "../../../helpers/getContentTinymce";
@@ -37,7 +28,7 @@ function ChangeInfoCompany() {
   const [imageLogo, setImageLogo] = useState(
     "https://res.cloudinary.com/dmmz10szo/image/upload/v1710149283/GNOUD_2_pxldrg.png"
   );
-    
+
   //Đây là khai báo state địa chỉ phường/xã, quận/huyện, tỉnh/thành phố
   const [textAddres, setTextAddress] = useState("");
   const [addressCompany, setAddressCompany] = useState([]);
@@ -58,9 +49,16 @@ function ChangeInfoCompany() {
     if (authenMainEmployer?.status) {
       const { infoUserEmployer } = authenMainEmployer;
 
-      if(infoUserEmployer?.logoCompany){
-      
+      if (infoUserEmployer?.logoCompany) {
         setImageLogo(infoUserEmployer?.logoCompany);
+      }
+
+      if (
+        typeof infoUserEmployer?.specificAddressCompany === "string" &&
+        infoUserEmployer?.specificAddressCompany.includes("-")
+      ) {
+        infoUserEmployer.specificAddressCompany =
+          infoUserEmployer.specificAddressCompany.split("-")[0];
       }
 
       form.setFieldsValue(infoUserEmployer);
@@ -165,6 +163,7 @@ function ChangeInfoCompany() {
   const handleFileChange = async (e) => {
     setImageLogo(URL.createObjectURL(e.target.files[0]));
   };
+
   return (
     <div className="mt-4">
       {contextHolder}

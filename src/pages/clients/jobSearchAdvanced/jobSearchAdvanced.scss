@@ -1,0 +1,116 @@
+.search-addvance {
+  .hiden-select {
+    transition: all 1s ease-in-out;
+    display: none;
+  }
+
+  .header-search-addvance {
+    background: url("https://static.topcv.vn/v4/image/search-job/bg-search-left-opacity.png"),
+      linear-gradient(90deg, #114c74, #5da8d4);
+
+    background-position: 0 0, 100% 0, 50%;
+    background-repeat: no-repeat;
+    background-size: auto 340px, auto 340px, 100% 100%;
+    font-family: Inter, sans-serif;
+    font-style: normal;
+    padding: 16px 0;
+    .box-normal {
+      .button-submit {
+        padding: 14px;
+        outline: none;
+        border: none;
+        border-radius: 10px;
+        background: #1cc6fa;
+        color: #fff;
+        font-weight: 500;
+        width: 100%;
+        transition: all 0.5s ease-in-out;
+        &:hover {
+          background: #3accf8;
+        }
+      }
+    }
+    .box-count {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .count-job {
+        display: flex;
+        align-items: center;
+        background: rgba(184, 219, 240, 0.2);
+        border-radius: 8px;
+        gap: 8px;
+        height: 40px;
+        padding: 10px 14px;
+        color: #fff;
+        font-weight: 600;
+      }
+      .button-addvance {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: #1cc6fa;
+
+        padding: 14px;
+        border-radius: 10px;
+        color: #fff;
+        user-select: none;
+        span,
+        svg {
+          font-weight: 500;
+        }
+        &:hover {
+          background: #1cc6fa;
+        }
+      }
+    }
+    .select-addvance {
+      transition: all 1s ease-in-out;
+      background: #0554792c;
+      padding: 10px;
+      border-radius: 10px;
+    }
+  }
+  .body-searh-advance{
+    .box-heading-content{
+      .heading{
+        h1{
+          color: #263a4d;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 600;
+          letter-spacing: .175px;
+          line-height: 22px;
+        
+        }
+      }
+      .breadcrumb-custom{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        a{
+          color: #0dc4fc;
+          font-weight: 500;
+        }
+        p, svg{
+          color: #212f3f;
+          display: inline;
+          font-family: Inter, sans-serif;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 22px;
+        
+        }
+      }
+      .box-sort{
+        .radio{
+          display: flex;
+          gap: 10px;
+          align-items: center;
+        }
+      }
+    }
+  }
+ 
+}

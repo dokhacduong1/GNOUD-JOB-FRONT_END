@@ -145,13 +145,13 @@ const [keywordApi,setKeywordApi] = useState("")
           </div>
           <div className="mb-2">
             <FontAwesomeIcon icon={faClock} />
-            <span>{moment(record.dateTime).format("YYYY/MM/DD HH:mm")}</span>
+            <span>{moment(record.createdAt).format("YYYY/MM/DD HH:mm")}</span>
           </div>
         </div>
       ),
 
       sorter: (a, b) => {
-        return new Date(a.dateTime) - new Date(b.dateTime);
+        return new Date(a.createdAt) - new Date(b.createdAt);
       },
       sortDirections: ["descend", "ascend"],
     },
@@ -192,7 +192,7 @@ const [keywordApi,setKeywordApi] = useState("")
               <MemoizedModelViewCv
                 record={record}
                 dataFull={{
-                  _id: record.idJob._id,
+                  _id: record?.idJob?._id,
                   email: record?.idUser?.email,
                   phone: record?.idUser?.phone,
                   title: record?.idJob?.title,

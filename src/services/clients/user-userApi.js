@@ -82,3 +82,7 @@ export const editCvByUser = async (valueForm)=>{
     const result = await AuthPost(`/users/edit-cv-user`,valueForm,checkToken);
     return result;
 }
+export const saveJob = async (valueForm)=>{
+    const result = await AuthPost(`/users//save-job`,valueForm,checkToken);
+    return result;
+}

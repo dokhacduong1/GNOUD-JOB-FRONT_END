@@ -13,3 +13,7 @@ export const getCvApplyAccept = async ()=>{
     const result = await AuthGet(`/cvs/get-cv-apply-accept`,checkToken);
     return result;
 }
+export const getCvInfoUser = async (idUser)=>{
+    const result = await AuthGet(`/cvs/get-cv-info-user/${idUser}`,checkToken);
+    return result;
+}

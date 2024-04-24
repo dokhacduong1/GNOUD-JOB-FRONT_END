@@ -46,7 +46,7 @@ function ModelViewCv({ record, dataFull,fetchApi }) {
     setIsModalOpen(true);
     if(email){
       const result = await coutViewCv(objectNew);
-      console.log(result);
+
   }
     if (id_File) {
       const result = await getPdfToDriver({ id_file: id_File });

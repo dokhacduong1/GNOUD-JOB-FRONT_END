@@ -8,10 +8,11 @@ import {
   faPlus,
   faUser,
   faCalendarDays,
+  faHeart as solidHeart
 } from "@fortawesome/free-solid-svg-icons";
 //regula kiểu fontawesome
 import {
-  faHeart,
+  faHeart as regularHeart ,
   faEnvelope,
   faFlag,
 } from "@fortawesome/free-regular-svg-icons";
@@ -37,10 +38,16 @@ import {
 import { useEffect, useState } from "react";
 import { formatSalary } from "../../../helpers/salaryConvert";
 import ModelJobSearch from "./modelJobSearch";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { saveJob } from "../../../services/clients/user-userApi";
+import { message } from "antd";
+import { UpdateDataAuthClient } from "../../../update-data-reducer/clients/updateDataClient";
 
 function InfoJob(props) {
   const { record } = props;
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [jobType, setJobType] = useState("");
   const [slary, setSalary] = useState("");
   const [workExperience, setWorkExperience] = useState("");
@@ -51,6 +58,8 @@ function InfoJob(props) {
   const authenMainClient = useSelector(
     (status) => status.authenticationReducerClient
   );
+  
+  const [messageApi, contextHolder] = message.useMessage();
   useEffect(() => {
     const { infoUser } = authenMainClient;
     if(infoUser !== undefined){
@@ -94,9 +103,43 @@ function InfoJob(props) {
       setEducationalLevel(educational_Level);
     }
   }, [record,authenMainClient]);
+  const handleSaveJob = async (value, action = "save") => {
+    try {
+      
+      if (!value) return;
+      const objectNew = {
+        action: action,
+        idJob: value,
+      };
+      const result = await saveJob(objectNew);
+      if(result.code === 402){
+        //đây là chưa đăng nhập nên chuyển hướng qua trang đăng nhập
+        navigate("/login");
+        return;
+      }
+      if (result.code === 200) {
+        messageApi.success({
+          type: "success",
+          content: result.success,
+        });
+        UpdateDataAuthClient(dispatch);
+      } else {
+        messageApi.error({
+          type: "error",
+          content: result.error,
+        });
+      }
+    } catch (error) {
+      messageApi.error({
+        type: "error",
+        content: "Lỗi gì đó rồi!",
+      });
+    }
+  };
 
   return (
     <section className="info-job">
+       {contextHolder}
       <div className="info-job__info-bg">
         <div className="row">
           <div className="col-lg-4 col-sm-6">
@@ -283,10 +326,30 @@ function InfoJob(props) {
             <div className="info-job__heart-content-desc">
               <ul>
                 <li>
-                  <a href="#!">
-                    <FontAwesomeIcon icon={faHeart} />
-                    <span>Lưu việc làm này</span>
-                  </a>
+                { infoUserC?.listJobSave?.some(job => record?._id === job.idJob)  ? (
+                    <div
+                    
+                      title="Bỏ lưu công việc"
+                      onClick={() => {
+                        handleSaveJob(record?._id, "delete");
+                      }}
+                      className="box-heart"
+                    >
+                      <FontAwesomeIcon icon={solidHeart} />
+                      <div>Hủy lưu việc làm</div>
+                    </div>
+                  ) : (
+                    <div
+                      title="Lưu công việc"
+                      onClick={() => {
+                        handleSaveJob(record?._id, "save");
+                      }}
+                      className="box-heart"
+                    >
+                      <FontAwesomeIcon icon={regularHeart} />
+                      <div>Lưu việc làm</div>
+                    </div>
+                  )}
                 </li>
                 <li>
                   <a href="#!">

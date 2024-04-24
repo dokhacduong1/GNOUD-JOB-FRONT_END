@@ -1,7 +1,7 @@
 import { faFile, faFolder } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Alert, Form, Input, Modal, Spin, message } from "antd";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import uploadCloud from "./images/upload-cloud.webp";
 import { phoneCheck } from "../../admins/addJobs/js/validate";
 import { handleFileChangeCustom } from "../../../helpers/imagesHelper";
@@ -10,7 +10,7 @@ import { convertThumbUrl } from "../../../helpers/convertThumbUrl";
 import { useNavigate } from "react-router-dom";
 import { recruitmentJob } from "../../../services/clients/user-userApi";
 
-function ModelJobSearch({ record, infoUser }) {
+function ModelJobSearch({ record, infoUser,showModel }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [filePdf, setFilePdf] = useState(null); // [1
   const [warning, setWarning] = useState(false); // [2
@@ -33,6 +33,12 @@ function ModelJobSearch({ record, infoUser }) {
     form.setFieldsValue(infoUser);
     setIsModalOpen(true);
   };
+  useEffect(() => {
+    if (showModel === "show") {
+      showModal();
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[])
   const handleOk = () => {
     setIsModalOpen(false);
   };

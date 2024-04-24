@@ -5,15 +5,15 @@ import { removeAccents } from "../../../helpers/removeAccents";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 function SearchCustomVip(props) {
-  const { options, value, defaultValueOk } = props;
+  const { options =[], value = "", defaultValueOk="" } = props;
 
   const [items, setItems] = useState(options);
 
   //lần đầu vào sẽ set giá trị mặc định
-  const onChange = useCallback((checkedValues) => {
+  const onChange = (checkedValues) => {
     props.onChange(checkedValues);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  };
 
   useEffect(() => {
     //Đoạn này lần đầu vào sẽ set default value

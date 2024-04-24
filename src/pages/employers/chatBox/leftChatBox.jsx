@@ -1,16 +1,19 @@
-import { faGear, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "./leftChatBox.scss";
 import {
 
-  MailOutlined,
-
-} from "@ant-design/icons";
+  faGear,
+  faMagnifyingGlass,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./leftChatBox.scss";
+import { MailOutlined } from "@ant-design/icons";
 import logo from "./images/logo.png";
+
 import { Input, Menu } from "antd";
 import { faEye } from "@fortawesome/free-regular-svg-icons";
 import { Link } from "react-router-dom";
-function LeftChatBox() {
+
+function LeftChatBox({ historyChat, idUser }) {
+
   const items = [
     {
       label: "Tất cả",
@@ -59,31 +62,49 @@ function LeftChatBox() {
             <Menu mode="horizontal" items={items} />
           </div>
           <div className="menu-chat">
-            <div className="chat-box mb-2 active">
-              <div className="logo-chat">
-                <img
-                  src="https://scontent.fhan5-10.fna.fbcdn.net/v/t39.30808-1/434329416_829884792513495_3431549589345019988_n.jpg?stp=dst-jpg_p100x100&_nc_cat=111&ccb=1-7&_nc_sid=5f2048&_nc_ohc=_nFlRQmPudMAb7BztxD&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.fhan5-10.fna&oh=00_AfDJ5xSdEU3HYKykmYbRdVnsnwb0g0Gna9qh5jpUdVguOw&oe=66183F99"
-                  alt=""
-                />
+            {historyChat.map((item, index) => (
+              <div key={index}>
+                {(item?.lastMessage || item?.typeRoom === "group") && (
+                  <div>
+                    <Link
+                      to={`/nha-tuyen-dung/app/chat-box/t/${item?.user_id}`}
+                      key={index}
+                      className={`chat-box mb-2 ${
+                        item?.user_id === idUser && "active"
+                      }`}
+                    >
+                      <div className="logo-chat">
+                        <img src={item?.avatar} alt="" />
+                      </div>
+                      <div className="content-chat">
+                        <div className="name">
+                          <span>{item?.fullName}</span>
+                        </div>
+                        <div className="demo">
+                          {item?.user_id !== item?.idUserChat && "Bạn: "}
+                          <span
+                            className={`${item?.unreadCount > 0 && "noo-seen"}`}
+                          >
+                            {item?.lastMessage}
+                          </span>
+                        </div>
+                      </div>
+                      {item?.unreadCount > 0 && (
+                        <div className="no-seen">
+                          <div></div>
+                        </div>
+                      )}
+                       {item?.typeRoom === "group" && (
+                        <div className="type-room group">GROUP</div>
+                      )}
+                      {item?.typeRoom === "friend" && (
+                        <div className="type-room user">USER</div>
+                      )}
+                    </Link>
+                  </div>
+                )}
               </div>
-              <div className="content-chat">
-                <div className="name">Trang Ái Như</div>
-                <div className="demo">Bạn: Unread</div>
-              </div>
-            </div>
-            <div className="chat-box">
-              <div className="logo-chat">
-                <img
-                  src="https://scontent.fhan5-10.fna.fbcdn.net/v/t39.30808-1/434329416_829884792513495_3431549589345019988_n.jpg?stp=dst-jpg_p100x100&_nc_cat=111&ccb=1-7&_nc_sid=5f2048&_nc_ohc=_nFlRQmPudMAb7BztxD&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.fhan5-10.fna&oh=00_AfDJ5xSdEU3HYKykmYbRdVnsnwb0g0Gna9qh5jpUdVguOw&oe=66183F99"
-                  alt=""
-                />
-              </div>
-              <div className="content-chat">
-                <div className="name">Trang Ái Như</div>
-                <div className="demo">Bạn: Unread</div>
-              </div>
-            </div>
-       
+            ))}
           </div>
         </div>
       </div>

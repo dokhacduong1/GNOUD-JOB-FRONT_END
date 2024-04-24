@@ -1,0 +1,130 @@
+.items-box {
+  &__newscustom {
+
+  
+    .title{
+      font-size: 19px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 24px;
+
+      padding: initial;
+      color: rgb(71, 71, 71);
+    }
+    &-item{
+        background: #fff 0 0 no-repeat padding-box;
+        border: 1px solid #f4f4f4;
+        cursor: pointer;
+        border-radius: 5px;
+        margin-bottom: 16px;
+        padding: 16px;
+        transition: all .2s;
+        background-color: #f2f8fb;
+        &:hover{
+          border: 1px solid #68d2ec;
+        }
+    }
+    &-item {
+      display: flex;
+      gap: 10px;
+      a {
+        display: block;
+        height: 100%;
+        overflow: hidden;
+        width: 100%;
+        img {
+          border-radius: 5px;
+          height: 100%;
+          -o-object-fit: cover;
+          object-fit: cover;
+          width: 100%;
+        }
+      }
+    }
+  }
+  &__avatar {
+    background-color: #fff;
+    border-radius: 8px;
+    flex-shrink: 0;
+    height: 100px;
+    outline: 1px solid #e9eaec;
+    padding: 8px;
+    width: 100px;
+  }
+  &__body {
+    margin-left: 20px;
+    width: 100%;
+    .title_all {
+      display: flex;
+      gap: 20px;
+      justify-content: space-between;
+      margin-bottom: 4px;
+      align-items: baseline;
+      .title {
+        display: flex;
+        flex: 1;
+        word-break: break-word;
+        a {
+          color: #212f3f;
+          font-size: 17px;
+          font-weight: 700;
+        }
+      }
+      .title-salary {
+        color: #3dbff7;
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 20px;
+        margin-bottom: 0;
+        margin-top: 0;
+        white-space: nowrap;
+      }
+    }
+    .company {
+      color: #646d79;
+      display: inline-block;
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+    .updateAt {
+      color: #646d79;
+      display: block;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 20px;
+      margin-bottom: 4px;
+    }
+    .info-job{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .time-line{
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            .address , .end_date{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                svg{
+                    color: #3dbff7;
+                }
+            }
+        }
+       
+        .button-line{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            .box-heart{
+                padding: 6px 10px;
+                background: #3dbff725 ;
+                border-radius: 5px;
+                color: #3dbff7;
+            }
+        }
+    }
+  }
+}

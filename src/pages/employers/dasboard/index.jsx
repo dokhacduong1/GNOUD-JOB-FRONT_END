@@ -30,48 +30,23 @@ import point from "./images/point.png";
 import "aplayer/dist/APlayer.min.css";
 import APlayer from "aplayer";
 import { useSelector } from "react-redux";
+import { statisticCompany } from "../../../services/employers/employer-userApi";
 function DashboardEmployer() {
   const [imageRole, setImageRole] = React.useState(MEMBER);
+const [data, setData] = useState([])
+  const [objectCount, setObjectCount] = useState({
+    coutCompaignIsOpen: 0,
+    coutCompaignIsPending: 0,
+    coutCvApplication: 0,
+    coutCvApproved: 0,
+  });
   const carouselRef = React.createRef();
   const authenMainEmployer = useSelector(
     (status) => status.authenticationReducerEmployer
   );
   const [infoUserEmployer, setInfoUserEmployer] = useState({});
 
-  const data = [
-    {
-      type: "1-3",
-      value: 0.16,
-    },
-    {
-      type: "4-10",
-      value: 0.125,
-    },
-    {
-      type: "11-30",
-      value: 0.24,
-    },
-    {
-      type: "31-60",
-      value: 0.19,
-    },
-    {
-      type: "1-3",
-      value: 0.22,
-    },
-    {
-      type: "3-10",
-      value: 0.05,
-    },
-    {
-      type: "10-30",
-      value: 0.01,
-    },
-    {
-      type: "30+",
-      value: 0.1,
-    },
-  ];
+ 
 
   const config = {
     data,
@@ -81,8 +56,6 @@ function DashboardEmployer() {
     autoFit: true,
     shapeField: "column25D",
     style: {
-
-
       maxWidth: 20,
       fill: "rgb(241 150 187 / 90%)",
     },
@@ -107,7 +80,7 @@ function DashboardEmployer() {
     setImageRole(role);
   };
   useEffect(() => {
-    if(authenMainEmployer?.status === true){
+    if (authenMainEmployer?.status === true) {
       new APlayer({
         container: document.getElementById("aplayer"),
         audio: [
@@ -127,6 +100,24 @@ function DashboardEmployer() {
     setInfoUserEmployer(infoUserEmployer);
   }, [authenMainEmployer]);
 
+  useEffect(() => {
+    const fetchApi = async () => {
+    
+      const result = await statisticCompany();
+      if(result.code === 200){
+        console.log(result);
+        setObjectCount({
+          coutCompaignIsOpen: result?.data?.coutCompaignIsOpen,
+          coutCompaignIsPending: result?.data?.coutCompaignIsPending,
+          coutCvApplication: result?.data?.coutCvApplication,
+          coutCvApproved: result?.data?.coutCvApproved,
+        });
+        console.log(result?.data?.groupedCvs);
+        setData(result?.data?.groupedCvs)
+      }
+    };
+    fetchApi();
+  }, [infoUserEmployer]);
   return (
     <>
       {authenMainEmployer?.status === true && (
@@ -203,25 +194,25 @@ function DashboardEmployer() {
                             desc="Chiến dịch đang mở"
                             color={"#2d7cf1"}
                             bgColor={"#ebf3ff"}
-                            value={1}
+                            value={objectCount.coutCompaignIsOpen}
                             icon={<FontAwesomeIcon icon={faStar} />}
                           />
                         </div>
                         <div className="col-6">
                           <BoxInfoColor
-                            desc="Chiến dịch đang mở"
+                            desc="CV tiếp nhận"
                             color={"rgb(227 65 131)"}
                             bgColor={"rgb(249 197 218 / 12%)"}
-                            value={1}
+                            value={objectCount.coutCvApproved}
                             icon={<FontAwesomeIcon icon={faFileCode} />}
                           />
                         </div>
                         <div className="col-6">
                           <BoxInfoColor
-                            desc="Tin tuyển dụng hiển thị"
+                            desc="Chiến dịch đang chờ duyệt"
                             color={"#e5b500"}
                             bgColor={"#fffae9"}
-                            value={1}
+                            value={objectCount.coutCompaignIsPending}
                             icon={<FontAwesomeIcon icon={faFileLines} />}
                           />
                         </div>
@@ -230,7 +221,7 @@ function DashboardEmployer() {
                             desc="Cv ứng tuyển mới"
                             color={"#da4538"}
                             bgColor={"#fff3f2"}
-                            value={1}
+                            value={objectCount.coutCvApplication}
                             icon={<FontAwesomeIcon icon={faFilePdf} />}
                           />
                         </div>
@@ -251,16 +242,15 @@ function DashboardEmployer() {
                         <div className="user__flex">
                           <div className="user-box">
                             <div className="images">
-                              <img
-                                src={infoUserEmployer?.image}
-                                alt="avatar"
-                              />
+                              <img src={infoUserEmployer?.image} alt="avatar" />
                             </div>
                             <div className="info">
                               <div className="name">
                                 {infoUserEmployer?.fullName}
                               </div>
-                              <div className="code">Mã NTD: {infoUserEmployer?.code}</div>
+                              <div className="code">
+                                Mã NTD: {infoUserEmployer?.code}
+                              </div>
                               <div className="contact-user">
                                 <a href="#!" className="email-user">
                                   <FontAwesomeIcon icon={faEnvelope} />
@@ -307,7 +297,9 @@ function DashboardEmployer() {
                           <div className="count">
                             <div className="point">Điểm hạng</div>
                             <div className="images-coint">
-                              <div className="count-coint">{infoUserEmployer?.cointsGP}</div>
+                              <div className="count-coint">
+                                {infoUserEmployer?.cointsGP}
+                              </div>
                               <img src={point} alt="point" />
                             </div>
                           </div>

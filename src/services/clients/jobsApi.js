@@ -1,6 +1,6 @@
 import { getCookie } from "../../helpers/cookie";
 import { Get, Post } from "../../utils/clients/request"
-import { AuthPost } from "../../utils/clients/requestAuth";
+import { AuthGet, AuthPost } from "../../utils/clients/requestAuth";
 
 const checkToken = getCookie("token-user") || "";
 export const getListJobs = async () => {
@@ -40,9 +40,9 @@ export const getJobSearchPosition = async (value) => {
     const result = await Get(`/jobs/search-position?keyword=${value}`);
     return result;
 }
-export const getJobAdvancedSearch = async (page = 1, limit = 10, sort_key = "", sort_value = "", keyword = "", job_categorie = "", job_type = "", job_level = "", salary_min = "", salary_max = "",select="") => {
-    console.log("job_categorie",keyword)
-    const result = await Get(`/jobs/advanced-search?page=${page}&limit=${limit}&sort_key=${sort_key}&sort_value=${sort_value}&keyword=${keyword}&job_categories=${job_categorie}&job_type=${job_type}&job_level=${job_level}&salary_min=${salary_min}&salary_max=${salary_max}&selectItem=${select}`);
+export const getJobAdvancedSearch = async (page = 1, limit = 10, sort_key = "", sort_value = "", keyword = "", job_categorie = "", job_type = "", job_level = "", salary_min = "", salary_max = "",city="",workExperience="",select="") => {
+
+    const result = await Get(`/jobs/advanced-search?page=${page}&limit=${limit}&sort_key=${sort_key}&sort_value=${sort_value}&keyword=${keyword}&job_categories=${job_categorie}&job_type=${job_type}&job_level=${job_level}&salary_min=${salary_min}&salary_max=${salary_max}&workExperience=${workExperience}&city=${city}&selectItem=${select}`);
     return result;
 }
 export const getMayBeInterested = async (value) => {
@@ -55,5 +55,17 @@ export const userViewJob = async (data) => {
 }
 export const getPdfToDriverClient = async (data)=>{
     const result = await AuthPost(`/jobs/get-pdf`,data,checkToken);
+    return result;
+}
+export const jobApplyUser = async (status="",page=1)=>{
+    const result = await AuthGet(`/jobs/job-apply?status=${status}&page=${page}`,checkToken);
+    return result;
+}
+export const jobSaveUser = async (sort_key="",page=1)=>{
+    const result = await AuthGet(`/jobs/job-save?sortKey=${sort_key}&sortValue=desc&page=${page}`,checkToken);
+    return result;
+}
+export const jobByCompany = async (slug="",page=1,keyword="",city_select="")=>{
+    const result = await AuthGet(`/jobs/job-by-company/${slug}?page=${page}&keyword=${keyword}&city=${city_select}`,checkToken);
     return result;
 }

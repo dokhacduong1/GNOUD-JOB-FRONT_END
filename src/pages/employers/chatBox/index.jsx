@@ -1,55 +1,65 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 
 import LeftChatBox from "./leftChatBox";
 import MidChatBox from "./midChatBox";
 import RightChatBox from "./rightChatBox";
 import "./chatBox.scss";
-import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getCookie } from "../../../helpers/cookie";
 import { io } from "socket.io-client";
 
+import { fetchApi, loadMore } from "./js";
+
 const checkTokenEmployer = getCookie("token-employer") || "";
-function useQuery() {
-  return new URLSearchParams(useLocation().search);
-}
+
 function ChatBox() {
-  const [idChat, setIdChat] = useState("");
-  const [roomChat] = useState(useQuery().get("t") || "");
   const [socketEmployer, setSocketEmployer] = useState(null);
+  const [userData, setUserData] = useState({});
+  const [contentChat, setContentChat] = useState([]);
+  const [historyChat, setHistoryChat] = useState([]);
+  const { idUser } = useParams();
+
+
+  useEffect(() => {
+    
+    fetchApi(setUserData, setContentChat, setHistoryChat, idUser);
+
+  }, [idUser]);
 
   //Kết nối socket với server
   useEffect(() => {
-    if (roomChat === "") return;
+   
+    if(socketEmployer){
+      //Phải disconnect socket cũ trước khi tạo socket mới
+     
+      socketEmployer.disconnect();
+    }
     setSocketEmployer(
       io("http://localhost:2709", {
         auth: {
           token: checkTokenEmployer,
           role: "employer",
-          roomChat: roomChat,
+          idUser: idUser,
         },
       })
     );
-  }, [roomChat]);
-
-  //Lấy id chat từ url
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const myParamId = params.get("t");
-    if (myParamId) {
-      setIdChat(myParamId);
-    } else {
-      setIdChat("");
-    }
-  }, [idChat]);
+      loadMore(setHistoryChat);
+  }, [idUser]);
 
   return (
     <div className="chat-box ">
       <div className="row gx-0">
         <div className="col-3">
-          <LeftChatBox />
+          <LeftChatBox  idUser={idUser}  historyChat = {historyChat}/>
         </div>
         <div className="col-6 reset-button-employer">
-          <MidChatBox socket={socketEmployer}/>
+          <MidChatBox
+            loadMore= {()=>{loadMore(setHistoryChat)}}
+            contentChat={contentChat}
+            userData={userData}
+            socket={socketEmployer}
+          />
         </div>
         <div className="col-3 reset-button-employer">
           <RightChatBox />

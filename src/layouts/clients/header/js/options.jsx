@@ -1,5 +1,6 @@
 import {
   faAddressCard,
+  faCalendarPlus,
   faFile,
   faHeart,
   faSquareCheck,
@@ -9,6 +10,7 @@ import {
   faDisplay,
   faLocationDot,
   faMagnifyingGlass,
+  faSuitcaseMedical,
   faUpload,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -21,10 +23,29 @@ export const searchJob = [
         className="item-ok"
        
         rel="noopener noreferrer"
-        to={"/viec-lam/tat-ca-viec-lam"}
+        to={"/viec-lam/tim-viec-lam"}
       >
         <div className="item-flex">
           <FontAwesomeIcon icon={faMagnifyingGlass} />
+          <span>Tìm việc làm</span>
+        </div>
+        <div className="item-arrow">
+          <FontAwesomeIcon icon={faArrowRight} />
+        </div>
+      </Link>
+    ),
+    key: "/viec-lam/tim-viec-lam",
+  },
+  {
+    label: (
+      <Link
+        className="item-ok"
+       
+        rel="noopener noreferrer"
+        to={"/viec-lam/tat-ca-viec-lam"}
+      >
+        <div className="item-flex">
+        <FontAwesomeIcon icon={faCalendarPlus} />
           <span>Việc làm mới nhất</span>
         </div>
         <div className="item-arrow">
@@ -34,6 +55,7 @@ export const searchJob = [
     ),
     key: "/viec-lam/tat-ca-viec-lam",
   },
+ 
   {
     type: "divider",
   },
@@ -59,11 +81,11 @@ export const searchJob = [
   
   {
     label: (
-      <a
+      <Link
         className="item-ok"
-        target="_blank"
+      
         rel="noopener noreferrer"
-        href="#!"
+        to="/viec-lam/viec-lam-da-luu"
       >
         <div className="item-flex">
           <FontAwesomeIcon icon={faHeart} />
@@ -72,9 +94,28 @@ export const searchJob = [
         <div className="item-arrow">
           <FontAwesomeIcon icon={faArrowRight} />
         </div>
-      </a>
+      </Link>
     ),
-    key: "2",
+    key: "/viec-lam/viec-lam-da-luu",
+  },
+  {
+    label: (
+      <Link
+        className="item-ok"
+      
+        rel="noopener noreferrer"
+        to="/viec-lam/viec-lam-da-ung-tuyen"
+      >
+        <div className="item-flex">
+        <FontAwesomeIcon icon={faSuitcaseMedical} />
+          <span>Việc làm đã ứng tuyển</span>
+        </div>
+        <div className="item-arrow">
+          <FontAwesomeIcon icon={faArrowRight} />
+        </div>
+      </Link>
+    ),
+    key: "/viec-lam/viec-lam-da-ung-tuyen",
   },
 
   {
@@ -100,7 +141,7 @@ export const searchJob = [
         </div>
       </a>
     ),
-    key: "3",
+    key: "4",
   },
   {
     label: (
@@ -122,7 +163,7 @@ export const searchJob = [
         </div>
       </a>
     ),
-    key: "4",
+    key: "5",
   },
   {
     label: (
@@ -144,7 +185,7 @@ export const searchJob = [
         </div>
       </a>
     ),
-    key: "5",
+    key: "6",
   },
 ];
 

@@ -339,6 +339,7 @@
         p {
           color: #f771a7 !important;
           font-weight: 600;
+         
         }
         ul {
           list-style: none;
@@ -421,6 +422,8 @@
       }
     }
     .body-info {
+      height: 200px;
+      overflow: hidden;
     }
   }
   .fix-flex1 {
@@ -437,7 +440,11 @@
     line-height: 1.5;
     line-break: normal;
     word-wrap: break-word;
+
     color: #696969;
+    p{
+      margin-top: 10px;
+    }
   }
   .button-back-link{
     margin-left: 40px;

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import {  Link, useNavigate, useParams } from "react-router-dom";
 import { fetchApiJobSearch } from "./js/fetchApi";
 import "./jobSearch.scss";
 import { Tabs, Tooltip } from "antd";
@@ -7,7 +7,7 @@ import InfoJob from "./infoJob";
 import OverviewCompany from "./overviewCompany";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
-import { faHeart, faFlag } from "@fortawesome/free-regular-svg-icons";
+import { faFlag } from "@fortawesome/free-regular-svg-icons";
 import { ShareAltOutlined } from "@ant-design/icons";
 import {
   faFacebookF,
@@ -19,8 +19,12 @@ import banner from "./images/banner.png";
 import ModelJobSearch from "./modelJobSearch";
 import { useSelector } from "react-redux";
 import { userViewJob } from "../../../services/clients/jobsApi";
+import { useQuery } from "../../../helpers/getQuery";
 
 function JobSearch() {
+  const query = useQuery();
+  const showModel = query.get("modal");
+ 
   const { slug } = useParams();
   const [recordMain, setRecordMain] = useState({});
   const navigate = useNavigate();
@@ -43,16 +47,7 @@ function JobSearch() {
       key: "3",
       label: (
         <ul>
-          <li>
-            <Tooltip
-              color="#fff"
-              title={<span style={{ color: "#5d677a" }}>Lưu việc làm</span>}
-            >
-              <a href="#!">
-                <FontAwesomeIcon icon={faHeart} />
-              </a>
-            </Tooltip>
-          </li>
+         
           <li>
             <Tooltip
               className=""
@@ -101,8 +96,8 @@ function JobSearch() {
       idJob: recordMain._id,
       idUser: infoUserC.id,
     };
-    const result = await userViewJob(objectNew);
-    console.log(result);
+    await userViewJob(objectNew);
+  
   };
   useEffect(() => {
     const { infoUser } = authenMainClient;
@@ -113,7 +108,7 @@ function JobSearch() {
     window.scrollTo(0, 0);
     fetchApiJobSearch(setRecordMain, slug, navigate);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [authenMainClient?.infoUser]);
+  }, [authenMainClient?.infoUser,slug]);
 
   useEffect(() => {
     
@@ -129,7 +124,7 @@ function JobSearch() {
   return (
     <>
       {recordMain?.title && (
-        <section className="cb-section cb-section-padding-bottom deltail-job">
+        <section className="cb-section cb-section-padding-bottom deltail-job  ">
           <div className="container">
             <div className="row">
               <div className="col-12 mb-15">
@@ -146,6 +141,7 @@ function JobSearch() {
                     </div>
                     <div className="job-search-one__apply">
                       <ModelJobSearch
+                      showModel={showModel}
                         infoUser={infoUserC}
                         record={recordMain}
                       />
@@ -166,36 +162,37 @@ function JobSearch() {
                       {recordMain &&
                         recordMain.jobByCategories?.length > 0 &&
                         recordMain.jobByCategories.map((item, index) => (
-                          <div key={index}>
+                          <div  key={index}>
                             <div className="job-item">
                               <div className="figure row">
                                 <div className="image col-5">
-                                  <a
-                                    href="#!"
+                                  <span
+                                   
                                     title={item.employerId.companyName}
                                   >
                                     <img
                                       className="lazy-bg"
-                                      src={item.employerId.image}
+                                      src={item.employerId.logoCompany}
                                       alt={item.employerId.companyName}
                                       style={{}}
                                     />
-                                  </a>
+                                  </span>
                                 </div>
                                 <div className="figcaption col-7">
                                   <div className="title">
-                                    <a
+                                    <Link
+                                      to={`/tim-viec-lam/${item.slug}`}
                                       className="job_link"
-                                      href={`/tim-viec-lam/${item.slug}`}
+                                     
                                       title={item.title}
                                     >
                                       {item.title}
-                                    </a>
+                                    </Link>
                                   </div>
                                   <div className="caption">
                                     <a
                                       className="company-name"
-                                      href="https://careerviet.vn/vi/nha-tuyen-dung/cong-ty-tai-chinh-tnhh-mot-thanh-vien-shinhan-viet-nam.35A95615.html"
+                                      href="#!"
                                       title="Công ty Tài chính TNHH Một Thành Viên Shinhan Việt Nam "
                                     >
                                       {item.employerId.companyName}

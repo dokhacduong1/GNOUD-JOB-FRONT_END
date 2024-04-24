@@ -1,7 +1,7 @@
 import moment from "moment";
 import banner from "./images/banner.png"
 function InfoProfileUser({ record}) {
-console.log(record)
+
     //lấy phone và email từ props nếu đã xác nhận thì mới hiển thị
   return (
     <div className="contact-infomation ">

@@ -74,7 +74,7 @@ function InfoCompany() {
               <div className="info__company-body mt-4">
               {
                 !changeInfo ? (<>
-                   <div className="header-info mb-2 p-3">
+                   <div   className="header-info mb-2 p-3">
                   <div className="d-flex align-items-center">
                     <div className="image">
                       <img

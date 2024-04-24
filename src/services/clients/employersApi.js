@@ -10,3 +10,8 @@ export const getCountJobEmployers = async ()=>{
     const result = await Get(`/employers/count-job`);
     return result;
 }
+
+export const getCompany = async (slug="")=>{
+    const result = await Get(`/employers/get-company/${slug}`);
+    return result;
+}

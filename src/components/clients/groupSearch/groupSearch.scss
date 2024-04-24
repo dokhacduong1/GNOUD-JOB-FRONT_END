@@ -1,0 +1,51 @@
+.group-search {
+  display: flex;
+  align-items: center;
+  background: #fff;
+
+  border-radius: 10px;
+  gap: 10px;
+  svg {
+    font-size: 16px;
+    color: #a8a7a7;
+  }
+  .item-search {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: 10px;
+    padding: 14px;
+    input {
+      border-right: 1px solid #d9d9d9;
+      border-bottom: none;
+      border-top: none;
+      border-left: none;
+       
+      color: #a5a5a5;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      height: 100%;
+      letter-spacing: 0.01em;
+      line-height: 22px;
+      outline: none;
+
+      text-align: left;
+      width: 100%;
+   
+    }
+  }
+  .search-city {
+    width: 35%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+   
+    .ant-select-outlined:not(.ant-select-disabled):not(
+        .ant-select-customize-input
+      ):not(.ant-pagination-size-changer)
+      .ant-select-selector {
+      border: none;
+    }
+  }
+}

@@ -6,7 +6,11 @@ import { AuthGet} from "../../utils/employers/requestAuth";
 
 const checkToken = getCookie("token-employer") || "";
 
-export const chatPrivate = async ()=>{
-    const result = await AuthGet(`/chat/private/1/2`,checkToken);
+export const getContentChat = async (idUser)=>{
+    const result = await AuthGet(`/chat/get-content-chat/${idUser}`,checkToken);
+    return result;
+}
+export const getHistoryChat = async ()=>{
+    const result = await AuthGet(`/chat/get-history-chat`,checkToken);
     return result;
 }

@@ -5,7 +5,6 @@ import {
   Form,
   Input,
   InputNumber,
-
   Select,
   Tag,
 } from "antd";
@@ -27,8 +26,14 @@ import { getCity } from "../../../services/admins/headerApi";
 import { decData } from "../../../helpers/decData";
 import { getAllJobsCategories } from "../../../services/employers/jobsCategoriesApi";
 import { getContentTiny } from "../../../helpers/getContentTinymce";
+import { useDebounce } from "use-debounce";
+import { loadCityFull } from "./js/loadCity";
 function FormOne({ setForm_one, next, form_one }) {
   const [optionsSelectTreeJobCategories, setOptionsSelectTree] = useState([]);
+  const [fullAddressCompany, setfullAddressCompany] = useState([]);
+  const [loadingSelect, setLoadingSelect] = useState(false);
+  const [textFullAddress, setTextFullAddress] = useState("");
+  const [valueDebounceFullAddress] = useDebounce(textFullAddress, 300);
   const [city, setCity] = useState([]);
   const [location, setLocation] = useState([0, 0]);
   const [tags, setTags] = useState([]);
@@ -175,7 +180,18 @@ function FormOne({ setForm_one, next, form_one }) {
     },
     [tags, location, setForm_one, next]
   );
+  //Hàm này để lấy thông tin chi tiết địa chỉ khi người dùng nhập vào
+  const changeValueAddress = useCallback(async (input) => {
+    setLoadingSelect(true);
+    if (input === "") return setTextFullAddress("");
+    setTextFullAddress(input);
+  }, []);
 
+  //Check xem debaunce address có thay đổi không để lấy thông tin chi tiết địa  chỉ
+  useEffect(() => {
+    loadCityFull(setfullAddressCompany, valueDebounceFullAddress);
+    setLoadingSelect(false);
+  }, [valueDebounceFullAddress]);
   return (
     <Form
       form={form}
@@ -217,15 +233,15 @@ function FormOne({ setForm_one, next, form_one }) {
           ]}
         >
           <Select
-           showSearch
-           filterOption={(input, option) =>
-            removeAccents(option.label)
-              .toLowerCase()
-              .includes(removeAccents(input).toLowerCase()) ||
-            removeAccents(option.value)
-              .toLowerCase()
-              .includes(removeAccents(input).toLowerCase())
-          }
+            showSearch
+            filterOption={(input, option) =>
+              removeAccents(option.label)
+                .toLowerCase()
+                .includes(removeAccents(input).toLowerCase()) ||
+              removeAccents(option.value)
+                .toLowerCase()
+                .includes(removeAccents(input).toLowerCase())
+            }
             mode="multiple"
             placeholder="Chọn Ngành Nghề"
             options={optionsSelectTreeJobCategories}
@@ -284,6 +300,7 @@ function FormOne({ setForm_one, next, form_one }) {
             <>
               <span>Nơi Làm Việc</span>
               <MemoizedModelMapAddress
+                top={70}
                 color={"#fda4c8"}
                 setLocation={setLocation}
               />
@@ -305,7 +322,39 @@ function FormOne({ setForm_one, next, form_one }) {
             },
           ]}
         >
-          <Input placeholder="Nhập Chi Tiết Địa Chỉ" />
+          <Select
+            loading={loadingSelect}
+            showSearch
+            placeholder="Nhập địa chỉ công ty"
+            options={fullAddressCompany}
+            filterOption={(input, option) => {
+              const words = removeAccents(input).toLowerCase().split(",");
+              const label = removeAccents(option.label).toLowerCase();
+              const value = removeAccents(option.value).toLowerCase();
+
+              return words.every(
+                (word) =>
+                  label.includes(word.trim()) || value.includes(word.trim())
+              );
+            }}
+            onSearch={(input) => changeValueAddress(input)}
+            dropdownRender={(menu) => {
+              return (
+                <> 
+                  {!loadingSelect && (
+                    <div className="search-custom-info-company">
+                      <span className="item">{menu}</span>
+                    </div>
+                  )}
+                  {loadingSelect && (
+                    <div style={{display:'flex',justifyContent:"center",alignItems:"center"}} className="search-custom-info-company">
+                      <img style={{width:"150px"}} src="https://img.pikbest.com/png-images/20190918/cartoon-snail-loading-loading-gif-animation_2734139.png!bw700"/>
+                    </div>
+                  )}
+                </>
+              );
+            }}
+          />
         </Form.Item>
 
         <Form.Item name="description" label="Mô Tả Công Việc">

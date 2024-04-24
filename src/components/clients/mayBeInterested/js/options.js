@@ -23,14 +23,41 @@ export const dataExperience  = [
         value:"no-required",
         label:"Không Yêu Cầu Kinh Nghiệm"
     },
-    {
-        value:"experienced",
-        label:"Có Kinh Nghiệm"
-    },
+
     {
         value:"no-experience-yet",
         label:"Chưa Có Kinh Nghiệm"
     },
+    {
+        value:"duoi_1_nam",
+        label:"Dưới 1 Năm"
+    },
+    {
+        value:"1_nam",
+        label:"1 Năm"
+    },
+    {
+        value:"2_nam",
+        label:"2 Năm"
+    },
+    {
+        value:"3_nam",
+        label:"3 Năm"
+    },
+    {
+        value:"4_nam",
+        label:"4 Năm"
+    },
+    {
+        value:"5_nam",
+        label:"5 Năm"
+    },
+ 
+    {
+        value:"tren_5_nam",
+        label:"Trên 5 Năm"
+    },
+
 
 ]
 

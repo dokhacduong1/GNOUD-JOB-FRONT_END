@@ -9,6 +9,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faPenToSquare } from "@fortawesome/free-regular-svg-icons";
 import DemoCvProfile from "../../../components/clients/demoCVProfile";
+import MemoizedItemBoxCustom from "../../../components/clients/itemBoxCustom";
 function ManagementCv() {
   const [data, setData] = useState([]);
   const [form] = Form.useForm();
@@ -121,7 +122,7 @@ function ManagementCv() {
 
   return (
     <div className="col-8">
-      <div className="box-settings-info">
+      <div className="box-settings-info mb-3">
         <div className="management-cv">
           <div className="banner mb-2">
             <img src={banner} alt="banne-cv.jpg" />
@@ -133,6 +134,9 @@ function ManagementCv() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="box-settings-info">
+        <MemoizedItemBoxCustom/>
       </div>
     </div>
   );

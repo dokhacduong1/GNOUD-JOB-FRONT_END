@@ -18,6 +18,13 @@
   
 .rc-virtual-list-holder{
     margin: 0 13px 0 0;
+    .ant-select-item{
+      margin-bottom: 5px;
+    }
+    .rc-virtual-list-holder-inner{
+      padding: 10px;
+    }
+   
 }
   /* Handle on hover */
   &::-webkit-scrollbar-thumb:hover {

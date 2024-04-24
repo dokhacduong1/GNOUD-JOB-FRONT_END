@@ -517,3 +517,17 @@ body::-webkit-scrollbar-horizontal-thumb {
 .title-employer-setting h3{
   font-weight: 500 !important;
 }
+
+@keyframes typing {
+  0% { content: '...'; }
+  25% { content: '..'; }
+  50% { content: '.'; }
+  75% { content: '..'; }
+  100% { content: '...'; }
+}
+
+.typing-animation {
+  animation-name: typing;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}

@@ -44,7 +44,7 @@ export const loadCityDeletai = async (setAddress, selectAddress, keyword) => {
       // Mỗi phần tử trong mảng mới sẽ là một object với value và label đều là description của phần tử đó
       let convertData = resultCity.data
         .filter(item => item.description.includes(ward) && item.description.includes(district) && item.description.includes(city))
-        .map(item => ({ value: item.description, label: item.description }));
+        .map(item => ({ value: item.description + "-"+ item?.id, label: item.description }));
   
       // Nếu keyword không phải là chuỗi rỗng, thêm một object với value và label đều là keyword vào đầu mảng
       if (keyword !== "") {

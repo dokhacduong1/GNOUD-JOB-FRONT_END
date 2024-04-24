@@ -43,30 +43,28 @@ function Header({ setIsCollapsed, isCollapsed }) {
                 <span>Báo cáo thị trường tuyển dụng</span>
               </li>
               <li className="navbar__item check">
-                <FontAwesomeIcon icon={faPen} />
-                <Link
-                  style={{ color: "#fff", fontWeight: "500" }}
-                  to={"./add-jobs-employer"}
-                >
-                  Đăng tin
+                <Link to={"./add-jobs-employer"}>
+                  <FontAwesomeIcon icon={faPen} />
+                  <span to={"./add-jobs-employer"}>Đăng tin</span>
                 </Link>
               </li>
               <li className="navbar__item check">
-                <FontAwesomeIcon icon={faPen} />
-                <span>Tìm CV</span>
-              </li>
-              <li className="navbar__item check">
-                <FontAwesomeIcon icon={faFacebookMessenger} />
-                <Link
-                  style={{ color: "#fff", fontWeight: "500" }}
-                  to={"./chat-box"}
-                >
-                  Kết nối
+                <Link>
+                  <FontAwesomeIcon icon={faPen} />
+                  <span>Tìm CV</span>
                 </Link>
               </li>
               <li className="navbar__item check">
-                <FontAwesomeIcon icon={faQuestion} />
-                <span>Trợ giúp</span>
+                <Link to={"./chat-box"}>
+                  <FontAwesomeIcon icon={faFacebookMessenger} />
+                  <span to={"./chat-box"}>Kết nối</span>
+                </Link>
+              </li>
+              <li className="navbar__item check">
+                <Link>
+                  <FontAwesomeIcon icon={faQuestion} />
+                  <span>Trợ giúp</span>
+                </Link>
               </li>
               <li className="navbar__item no-check">
                 <Badge count={1}>

@@ -10,29 +10,46 @@ import {
 import SearchCustomVip from "../../../components/clients/searchCustomVip";
 import { useCallback, useEffect, useState } from "react";
 
-import { decData } from "../../../helpers/decData";
-import { fetchApi, reloadData } from "./js/fetchApi";
+import { fetchApi } from "./js/fetchApi";
 import { dataLevel, optionsSalary } from "./js/options";
-import { getJobAdvancedSearch } from "../../../services/clients/jobsApi";
+
 import ItemBoxNews from "../../../components/clients/itemBoxNews";
 import MayBeInterested from "../../../components/clients/mayBeInterested";
 import CompanyOutstanding from "../../../components/clients/companyOutstanding";
+import { useQuery } from "../../../helpers/getQuery";
+import { useNavigate } from "react-router-dom";
+
 function NewJob() {
+  const navigate = useNavigate();
   const [jobCategories, setJobCategories] = useState([]);
   const [recordItem, setRecordItem] = useState([]);
-
-  const [value, setValue] = useState(1);
-  const [page] = useState(1);
-  const [limit] = useState(10);
-  const [sort_key, setSort_key] = useState("createdAt");
-  const [sort_value, setSort_value] = useState("desc");
-  const [keyword, setKeyword] = useState("");
-  const [job_categorie, setJob_categorie] = useState("");
-  const [job_type] = useState("");
-  const [job_level, setJob_level] = useState("");
-  const [salary_min, setSalary_min] = useState("");
-  const [salary_max, setSalary_max] = useState("");
+  const query = useQuery();
+  const page = query.get("page") || 1;
+  const limit = query.get("limit") || 10;
+  const sort_key = query.get("sort_key") || "createdAt";
+  const sort_value = query.get("sort_value") || "desc";
+  const keyword = query.get("keywords") || "";
+  const job_categorie = query.get("job_categories") || "";
+  const job_type = query.get("job_type") || "";
+  const job_level = query.get("job_level") || "";
+  const salary_min = query.get("salary_min") || "";
+  const salary_max = query.get("salary_max") || "";
+  const [listTag] = useState([
+    {
+      name: "Tài chính",
+    },
+    {
+      name: "Kinh doanh",
+    },
+    {
+      name: "Marketing",
+    },
+    {
+      name: "Nhân sự",
+    },
+  ]);
   const [coutJob, setCoutJob] = useState(0);
+
   useEffect(() => {
     fetchApi(
       setJobCategories,
@@ -49,88 +66,62 @@ function NewJob() {
       salary_max,
       setCoutJob
     );
-  }, []);
+  }, [
+    job_categorie,
+    job_level,
+    job_type,
+    keyword,
+    limit,
+    page,
+    salary_max,
+    salary_min,
+    sort_key,
+    sort_value,
+  ]);
+
+  const buildQueryString = (params) => {
+    window.scrollTo(0, 0);
+    return Object.entries(params)
+      .map(([key, value]) => `${key}=${value || ""}`)
+      .join("&");
+  };
 
   const handleForm = useCallback(
     async (valuesForm) => {
       const { job_categories, job_level, kewword, salary } = valuesForm;
-      const objectNew = {
-        job_categories: job_categories || "",
-        job_level: job_level || "",
-        kewword: kewword || "",
-        salary_min: salary.split("-")[0] || "",
-        salary_max: salary.split("-")[1] || "",
-      };
-      const result = await getJobAdvancedSearch(
-        1,
-        10,
-        sort_key,
+
+      const params = {
+        keywords: kewword,
+        job_categories,
+        job_level,
+        salary_min: salary?.split("-")[0] || "",
+        salary_max: salary?.split("-")[1] ||"",
+        sort_key: sort_key,
         sort_value,
-        objectNew.kewword,
-        objectNew.job_categories,
-        "",
-        objectNew.job_level,
-        objectNew.salary_min,
-        objectNew.salary_max
-      );
-
-      if (result.code === 200) {
-        setJob_categorie(objectNew.job_categories);
-        setJob_level(objectNew.job_level);
-        setKeyword(objectNew.kewword);
-        setSalary_min(objectNew.salary_min);
-        setSalary_max(objectNew.salary_max);
-        const data = decData(result.data);
-
-        setRecordItem(data);
-        setCoutJob(result.countJobs);
-      }
+        page: 1,
+      };
+      navigate(`?${buildQueryString(params)}`);
     },
-    [sort_key, sort_value]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [navigate, page, sort_key, sort_value]
   );
 
   const onChangeRaido = (e) => {
     const value = e.target.value;
-    switch (value) {
-      case 1:
-        reloadData(
-          setJobCategories,
-          setRecordItem,
-          page,
-          limit,
-          "createdAt",
-          "desc",
-          keyword,
-          job_categorie,
-          job_type,
-          job_level,
-          salary_min,
-          salary_max
-        );
-        setSort_key("createdAt");
-        setSort_value("desc");
-        break;
-      case 2:
-        reloadData(
-          setJobCategories,
-          setRecordItem,
-          page,
-          limit,
-          "salaryMax",
-          "desc",
-          keyword,
-          job_categorie,
-          job_type,
-          job_level,
-          salary_min,
-          salary_max
-        );
-        setSort_key("salaryMax");
-        setSort_value("desc");
-        break;
-    }
-    setValue(value);
+
+    const params = {
+      keywords: keyword,
+      job_categories: job_categorie,
+      job_level,
+      salary_min,
+      salary_max,
+      sort_key: value,
+      sort_value,
+      page,
+    };
+    navigate(`?${buildQueryString(params)}`);
   };
+
   const handleChangePreview = (e) => {
     const value = e.target.value;
     const element = document.querySelector(".may-be-interested");
@@ -141,28 +132,31 @@ function NewJob() {
     }
   };
 
-  const handleChangePagination = (value) => {
-    console.log("value", keyword);
-    reloadData(
-      setJobCategories,
-      setRecordItem,
-      value,
-      limit,
-      sort_key,
-      sort_value,
-      keyword,
-      job_categorie,
-      job_type,
+  const handleChangePagination = (page_select) => {
+    const params = {
+      keywords: keyword,
+      job_categories: job_categorie,
       job_level,
       salary_min,
-      salary_max
-    );
+      salary_max,
+      sort_key,
+      sort_value,
+      page: page_select,
+    };
+    navigate(`?${buildQueryString(params)}`);
   };
+
   return (
-    <div className="cb-section bg-grey2">
+    <div className="cb-section cb-section-padding-bottom bg-grey2">
       <div className="container">
         <div className="news__job">
-          <MemoizedNewsJobHeader />
+          <MemoizedNewsJobHeader
+            listTag={listTag}
+            title={"Việc làm mới nhất"}
+            description={
+              "Nâng tầm sự nghiệp với các cơ hội việc làm mới nhất tại các công ty hàng đầu. Thu nhập xứng tầm, đãi ngộ hấp dẫn, trải nghiệm đáng giá, khám phá ngay!"
+            }
+          />
           <div className="news__job-body">
             <div className="news__job-form-search">
               <Form
@@ -173,6 +167,7 @@ function NewJob() {
                 <div className="col-custom col-6">
                   <Form.Item name="kewword">
                     <Input
+                      value={keyword}
                       size="large"
                       placeholder="Tên công việc, vị trí bạn muốn ứng tuyển..."
                       prefix={
@@ -188,7 +183,7 @@ function NewJob() {
                     <SearchCustomVip
                       prefix={<FontAwesomeIcon icon={faBuilding} />}
                       options={jobCategories}
-                      defaultValueOk=""
+                      defaultValueOk={job_categorie}
                     />
                   </Form.Item>
                 </div>
@@ -197,7 +192,7 @@ function NewJob() {
                     <SearchCustomVip
                       prefix={<FontAwesomeIcon icon={faBuilding} />}
                       options={dataLevel}
-                      defaultValueOk=""
+                      defaultValueOk={job_level}
                     />
                   </Form.Item>
                 </div>
@@ -206,7 +201,11 @@ function NewJob() {
                     <SearchCustomVip
                       prefix={<FontAwesomeIcon icon={faBuilding} />}
                       options={optionsSalary}
-                      defaultValueOk=""
+                      defaultValueOk={
+                        salary_max && salary_min
+                          ? salary_min + "-" + salary_max
+                          : ""
+                      }
                     />
                   </Form.Item>
                 </div>
@@ -229,10 +228,10 @@ function NewJob() {
             </div>
             <div className="job-sort-news">
               <div className="radio">
-                <h4>Ưu tiên hiển thị</h4>
-                <Radio.Group onChange={onChangeRaido} value={value}>
-                  <Radio value={1}>Tin mới nhất</Radio>
-                  <Radio value={2}>Lương cao nhất</Radio>
+                <h4 style={{fontWeight:"500"}}>Ưu tiên hiển thị:</h4>
+                <Radio.Group onChange={onChangeRaido} value={sort_key}>
+                  <Radio value={"createdAt"}>Tin mới nhất</Radio>
+                  <Radio value={"salaryMax"}>Lương cao nhất</Radio>
                 </Radio.Group>
               </div>
               <div className="switch">
@@ -249,6 +248,7 @@ function NewJob() {
               <ItemBoxNews
                 recordItem={recordItem}
                 handleChangePagination={handleChangePagination}
+                defaultValue={page}
                 countPagination={coutJob}
               />
               <div className="suggested-job col-md-4">

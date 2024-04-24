@@ -9,3 +9,11 @@ export const getDetailedAddress= async (arr)=>{
     const result = await AuthPost(`/get-detailed-address`,arr,checkToken);
     return result;
 }
+export const getCoordinateAddress= async (placeid="")=>{
+    const result = await AuthPost(`/coordinate`,placeid,checkToken);
+    return result;
+}
+export const getFullAddress= async (keyword={})=>{
+    const result = await AuthPost(`/get-full-address`,keyword,checkToken);
+    return result;
+}

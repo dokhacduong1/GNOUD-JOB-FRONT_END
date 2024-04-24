@@ -107,10 +107,10 @@ function FormEdit(props) {
       if(recordCity.code === 200){
         const options = recordCity.data.map((item) => {
           return {
-            value: `${item.code}&${item.slug}&${item.name}`,
-            label: item.name
-          }
-        })
+            value: `${parseInt(item.code)}&${item.slug}&${item.name}`,
+            label: item.name,
+          };
+        });
         setCity(options)
       }
   

@@ -53,6 +53,10 @@ import ManagementCv from "../pages/clients/managementCv";
 import ChatBox from "../pages/employers/chatBox";
 import ChatBoxClient from "../pages/clients/chatBox";
 import ManagementCvs from "../pages/employers/managementCvs";
+import JobSaves from "../pages/clients/jobSaves";
+import ListJobAppy from "../pages/clients/listJobApply";
+import InfoCompany from "../pages/clients/infoCompany";
+import JobSearchAdvanced from "../pages/clients/jobSearchAdvanced";
 
 export const routes = [
   //client
@@ -72,13 +76,18 @@ export const routes = [
             path: "tim-viec-lam/:slug",
             element: <JobSearch />,
           },
+
           {
             path: "viec-lam/tat-ca-viec-lam",
             element: <NewJob />,
           },
           {
-            path: "viec-lam/tat-ca-viec-lam",
-            element: <NewJob />,
+            path: "viec-lam/tim-viec-lam",
+            element: <JobSearchAdvanced />,
+          },
+          {
+            path: "cong-ty/:slug",
+            element: <InfoCompany />,
           },
         ],
       },
@@ -109,6 +118,25 @@ export const routes = [
         element: <PrivateRoutesClient />,
         children: [
           {
+            path: "viec-lam",
+            element: <SettingsAccount />,
+            children: [
+              {
+                path: "viec-lam-da-ung-tuyen",
+                element: <ListJobAppy />,
+              },
+              {
+                path: "viec-lam-da-luu",
+                element: <JobSaves />,
+              },
+            ],
+          },
+        ],
+      },
+      {
+        element: <PrivateRoutesClient />,
+        children: [
+          {
             path: "tai-khoan",
             element: <SettingsAccount />,
             children: [
@@ -128,6 +156,7 @@ export const routes = [
                 path: "cai-dat-thong-bao-email",
                 element: <EmailSuggestions />,
               },
+      
               {
                 path: "test",
                 element: <Test />,
@@ -158,15 +187,18 @@ export const routes = [
       },
     ],
   },
-  {   
+  {
     element: <PrivateRoutesClient />,
     children: [
       {
         path: "chat-box",
         element: <ChatBoxClient />,
-      }
-    ]
-   
+      },
+      {
+        path: "chat-box/t/:idUser",
+        element: <ChatBoxClient />,
+      },
+    ],
   },
   //admin
   {
@@ -317,7 +349,7 @@ export const routes = [
         element: <ChatBox />,
       },
       {
-        path: "chat-box/:idRoom",
+        path: "chat-box/t/:idUser",
         element: <ChatBox />,
       },
     ],

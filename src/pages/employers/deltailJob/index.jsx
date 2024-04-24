@@ -30,7 +30,7 @@ function DetailJob() {
   const fetchApi = async (status="") => {
     const result = await infoJobsEmployer(param.id,status);
     if (result.code === 200) {
-      console.log(decData(result.data));
+
 
       setData(decData(result.data));
     }

@@ -13,7 +13,7 @@ import MapView from "../mapView/mapView";
 import { removeAccents } from "../../../helpers/removeAccents";
 
 function ModelMapAddress(props) {
-  const { setLocation,color="#5dcaf9" } = props;
+  const { setLocation,color="#5dcaf9",top=20 } = props;
   const [isModal, setIsModalOpen] = useState(false);
   //Lưu tọa độ
   //longitudeAndLatitude[0] là longitude
@@ -134,7 +134,7 @@ function ModelMapAddress(props) {
       </span>
       <Modal
         style={{
-          top: 20,
+          top: top,
         }}
         width={600}
         title="Thêm Vị Trí Map"

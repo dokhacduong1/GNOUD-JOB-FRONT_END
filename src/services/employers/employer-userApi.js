@@ -3,7 +3,7 @@
 // import { getCookie } from "../../helpers/cookie";
 import { getCookie } from "../../helpers/cookie";
 import { Post } from "../../utils/employers/request";
-import { AuthPost } from "../../utils/employers/requestAuth";
+import { AuthGet, AuthPost } from "../../utils/employers/requestAuth";
 
 const checkToken = getCookie("token-employer") || "";
 
@@ -60,5 +60,11 @@ export const verifyPhoneEmployer = async (valueForm)=>{
 }
 export const changePasswordEmployer = async (valueForm)=>{
     const result = await AuthPost(`/users/change-password`,valueForm,checkToken);
+    return result;
+}
+
+
+export const statisticCompany = async ()=>{
+    const result = await AuthGet(`/users/statistic-company`,checkToken);
     return result;
 }

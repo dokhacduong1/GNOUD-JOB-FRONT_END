@@ -49,10 +49,13 @@
         color: #fff;
         font-size: 14px;
        
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
+        a{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          color: #fff;
+        }
         cursor: pointer;
         span{
           font-weight: 500;
