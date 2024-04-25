@@ -47,17 +47,18 @@
       .image {
         display: flex;
         align-items: center;
-       
+        
         background: #fff;
         border: 2px solid #70b7f1;
         border-radius: 50%;
-        height: 80px;
-        width: 80px;
-        overflow: hidden;
+      
+      
         display: flex;
         justify-content: center;
         align-items: center;
-       
+       a{
+        width: 80px;
+        height: 80px;
         img {
           height: 100%;
           width: 100%;
@@ -66,6 +67,8 @@
           border-radius: 50%;
          
         }
+       }
+       
       }
       .title {
         .title-text {

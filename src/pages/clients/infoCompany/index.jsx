@@ -108,7 +108,7 @@ function InfoCompany() {
   const toggleExpand = () => {
     setIsExpanded(!isExpanded);
   };
-console.log(recordItem)
+
   return (
     <div className="cb-section cb-section-padding-bottom bg-grey2">
       <div className="container">
@@ -199,7 +199,7 @@ console.log(recordItem)
                             </div>
                             <div className="content">
                               <div>
-                                <a href="#!" className="name-company">
+                                <a href={item?.slug} className="name-company">
                                   CÔNG TY {item?.companyName}
                                 </a>
                               </div>

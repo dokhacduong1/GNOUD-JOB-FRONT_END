@@ -115,7 +115,7 @@ function JobSearchAdvanced() {
     setHiden(!hiden);
   };
 
-  console.log(recordItem);
+
   const handleChangeJobCategories = (value) => {
     const params = {
       keywords: keyword,
@@ -262,7 +262,7 @@ function JobSearchAdvanced() {
               <div className="count-job">
                 Tổng{" "}
                 <span style={{ color: "rgb(255 239 0)", fontWeight: "600" }}>
-                  {coutJob}
+                  {recordItem?.length}
                 </span>{" "}
                 kết quả
               </div>
@@ -334,7 +334,7 @@ function JobSearchAdvanced() {
             <div className="box-heading-content">
               <div className="heading mb-2">
                 <h1>
-                  Tuyển dụng {coutJob} việc làm mới nhất{" "}
+                  Tuyển dụng {recordItem?.length} việc làm mới nhất{" "}
                   {new Date().getFullYear("YYYY/MM/Đ")}
                 </h1>
               </div>
@@ -342,7 +342,7 @@ function JobSearchAdvanced() {
                 <a href="/">Trang chủ</a>
                 <FontAwesomeIcon icon={faChevronRight} />
                 <p>
-                  Tuyển dụng {coutJob}{" "}
+                  Tuyển dụng {recordItem?.length}{" "}
                   {keyword
                     ? `${keyword} [Update ${moment(new Date()).format(
                         "YYYY/MM/DD"

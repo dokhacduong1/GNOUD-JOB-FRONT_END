@@ -26,7 +26,7 @@ export const fetchApi = async (setOptionCategories, setRecordItem, page, limit, 
      
       const convertDataRecord = decData(resultgetJobAdvancedSearch.data);
       setCoutJob(resultgetJobAdvancedSearch.countJobs);
-      console.log("convertDataRecord",convertDataRecord)
+
       setRecordItem(convertDataRecord);
     }
   }

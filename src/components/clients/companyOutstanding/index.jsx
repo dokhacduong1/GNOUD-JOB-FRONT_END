@@ -14,7 +14,7 @@ function CompanyOutstanding() {
   useEffect(() => {
     fetchApi();
   }, []);
-console.log("recordItem",recordItem)
+
   return (
     <>
       {recordItem.length > 0 && (

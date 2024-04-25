@@ -6,8 +6,10 @@ import "./sliderBanner.scss"
 import Sliders from '../sliders';
 import { Form, Input } from "antd";
 import { memo } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function SliderBanner(props) {
+    const navigate = useNavigate();
     const { images } = props;
     const settingSliders = {
         dots: true,
@@ -19,8 +21,8 @@ function SliderBanner(props) {
         autoplay: true,
         autoplaySpeed: 5000,
     }
-    const handlFormSearch = () => {
-  
+    const handlFormSearch = (valueForm) => {
+        navigate(`/viec-lam/tim-viec-lam?keywords=${valueForm.keyword}`)
     };
     return (
         <div className="banner__slider">

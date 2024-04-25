@@ -121,7 +121,7 @@ function JobSearch() {
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [infoUserC, recordMain]);
-  console.log('recordMain', recordMain)
+console.log(recordMain)
   return (
     <>
       {recordMain?.title && (
@@ -194,7 +194,7 @@ function JobSearch() {
                                     <a
                                       className="company-name"
                                       href={`/cong-ty/${item.employerId.slug}`}
-                                      title="Công ty Tài chính TNHH Một Thành Viên Shinhan Việt Nam "
+                                      title= {item.employerId.companyName}
                                     >
                                       {item.employerId.companyName}
                                     </a>
@@ -214,7 +214,7 @@ function JobSearch() {
                                           <FontAwesomeIcon
                                             icon={faLocationDot}
                                           />{" "}
-                                          Hồ Chí Minh
+                                           {item?.city?.name}
                                         </li>
                                       </ul>
                                     </div>

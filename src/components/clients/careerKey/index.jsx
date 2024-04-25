@@ -31,7 +31,9 @@ function CareerKey() {
         fetchApi()
 
     }, [])
+const handleSearchCategory = (id) => {
 
+}
     return (
         <>
             <div className="cb-section">
@@ -41,13 +43,13 @@ function CareerKey() {
                         <div className="row ">
                             <Sliders settings={settingsliders} custom={careerKey.length > 0 && (
                                 careerKey.map((data, index) => (
-                                    <div key={index} className="career-key__background" >
+                                    <div onClick={()=>{handleSearchCategory(data?._id)}} key={index} className="career-key__background" >
                                         <div className="career-key__card mr-1">
                                             <div className="career-key__card-innerImage">
                                                 <img src={`${data.thumbnail}`} alt="Kế toán / Kiểm toán" />
                                             </div>
                                             <div className="career-key__card-des">
-                                                <h3>{data.title}</h3>
+                                                <h3><a href={`viec-lam/tim-viec-lam?job_categorie=${data?._id}`}>{data.title}</a></h3>
                                                 <span>({data.countJob} việc làm)</span>
                                             </div>
                                         </div>
