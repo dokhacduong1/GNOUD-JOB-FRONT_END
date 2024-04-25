@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { Form, Input, Select, Spin, message } from "antd";
 import MemoizedTinyMce from "../../../components/admins/tinyEditor";
-import { useCallback, useEffect, useRef, useState } from "react";
+import {  useEffect, useRef, useState } from "react";
 import { getContentTiny } from "../../../helpers/getContentTinymce";
 import "./changeInfoCompany.scss";
 import { LoadingOutlined } from "@ant-design/icons";
@@ -81,26 +81,26 @@ function ChangeInfoCompany() {
   }, [valueDebounceAddress]);
 
   //Đây là check người dùng ghi vào địa chỉ chi tiết
-  const changeValueSpecificAddress = useCallback(async (input) => {
+  const changeValueSpecificAddress =  (input) => {
     if (input === "") return;
     setTextSpecificAddress(input);
-  }, []);
+  };
 
   //Đây là check người dùng ghi vào địa chỉ xã/phường, quận/huyện, tỉnh/thành phố
-  const changeValueAddress = useCallback(async (input) => {
+  const changeValueAddress = async (input) => {
     if (input === "") return setAddressCompany([]);
     setTextAddress(input);
-  }, []);
+  };
 
   //Khi người dùng chọn địa chỉ xã/phường, quận/huyện, tỉnh/thành phố thì sẽ set giá trị cho selectAddress để khi người dùng ghi vào địa chỉ chi tiết thì mới lấy dữ liệu
-  const handleSelectAddress = useCallback((value) => {
+  const handleSelectAddress = (value) => {
     setSelectAddress(value);
     setSpecifiAddressCompany([]);
     form.setFieldsValue({
       specificAddress: "",
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  };
 
   //Hàm này để lấy dữ liệu từ form
   const handleForm = async (valueForm) => {
@@ -366,28 +366,11 @@ function ChangeInfoCompany() {
                   showSearch
                   onSelect={handleSelectAddress}
                   placeholder="Nhập địa chỉ công ty"
-                  filterOption={(input, option) => {
-                    const words = removeAccents(input).toLowerCase().split(",");
-                    const label = removeAccents(option.label).toLowerCase();
-                    const value = removeAccents(option.value).toLowerCase();
-
-                    return words.every(
-                      (word) =>
-                        label.includes(word.trim()) ||
-                        value.includes(word.trim())
-                    );
-                  }}
+                  value={addressCompany[0]?.value || ""}
+         
                   onSearch={(input) => changeValueAddress(input)}
                   options={addressCompany}
-                  dropdownRender={(menu) => {
-                    return (
-                      <>
-                        <div className="search-custom-info-company">
-                          <span className="item">{menu}</span>
-                        </div>
-                      </>
-                    );
-                  }}
+              
                 />
               </Form.Item>
               <Form.Item
@@ -456,27 +439,10 @@ function ChangeInfoCompany() {
                   disabled={!selectAddress}
                   showSearch
                   placeholder="Nhập địa chỉ chi tiết công ty"
-                  filterOption={(input, option) => {
-                    const words = removeAccents(input).toLowerCase().split(",");
-                    const label = removeAccents(option.label).toLowerCase();
-                    const value = removeAccents(option.value).toLowerCase();
-                    return words.every(
-                      (word) =>
-                        label.includes(word.trim()) ||
-                        value.includes(word.trim())
-                    );
-                  }}
+                  value={specifiAddressCompany[0]?.value || ""}
                   onSearch={(input) => changeValueSpecificAddress(input)}
                   options={specifiAddressCompany}
-                  dropdownRender={(menu) => {
-                    return (
-                      <>
-                        <div className="search-custom-info-company">
-                          <span className="item">{menu}</span>
-                        </div>
-                      </>
-                    );
-                  }}
+               
                 />
               </Form.Item>
               <Form.Item

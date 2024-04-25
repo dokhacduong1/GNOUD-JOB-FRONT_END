@@ -121,6 +121,7 @@ function JobSearch() {
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [infoUserC, recordMain]);
+  console.log('recordMain', recordMain)
   return (
     <>
       {recordMain?.title && (
@@ -137,7 +138,7 @@ function JobSearch() {
                   <div className="job-search-one__content">
                     <div className="job-search-one__desc">
                       <h1>{recordMain.title}</h1>
-                      <a href="#!">{recordMain.companyName}</a>
+                      <a href={"/cong-ty/"+recordMain?.employerId?.slug}>{recordMain.companyName}</a>
                     </div>
                     <div className="job-search-one__apply">
                       <ModelJobSearch
@@ -192,7 +193,7 @@ function JobSearch() {
                                   <div className="caption">
                                     <a
                                       className="company-name"
-                                      href="#!"
+                                      href={`/cong-ty/${item.employerId.slug}`}
                                       title="Công ty Tài chính TNHH Một Thành Viên Shinhan Việt Nam "
                                     >
                                       {item.employerId.companyName}

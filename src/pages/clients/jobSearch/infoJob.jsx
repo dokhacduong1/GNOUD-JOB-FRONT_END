@@ -136,7 +136,7 @@ function InfoJob(props) {
       });
     }
   };
-
+  console.log("infoUserC",record);
   return (
     <section className="info-job">
        {contextHolder}

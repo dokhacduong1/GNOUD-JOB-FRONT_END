@@ -90,8 +90,9 @@ function InfoEmployer() {
           <div className="card-employer">
             <div className="demo-employer card-setting-form-employer card-body-employer">
               <div className="title-settings mb-3">
+                
                 Tài khoản xác thực:{" "}
-                <strong style={{ color: "rgb(253, 109, 166)" }}>Cấp 2/2</strong>
+                <strong style={{ color: "rgb(253, 109, 166)" }}>Cấp {infoUserEmployer?.countActive}/2</strong>
               </div>
               <div className="demo-employer__body">
                 <div className="box-item">
@@ -101,7 +102,7 @@ function InfoEmployer() {
                   <div className="text">
                     Tài khoản quý khách đang đạt:{" "}
                     <strong style={{ color: "rgb(253, 109, 166)" }}>
-                      Cấp 2/2
+                      Cấp {infoUserEmployer?.countActive}/2
                     </strong>
                   </div>
                 </div>

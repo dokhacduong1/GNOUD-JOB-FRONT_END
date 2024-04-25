@@ -14,7 +14,7 @@ function CompanyOutstanding() {
   useEffect(() => {
     fetchApi();
   }, []);
-
+console.log("recordItem",recordItem)
   return (
     <>
       {recordItem.length > 0 && (
@@ -34,7 +34,7 @@ function CompanyOutstanding() {
                     </a>
                   </div>
                   <div className="text-box">
-                    <a title={item?.companyName} className="title" href="#!">
+                    <a title={item?.companyName} className="title" href={"/cong-ty/"+item?.slug}>
                       Công ty {item?.companyName}
                     </a>
                     <p className="des">Đang có {item?.countJobs} việc làm</p>

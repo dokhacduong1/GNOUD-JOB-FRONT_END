@@ -72,7 +72,7 @@ function ItemBoxNews({
       setDataUser(authenMainClient?.infoUser);
     }
   }, [authenMainClient?.infoUser]);
-
+console.log('recordItem', recordItem)
   return (
     <div className={`items-box__news ${colGrid}`}>
       {contextHolder}

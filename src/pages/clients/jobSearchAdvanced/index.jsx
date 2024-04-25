@@ -345,7 +345,7 @@ function JobSearchAdvanced() {
                   Tuyển dụng {coutJob}{" "}
                   {keyword
                     ? `${keyword} [Update ${moment(new Date()).format(
-                        "YYYY/"
+                        "YYYY/MM/DD"
                       )}]`
                     : `việc làm mới nhất ${new Date().getFullYear(
                         "YYYY/MM/Đ"

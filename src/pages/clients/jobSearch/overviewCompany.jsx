@@ -32,7 +32,7 @@ function OverviewCompany({ record }) {
             <div className="content">
               <div className="address mb-2">
                 <strong>Địa điểm </strong>
-                {infoCompany?.specificAddressCompany}
+                {infoCompany?.specificAddressCompany?.split("-")[0]}
               </div>
 
               <div className="title-info mb-2">Thông tin công ty</div>

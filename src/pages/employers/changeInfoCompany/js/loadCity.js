@@ -4,23 +4,19 @@ import { geAreaDetail, getDetailedAddress } from "../../../../services/locations
 
 export const loadCity = async (setAddress, keyword) => {
     if (!keyword) return;
+    
     const objectNew = {
         keyword: keyword,
     };
     const resultCity = await geAreaDetail(objectNew);
     if (resultCity.code === 200) {
-        const convertData = [];
-        resultCity.data.forEach(item => {
-            if (item?.ward?.value && item?.district?.value && item?.city?.value) {
-                convertData.push(
-                    {
-                        value: `${item?.ward?.value || ""}, ${item?.district?.value || ""}, ${item?.city?.value || ""}`,
-                        label: `${item?.ward?.value || ""}, ${item?.district?.value || ""}, ${item?.city?.value || ""}`
-                    }
-                )
-            }
-
-        })
+        const convertData = resultCity.data
+            .filter(item => item?.ward?.value && item?.district?.value && item?.city?.value)
+            .map(item => ({
+                value: `${item?.ward?.value || ""}, ${item?.district?.value || ""}, ${item?.city?.value || ""}`,
+                label: `${item?.ward?.value || ""}, ${item?.district?.value || ""}, ${item?.city?.value || ""}`
+            }));
+            console.log("keyword", convertData)
         setAddress(convertData);
     }
 }
