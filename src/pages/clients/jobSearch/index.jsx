@@ -121,7 +121,7 @@ function JobSearch() {
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [infoUserC, recordMain]);
-console.log(recordMain)
+
   return (
     <>
       {recordMain?.title && (

@@ -16,7 +16,7 @@ export const loadCity = async (setAddress, keyword) => {
                 value: `${item?.ward?.value || ""}, ${item?.district?.value || ""}, ${item?.city?.value || ""}`,
                 label: `${item?.ward?.value || ""}, ${item?.district?.value || ""}, ${item?.city?.value || ""}`
             }));
-            console.log("keyword", convertData)
+    
         setAddress(convertData);
     }
 }

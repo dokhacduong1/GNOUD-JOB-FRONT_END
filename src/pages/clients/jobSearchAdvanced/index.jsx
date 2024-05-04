@@ -27,7 +27,7 @@ import MemoizedMayBeInterested from "../../../components/clients/mayBeInterested
 import MemoizedCompanyOutstanding from "../../../components/clients/companyOutstanding";
 
 const buildQueryString = (params) => {
-  console.log(params);
+
   window.scrollTo(0, 0);
   return Object.entries(params)
     .map(([key, value]) => `${key}=${value || ""}`)

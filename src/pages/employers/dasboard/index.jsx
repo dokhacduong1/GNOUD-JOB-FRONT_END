@@ -112,7 +112,7 @@ const [data, setData] = useState([])
           coutCvApplication: result?.data?.coutCvApplication,
           coutCvApproved: result?.data?.coutCvApproved,
         });
-        console.log(result?.data?.groupedCvs);
+
         setData(result?.data?.groupedCvs)
       }
     };

@@ -56,7 +56,7 @@ function ListJobAppy() {
     fetchApi(value);
   };
   const handleChangePagination = (value) => {
-    console.log(value);
+
   };
   return (
     <>
