@@ -36,7 +36,7 @@ function ChatBox() {
       socketEmployer.disconnect();
     }
     setSocketEmployer(
-      io("http://localhost:2709", {
+      io("http://35.198.196.205:3001", {
         auth: {
           token: checkTokenEmployer,
           role: "employer",
