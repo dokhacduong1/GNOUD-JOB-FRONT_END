@@ -1,2 +1,2 @@
-// export const DOMAIN = "34.87.54.148"
-export const DOMAIN ="localhost"
+export const DOMAIN = "35.198.196.205"
+// export const DOMAIN ="localhost"
