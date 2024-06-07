@@ -1,6 +1,6 @@
 import { DOMAIN } from "../api-domain";
 
-const API_DOMAIN = `http://${DOMAIN}:2709/api/v1/admin`;
+const API_DOMAIN = `http://${DOMAIN}/api/v1/admin`;
 
 export const AuthGet = async (path, token, link = API_DOMAIN) => {
 

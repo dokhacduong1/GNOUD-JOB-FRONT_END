@@ -1,6 +1,6 @@
 import { DOMAIN } from "../api-domain";
 
-const API_DOMAIN = `http://${DOMAIN}:2709/api/v1/locations`;
+const API_DOMAIN = `http://${DOMAIN}/api/v1/locations`;
 
 export const Get = async (path, options ,link = API_DOMAIN) => {
 

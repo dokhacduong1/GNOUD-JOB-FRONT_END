@@ -1,6 +1,6 @@
 import { DOMAIN } from "../api-domain";
 
-const API_DOMAIN = `http://${DOMAIN}:2709/api/v1/client`;
+const API_DOMAIN = `http://${DOMAIN}/api/v1/client`;
 export const AuthPost = async (path, options, token, link = API_DOMAIN) => {
   const response = await fetch(link + path, {
     method: "POST",
