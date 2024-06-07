@@ -36,7 +36,7 @@ function ChatBox() {
       socketEmployer.disconnect();
     }
     setSocketEmployer(
-      io("http://35.198.196.205:2709", {
+      io("https://project-duong-vip-api.vercel.app", {
         auth: {
           token: checkTokenEmployer,
           role: "employer",
