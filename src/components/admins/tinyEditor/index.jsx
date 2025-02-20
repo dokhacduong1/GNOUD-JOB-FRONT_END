@@ -1,5 +1,6 @@
 import { Editor } from '@tinymce/tinymce-react';
 import { forwardRef, memo, useEffect, useImperativeHandle, useRef, useState } from 'react';
+import { DOMAIN } from '../../../utils/api-domain';
 
 const TinyMce = forwardRef(function TinyMce({ value, height = 500 }, ref) {
 
@@ -21,10 +22,10 @@ const TinyMce = forwardRef(function TinyMce({ value, height = 500 }, ref) {
   return (
     <Editor
       onInit={(evt, editor) => editorRef.current = editor}
-      apiKey='6vlxx8kasbjyz3ilxrhhwjy7hdk4fb3667zep1jooplekfqq'
+      apiKey='y33vw6bkvk5hh4dihg8cankmcrgrjm9hoy9z79w8p6a26z0v'
       value={editorContent}
       init={{
-        images_upload_url: "http://localhost:2709/api/v1/admin/uploads/image",
+        images_upload_url: `${DOMAIN}/api/v1/admin/uploads/image`,
         height: height,
         menubar: false,
         plugins: [
