@@ -8,13 +8,13 @@ import {
 import MemoizedSearchCustomVip from "../searchCustomVip";
 import { useEffect, useRef, useState } from "react";
 import { getCityApiDuong } from "../../../services/clients/user-userApi";
-function GroupSearch({ onValueChange,valueCity="",valueKeyword="" }) {
+function GroupSearch({ onValueChange, valueCity = "", valueKeyword = "" }) {
   const [options, setOptions] = useState([]);
   const keywordRef = useRef("");
   useEffect(() => {
     keywordRef.current.value = valueKeyword;
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const [value, setValue] = useState(valueCity);
   const handleChangeSelect = (value) => {
     const keyword = keywordRef.current.value || "";
@@ -61,8 +61,7 @@ function GroupSearch({ onValueChange,valueCity="",valueKeyword="" }) {
       <div className="item item-search">
         <FontAwesomeIcon icon={faMagnifyingGlass} />
         <input
-        
-        defaultValue={keywordRef}
+          defaultValue={keywordRef}
           onChange={handleChangeInput}
           ref={keywordRef}
           type="text"
@@ -70,15 +69,19 @@ function GroupSearch({ onValueChange,valueCity="",valueKeyword="" }) {
         />
       </div>
       <div className="item search-city">
-        <FontAwesomeIcon icon={faLocationDot} />
-        <MemoizedSearchCustomVip
-          defaultValue={value}
-          prefix={<FontAwesomeIcon icon={faBuilding} />}
-          options={options}
-          defaultValueOk={""}
-          value={value}
-          onChange={handleChangeSelect}
-        />
+        <div className="icon-hidden">
+          <FontAwesomeIcon icon={faLocationDot} />
+        </div>
+        <div>
+          <MemoizedSearchCustomVip
+            defaultValue={value}
+            prefix={<FontAwesomeIcon icon={faBuilding} />}
+            options={options}
+            defaultValueOk={""}
+            value={value}
+            onChange={handleChangeSelect}
+          />
+        </div>
       </div>
     </div>
   );

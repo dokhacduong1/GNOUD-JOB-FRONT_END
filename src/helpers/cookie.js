@@ -31,14 +31,18 @@ export function getCookie(cname) {
   // Hết Hàm xóa cookie
   
   // Xóa hết cookie
-  export function deleteAllCookies() {
+  export function deleteAllCookies(listCookie = ["token-employer", "token-user"]) {
     const cookies = document.cookie.split(";");
   
     for (let i = 0; i < cookies.length; i++) {
-        const cookie = cookies[i];
-        const eqPos = cookie.indexOf("=");
-        const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+      const cookie = cookies[i];
+      const eqPos = cookie.indexOf("=");
+      const name = eqPos > -1 ? cookie.substr(0, eqPos).trim() : cookie.trim();
+  
+      // Kiểm tra xem tên cookie có nằm trong danh sách không xóa không
+      if (!listCookie.includes(name)) {
         document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+      }
     }
   }
   // Hết phần Xóa hết cookie

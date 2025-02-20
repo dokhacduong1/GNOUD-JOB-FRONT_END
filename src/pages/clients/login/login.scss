@@ -115,6 +115,9 @@
     }
   }
   &__image{
+    @media only screen and (max-width: 991.9px) {
+        display: none;
+    }
     height:100%;
    
     img{

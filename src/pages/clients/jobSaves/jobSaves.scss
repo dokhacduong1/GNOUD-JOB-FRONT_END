@@ -4,19 +4,37 @@
       color: #333;
       font-size: 15px;
       line-height: 20px;
+      @media only screen and (max-width: 768px) {
+        font-size: 13px;
+      }
     }
     .box-sort {
       display: flex;
       align-items: center;
-      gap: 30px;
+      flex-wrap: wrap;
+      .sort-radio {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        span {
+          @media only screen and (max-width: 768px) {
+            font-size: 13px;
+          }
+        }
+      }
+      gap: 10px;
       .text {
         color: #999;
         font-size: 15px;
         margin-right: 24px;
+        @media only screen and (max-width: 768px) {
+          font-size: 13px;
+        }
       }
     }
     .box-items {
       .item {
+        margin-bottom: 10px;
         background-color: #f2f8fb;
         display: flex;
         padding: 12px;
@@ -24,6 +42,9 @@
         border: 1px solid #f4f4f4;
         align-items: center;
         gap: 20px;
+        @media only screen and (max-width: 768px) {
+          align-items: start;
+        }
         .image-company {
           aspect-ratio: 1 / 1;
           background-color: #fff;
@@ -32,17 +53,23 @@
           display: flex;
           height: 120px;
           width: 120px;
+          @media only screen and (max-width: 768px) {
+            height: 80px;
+            width: 80px;
+          }
           a {
             display: block;
             height: 100%;
             overflow: hidden;
             width: 100%;
+           
             img {
               border-radius: 5px;
               height: 100%;
               -o-object-fit: cover;
               object-fit: cover;
               width: 100%;
+             
             }
           }
         }
@@ -50,13 +77,18 @@
           flex: 1;
           .title-job {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
-            span, a {
+            span,
+            a {
               &:first-child {
                 color: #212f3f;
                 font-size: 16px;
                 font-weight: 600;
                 line-height: 24px;
+                @media only screen and (max-width: 768px) {
+                  font-size: 14px;
+                }
               }
               &:last-child {
                 align-items: center;
@@ -70,6 +102,7 @@
                 margin-bottom: 0;
                 margin-top: 0;
                 white-space: nowrap;
+               
               }
             }
           }
@@ -88,6 +121,9 @@
             width: -webkit-fit-content;
             width: -moz-fit-content;
             width: fit-content;
+            @media only screen and (max-width: 768px) {
+              font-size: 12px;
+            }
           }
           .time-created {
             color: #424e5c;
@@ -99,19 +135,33 @@
             width: -webkit-fit-content;
             width: -moz-fit-content;
             width: fit-content;
+            @media only screen and (max-width: 768px) {
+              font-size: 12px;
+            }
           }
           .box-action {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
+            @media only screen and (max-width: 768px) {
+              gap: 10px;
+              
+            }
             .box-tag,
             .box-button {
               display: flex;
               justify-content: space-between;
               align-items: center;
               gap: 10px;
+              @media only screen and (max-width: 768px) {
+                gap: 5px;
+                width: 100%;
+                justify-content: right;
+              }
             }
             .box-tag {
+              flex-wrap: wrap;
               div {
                 background: #e9eaec;
                 border-radius: 3px;
@@ -124,31 +174,32 @@
                 padding: 4px 8px;
               }
             }
-            .box-button{
-                div , a{
-                    cursor: pointer;
-                    align-items: center;
-                    background: #5dcaf9;
-                    border-radius: 3px;
-                    color: #fff;
-                    display: flex;
-                    font-size: 12px;
-                    font-weight: 400;
-                    height: 28px;
-                    line-height: 16px;
-                    outline: none;
-                    padding: 6px 16px;
-                    transition: all 0.3s ease;
-                    &:hover{
-                        background: #6fc1f7;
-                    }
+            .box-button {
+              div,
+              a {
+                cursor: pointer;
+                align-items: center;
+                background: #5dcaf9;
+                border-radius: 3px;
+                color: #fff;
+                display: flex;
+                font-size: 12px;
+                font-weight: 400;
+                height: 28px;
+                line-height: 16px;
+                outline: none;
+                padding: 6px 16px;
+                transition: all 0.3s ease;
+                &:hover {
+                  background: #6fc1f7;
                 }
-                .delete{
-                    background: #f44336;
-                    &:hover{
-                        background: #fc5e53;
-                    }
+              }
+              .delete {
+                background: #f44336;
+                &:hover {
+                  background: #fc5e53;
                 }
+              }
             }
           }
         }

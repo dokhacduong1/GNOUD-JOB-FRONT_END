@@ -1,4 +1,9 @@
 .telent-network {
+    &_check{
+        @media only screen and (max-width: 991.9px) {
+            display: none;
+        }
+    }
     &__bg {
         background-image: url("./images/word.png");
         -webkit-box-pack: center;

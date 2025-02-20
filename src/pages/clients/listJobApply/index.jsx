@@ -60,7 +60,7 @@ function ListJobAppy() {
   };
   return (
     <>
-      <div className="col-8 ">
+      <div className="col-lg-8 col-12 mb-3">
         <div className="box-settings-info mb-3">
           <div className="job-saves">
             <div className="job-saves__header mb-3">

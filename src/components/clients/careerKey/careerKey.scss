@@ -1,4 +1,7 @@
 .career-key {
+    @media only screen and (max-width: 991.9px) {
+        display: none;
+    }
     &__background {
 
         padding: 10px;

@@ -35,7 +35,10 @@ function Sliders(props) {
       ))}
     </Slider>
   ) : (
-    <Slider {...settings}>{custom}</Slider>
+    <>
+      <Slider {...settings}>{custom}</Slider>
+    </>
+    
   );
 }
 

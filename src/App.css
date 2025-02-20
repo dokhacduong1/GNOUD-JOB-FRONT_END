@@ -29,6 +29,16 @@ body .title-text {
   font-size: 1.875rem;
   font-weight: 700;
   font-family: "Roboto", sans-serif !important;
+
+}
+@media only screen and (max-width: 1200px) {
+  body .title-text {
+   
+    font-size: 1.575rem;
+   
+  
+  }
+
 }
 .cb-section {
   padding: 60px 0 0 0;

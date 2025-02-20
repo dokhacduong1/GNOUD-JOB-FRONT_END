@@ -1,5 +1,8 @@
 .job {
     &__occupation {
+        @media only screen and (max-width: 991.9px) {
+            display: none;
+        }
         .item-box{
             display: flex;
             justify-content: center;
@@ -67,6 +70,9 @@
                  overflow: hidden;
                  color: #5d677a;
                  text-overflow: ellipsis;
+                 -webkit-line-clamp: 1;
+                 -webkit-box-orient: vertical;
+                 display: -webkit-box;
                  font-weight: 500;
              }
              h4{

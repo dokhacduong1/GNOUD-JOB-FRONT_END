@@ -375,8 +375,8 @@ function InfoJob(props) {
         className="info-job__fullBox detail-row"
         style={{ marginTop: "30px" }}
       >
-        <div className="row">
-          <div className="col-lg-4">
+        <div className="row jobfullbox">
+          <div className="col-lg-4 col-12">
             <div className="box-job-type">
               <h4>Tìm việc làm theo ngành nghề</h4>
               <ul>
@@ -999,7 +999,7 @@ function InfoJob(props) {
               </ul>
             </div>
           </div>
-          <div className="col-lg-4">
+          <div className="col-lg-4 col-12">
             <div className="box-job-type">
               <h4>Việc làm theo khu vực</h4>
               <ul>
@@ -1622,7 +1622,7 @@ function InfoJob(props) {
               </ul>
             </div>
           </div>
-          <div className="col-lg-4">
+          <div className="col-lg-4 col-12">
             <div className="box-job-type">
               <h4>Tìm việc làm phổ biến</h4>
               <ul>

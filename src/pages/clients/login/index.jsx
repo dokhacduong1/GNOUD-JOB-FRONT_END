@@ -47,7 +47,7 @@ function Login() {
       <div className="cb-section client-login">
         <div className="container">
           <div className="row">
-            <div className="col-7">
+            <div className="col-lg-7">
               <div className="client-login__form">
                 <h2 className="title">Chào mừng bạn quay trở lại</h2>
                 <p className="description">
@@ -162,7 +162,7 @@ function Login() {
                   </p>
                 </div>
                 <hr />
-                <div className="box-helper">
+                <div className="box-helper mb-3">
                   <p>Bạn gặp khó khăn khi tạo tài khoản?</p>
                   <p>
                     Vui lòng liên hệ tới số{" "}

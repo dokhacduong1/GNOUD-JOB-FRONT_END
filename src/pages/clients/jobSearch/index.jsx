@@ -141,6 +141,7 @@ function JobSearch() {
                       <a href={"/cong-ty/"+recordMain?.employerId?.slug}>{recordMain.companyName}</a>
                     </div>
                     <div className="job-search-one__apply">
+                     
                       <ModelJobSearch
                       showModel={showModel}
                         infoUser={infoUserC}

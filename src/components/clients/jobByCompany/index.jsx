@@ -96,17 +96,17 @@ function JobByCompany({ slug }) {
             kewword: kewword,
             city_select: city_select,
           }}
-          className="row gx-0 align-items-center"
+          className="row gx-0 gap-3 align-items-center"
           layout="inline"
         >
-          <Form.Item name="keyword" className="col-4">
+          <Form.Item name="keyword" className="col-lg-4 col-12">
             <Input
               placeholder="Tên công việc, vị trí ứng tuyển..."
               size="large"
               addonBefore={<FontAwesomeIcon icon={faMagnifyingGlass} />}
             />
           </Form.Item>
-          <Form.Item name="city_select" className="col-4">
+          <Form.Item name="city_select" className="col-lg-4 col-12">
             <Select
               showSearch
               filterOption={(input, option) =>

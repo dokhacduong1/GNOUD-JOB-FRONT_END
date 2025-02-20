@@ -3,6 +3,8 @@
     .search-saves {
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
       justify-content: space-between;
       .title {
         font-size: 19px;
@@ -23,6 +25,9 @@
         display: flex;
         align-items: center;
         gap: 20px;
+        @media only screen and (max-width: 768px) {
+         align-items: start;
+        }
         .logo-company {
           background-color: #fff;
           border-radius: 8px;
@@ -41,13 +46,22 @@
           flex: 1;
           .box-content {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
+            @media only screen and (max-width: 768px) {
+            
+              margin-bottom: 2px;
+            }
             a {
               color: #212f3f;
               font-size: 17px;
               font-weight: 700;
               line-height: 25px;
+              @media only screen and (max-width: 768px) {
+                font-size: 13px;
+                margin-bottom: 2px;
+              }
             }
             div {
               color: #5dcaf9;
@@ -62,32 +76,55 @@
               width: -moz-fit-content;
               width: fit-content;
               word-break: break-word;
+              @media only screen and (max-width: 768px) {
+                font-size: 13px;
+              }
             }
           }
           .name-company {
             color: #8b8b8b;
+            @media only screen and (max-width: 768px) {
+              font-size: 13px;
+              margin-bottom: 2px;
+            }
           }
           .time-apply {
             color: #424e5c;
             font-size: 15px;
             font-weight: 400;
             line-height: 20px;
+            @media only screen and (max-width: 768px) {
+              font-size: 13px;
+              margin-bottom: 2px;
+            }
           }
           .box-content2 {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
             .view-cv {
               color: #999;
               font-size: 15px;
               font-style: normal;
               font-weight: 400;
               line-height: 20px;
+              @media only screen and (max-width: 768px) {
+                font-size: 13px;
+                width: 100%;
+              }
             }
             .box-icon {
               display: flex;
               align-items: center;
+              flex-wrap: wrap;
+             
               gap: 10px;
+              @media only screen and (max-width: 768px) {
+                margin-top: 10px;
+                justify-content: center;
+                width: 100%;
+              }
               .icons {
                 cursor: pointer;
                 background: #5dcaf913;
@@ -103,6 +140,13 @@
                 align-items: center;
                 gap: 5px;
                 transition: all 0.3s ease;
+                @media only screen and (max-width: 768px) {
+                  font-size: 12px;
+                  width: 100%;
+                 
+                  text-align: center;
+                  justify-content: center;
+                }
                 &:hover {
                   background: #5dcaf9;
                   color: #fff;
@@ -113,13 +157,17 @@
           .box-content3 {
             display: flex;
             justify-content: space-between;
+            flex-wrap: wrap;
+           
             .status {
               color: #6f7882;
               font-size: 14px;
               font-weight: 400;
               font-weight: 500;
               line-height: 20px;
-              width: calc(50% - 6px);
+              @media only screen and (max-width: 768px) {
+               font-size: 13px;
+              }
               .pending {
                 color: #b1b1b1;
               }
@@ -136,7 +184,9 @@
               font-weight: 400;
               text-align: right;
               line-height: 20px;
-              width: calc(50% - 6px);
+              @media only screen and (max-width: 768px) {
+                font-size: 11px;
+               }
             }
           }
         }

@@ -78,7 +78,7 @@ function JobSaves() {
   return (
     <>
       {contextHolder}
-      <div className="col-8 ">
+      <div className="col-lg-8 col-12 mb-3 ">
         <div className="box-settings-info">
           <div className="job-saves">
             <div className="job-saves__header mb-3">
@@ -91,12 +91,12 @@ function JobSaves() {
             </div>
             <div className="job-saves__body">
               <div className="box-total">
-                Danh sách <strong>1</strong> việc làm đã lưu
+                Danh sách <strong>{dataJob.length ?? 1}</strong> việc làm đã lưu
               </div>
               <hr />
               <div className="box-sort">
                 <div className="text">Ưu tiên hiển thị:</div>
-                <Radio.Group value={sort_key} onChange={onChangeSort}>
+                <Radio.Group className="sort-radio" value={sort_key} onChange={onChangeSort}>
                   <Radio value={""}>Tất cả</Radio>
                   <Radio value={"updatedAt"}>Cập nhật gần đây</Radio>
                   <Radio value={"salary_max"}>Lương cao nhất</Radio>

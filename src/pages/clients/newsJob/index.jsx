@@ -160,11 +160,11 @@ function NewJob() {
           <div className="news__job-body">
             <div className="news__job-form-search">
               <Form
-                className="form-ok align-items-center gx-3"
+                className="form-ok align-items-center gx-3 "
                 onFinish={handleForm}
                 layout="inline"
               >
-                <div className="col-custom col-6">
+                <div className="col-custom">
                   <Form.Item name="kewword">
                     <Input
                       value={keyword}
@@ -251,8 +251,11 @@ function NewJob() {
                 defaultValue={page}
                 countPagination={coutJob}
               />
-              <div className="suggested-job col-md-4">
-                <MayBeInterested />
+              
+              <div className="suggested-job col-lg-4 col-12">
+                <div className="job-maybe">
+                  <MayBeInterested />
+                </div>  
                 <hr />
                 <CompanyOutstanding />
               </div>

@@ -6,6 +6,7 @@ import { Outlet } from "react-router-dom";
 import Sider from "antd/es/layout/Sider";
 import SliderHome from "./SliderHome";
 import { useState } from "react";
+
 import "./layout.scss";
 const { Content } = Layout;
 
@@ -13,6 +14,8 @@ function LayoutMainEmployerAdmin() {
   const [isCollapsed, setIsCollapsed] = useState(false);
   return (
     <>
+     
+      
       <Layout className="layout__employer-admin">
         <Header
           setIsCollapsed={setIsCollapsed}
@@ -22,11 +25,9 @@ function LayoutMainEmployerAdmin() {
         <Layout className="employer-full">
           <Sider
             breakpoint="xxl"
-    
             onBreakpoint={(boolean) => {
               setIsCollapsed(boolean);
             }}
-           
             collapsed={isCollapsed}
             className="mt-3 mb-3 sider-fixed"
           >

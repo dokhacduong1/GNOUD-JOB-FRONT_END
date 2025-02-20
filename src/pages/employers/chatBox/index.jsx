@@ -10,6 +10,7 @@ import { getCookie } from "../../../helpers/cookie";
 import { io } from "socket.io-client";
 
 import { fetchApi, loadMore } from "./js";
+import { DOMAIN } from "../../../utils/api-domain";
 
 const checkTokenEmployer = getCookie("token-employer") || "";
 
@@ -36,7 +37,7 @@ function ChatBox() {
       socketEmployer.disconnect();
     }
     setSocketEmployer(
-      io("https://project-duong-vip-api.vercel.app", {
+      io(DOMAIN, {
         auth: {
           token: checkTokenEmployer,
           role: "employer",

@@ -102,20 +102,20 @@ function JobsHot() {
           <div className="row job__featured-change">
             {listJobsFeatured?.record?.length > 0 &&
               listJobsFeatured.record.slice(0, 8).map((dataMap, index) => (
-                <div key={index} className="col-lg-6 ">
+                <div key={index} className="col-lg-6 col-12 ">
                   <div className="job__item">
                     <div className="col-12">
                       <Link
                         to={`/tim-viec-lam/${dataMap.slug}`}
                         className="row job__item-box justify-content-center align-items-center"
                       >
-                        <div className="job__featured-boxImage col-2">
+                        <div className="job__featured-boxImage col-lg-2 col-4">
                           <img
                             src={dataMap.logoCompany}
                             alt={dataMap.employerId.companyName}
                           ></img>
                         </div>
-                        <div className="job__featured-content col-10">
+                        <div className="job__featured-content col-lg-10 col-8">
                           <h2 title={dataMap.title}>{dataMap.title}</h2>
                           <h3 className="mt-1">{dataMap.companyName}</h3>
                           <h4 className="mt-1">
@@ -143,6 +143,7 @@ function JobsHot() {
           {listJobsFeatured?.record?.length > 0 && (
             <Pagination
               onChange={changePaginationFeture}
+                className="paginationTab-custom"
               style={{
                 display: "flex",
                 justifyContent: "center",
@@ -164,20 +165,20 @@ function JobsHot() {
           <div className="row job__featured-change">
             {listJobsSalary?.record?.length > 0 &&
               listJobsSalary.record.slice(0, 8).map((dataMap, index) => (
-                <div key={index} className="col-lg-6 ">
+                <div key={index} className="col-lg-6 col-12 ">
                   <div className="job__item">
                     <div className="col-12">
                       <Link
                         to={`/tim-viec-lam/${dataMap.slug}`}
                         className="row job__item-box justify-content-center align-items-center"
                       >
-                        <div className="job__featured-boxImage col-2">
+                        <div className="job__featured-boxImage col-lg-2 col-4">
                           <img
                             src={dataMap.logoCompany}
                             alt={dataMap.employerId.companyName}
                           ></img>
                         </div>
-                        <div className="job__featured-content col-10">
+                        <div className="job__featured-content col-lg-10 col-8">
                           <h2 title={dataMap.title}>{dataMap.title}</h2>
                           <h3 className="mt-1">{dataMap.companyName}</h3>
                           <h4 className="mt-1">
@@ -205,6 +206,7 @@ function JobsHot() {
           {listJobsSalary?.record?.length > 0 && (
             <Pagination
               onChange={changePaginationSalary}
+                className="paginationTab-custom"
               style={{
                 display: "flex",
                 justifyContent: "center",
@@ -226,20 +228,20 @@ function JobsHot() {
           <div className="row job__featured-change">
             {listJobsLevel?.record?.length > 0 &&
               listJobsLevel.record.slice(0, 8).map((dataMap, index) => (
-                <div key={index} className="col-lg-6 ">
+                <div key={index}className="col-lg-6 col-12 ">
                   <div className="job__item">
                     <div className="col-12">
                       <Link
                         to={`/tim-viec-lam/${dataMap.slug}`}
                         className="row job__item-box justify-content-center align-items-center"
                       >
-                        <div className="job__featured-boxImage col-2">
+                        <div className="job__featured-boxImage col-lg-2 col-4">
                           <img
                             src={dataMap.logoCompany}
                             alt={dataMap.employerId.companyName}
                           ></img>
                         </div>
-                        <div className="job__featured-content col-10">
+                        <div className="job__featured-content col-lg-10 col-8">
                           <h2 title={dataMap.title}>{dataMap.title}</h2>
                           <h3 className="mt-1">{dataMap.companyName}</h3>
                           <h4 className="mt-1">
@@ -266,6 +268,7 @@ function JobsHot() {
           </div>
           {listJobsLevel?.record?.length > 0 && (
             <Pagination
+              className="paginationTab-custom"
               onChange={changePaginationLevel}
               style={{
                 display: "flex",
@@ -285,7 +288,7 @@ function JobsHot() {
     <div className="jobs cb-section">
       <div className="container">
         <h2 className="text-center title-text">CÔNG VIỆC ĐƯỢC YÊU THÍCH</h2>
-        <Tabs size="large " centered defaultActiveKey="1" items={items} />
+        <Tabs size="large " centered defaultActiveKey="1" items={items}  />
       </div>
     </div>
   );

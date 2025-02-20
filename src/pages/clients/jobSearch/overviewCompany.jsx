@@ -37,25 +37,25 @@ function OverviewCompany({ record }) {
 
               <div className="title-info mb-2">Thông tin công ty</div>
               <div className="contact-company row gx-0 gy-2">
-                <div className="col-6">
+                <div className="col-lg-6 col-12">
                   <div className="item">
                     <FontAwesomeIcon icon={faUser} />
                     <span>Người liên hệ: Ms {infoCompany?.fullName}</span>
                   </div>
                 </div>
-                <div className="col-6">
+                <div className="col-lg-6 col-12">
                   <div className="item">
                     <FontAwesomeIcon icon={faUserGroup} />
                     <span>Quy mô công ty: {infoCompany?.numberOfWorkers}</span>
                   </div>
                 </div>
-                <div className="col-6">
+                <div className="col-lg-6 col-12">
                   <div className="item">
                     <FontAwesomeIcon icon={faAddressCard} />
                     <span>Loại hình hoạt động: Trách nhiệm hữu hạn</span>
                   </div>
                 </div>
-                <div className="col-6">
+                <div className="col-lg-6 col-12">
                   <div className="item">
                     <FontAwesomeIcon icon={faLink} />
                     <span>Website: {infoCompany?.website}</span>

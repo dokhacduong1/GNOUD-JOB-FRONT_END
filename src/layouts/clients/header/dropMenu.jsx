@@ -3,6 +3,8 @@ import {
   faCircleUp,
   faEnvelope,
   faEye,
+  faFile,
+  faHeart,
   faMessage,
   faPenToSquare,
 } from "@fortawesome/free-regular-svg-icons";
@@ -13,6 +15,8 @@ import {
   faArrowRightFromBracket,
   faGears,
   faLock,
+  faSuitcaseMedical,
+  faUpload,
 } from "@fortawesome/free-solid-svg-icons";
 
 import { Link, useLocation } from "react-router-dom";
@@ -56,6 +60,42 @@ const location = useLocation();
         <Link className="info-drop__button" to="/tai-khoan/thong-tin">
           <FontAwesomeIcon icon={faPenToSquare} />
           <span>Cài đặt thông tin cá nhân</span>
+        </Link>
+      ),
+    },
+    {
+      key: "/cv/quan-ly-cv",
+      label: (
+        <Link className="info-drop__button" to="/cv/quan-ly-cv">
+          <FontAwesomeIcon icon={faFile} />
+          <span>Quản lý CV</span>
+        </Link>
+      ),
+    },
+    {
+      key: "/cv/upload-cv",
+      label: (
+        <Link className="info-drop__button" to="/cv/upload-cv">
+          <FontAwesomeIcon icon={faUpload} />
+          <span>Tải lên CV</span>
+        </Link>
+      ),
+    },
+    {
+      key: "/viec-lam/viec-lam-da-ung-tuyen",
+      label: (
+        <Link className="info-drop__button" to="/viec-lam/viec-lam-da-ung-tuyen">
+          <FontAwesomeIcon icon={faSuitcaseMedical} />
+          <span>Việc làm đã ứng tuyển</span>
+        </Link>
+      ),
+    },
+    {
+      key: "/viec-lam/viec-lam-da-luu",
+      label: (
+        <Link className="info-drop__button" to="/viec-lam/viec-lam-da-luu">
+          <FontAwesomeIcon icon={faHeart} />
+          <span>Việc làm đã lưu</span>
         </Link>
       ),
     },
@@ -135,7 +175,7 @@ const location = useLocation();
   return (
     <>
       {" "}
-      <ul className="header__user col-5">
+      <ul className="header__user col-6">
         <li className="header__user-noti">
           <a href="#!">
             <FontAwesomeIcon icon={faBell} />
@@ -161,7 +201,7 @@ const location = useLocation();
             <div className="info-name">
               <a href="#!">
                 <img src={infoUser?.avatar} alt="default" />
-                <span>{infoUser?.fullName}</span>
+                <span className="hide-repon-name">{infoUser?.fullName}</span>
               </a>
             </div>
           </li>

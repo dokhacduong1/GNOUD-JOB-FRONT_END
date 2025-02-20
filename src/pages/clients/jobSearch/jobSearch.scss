@@ -27,6 +27,14 @@
     justify-content: space-between;
     background: rgba(255, 255, 255, 0.85);
     width: 100%;
+    @media only screen and (max-width: 767px) {
+      display: block;
+    }
+    .job-search-one__apply {
+      @media only screen and (max-width: 767px) {
+        display: none;
+      }
+    }
   }
   &__desc {
     h1 {
@@ -34,12 +42,21 @@
       font-size: 1rem;
       font-weight: 700;
       line-height: 1.25rem;
+      @media only screen and (max-width: 767px) {
+        font-size: 13px;
+        margin-bottom: 3px;
+      }
     }
     a {
       font-size: 14.5px;
       color: #5d677a;
       font-weight: 700;
       line-height: 1.25rem;
+      @media only screen and (max-width: 767px) {
+        font-size: 13px;
+        margin-bottom: 3px;
+        display: block;
+      }
     }
   }
   &__apply {
@@ -60,6 +77,9 @@
       transition: 0.4s all ease-in-out;
       &:hover {
         background: #41b4e6;
+      }
+      @media only screen and (max-width: 767px) {
+        font-size: 13px;
       }
     }
   }
@@ -218,24 +238,45 @@
       justify-content: space-between;
       border: 1px solid #5dcaf9;
       border-radius: 5px;
+      flex-wrap: wrap;
       padding: 10px;
+      @media only screen and (max-width: 767px) {
+        gap: 10px;
+      }
+      .job-search-one__apply {
+        @media only screen and (max-width: 767px) {
+          width: 100%;
+        }
+      }
       &-desc {
         display: flex;
         align-items: center;
         justify-content: center;
+        @media only screen and (max-width: 767px) {
+          width: 100%;
+        }
         ul {
           list-style: none;
           display: flex;
+          flex-wrap: wrap;
           align-items: center;
           justify-content: center;
           padding: 0;
           margin: 0;
+          @media only screen and (max-width: 767px) {
+            justify-content: start;
+          }
           li {
             margin-right: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            a,div {
+            @media only screen and (max-width: 767px) {
+              width: 100%;
+              justify-content: start;
+            }
+            a,
+            div {
               cursor: pointer;
               display: flex;
               align-items: center;
@@ -326,10 +367,8 @@
           justify-content: center;
           overflow: hidden;
           padding: 0;
-        
-       
-        
-          img{
+
+          img {
             border-radius: 5px;
             width: 79px;
             height: 79px;
@@ -445,7 +484,7 @@
       font-style: normal;
       font-weight: 500;
       line-height: 24px;
-      span{
+      span {
         color: #5dcaf9;
         font-weight: 600;
       }
@@ -570,7 +609,7 @@
         }
       }
       .formjs {
-        .ant-input-outlined:focus{
+        .ant-input-outlined:focus {
           border-color: #5dcaf9;
           box-shadow: none;
         }
@@ -585,8 +624,6 @@
           border: 1px solid #eef1f5;
           border-radius: 4px;
           display: flex;
-
-        
 
           padding: 8px 20px;
         }
@@ -620,21 +657,26 @@
             color: #414141;
           }
         }
-        button{
+        button {
           font-weight: 500;
           border-radius: 10px;
           border: none;
           width: 100%;
-        
+
           padding: 8px 16px;
           background: #8ad6f7;
           color: #fff;
           transition: 0.3s all ease-in-out;
-          &:hover{
+          &:hover {
             background: #5dcaf9;
           }
         }
       }
     }
+  }
+}
+.jobfullbox{
+  @media only screen and (max-width: 767px) {
+    gap:10px;
   }
 }

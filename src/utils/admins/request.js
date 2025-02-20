@@ -1,7 +1,7 @@
 import { DOMAIN } from "../api-domain";
 
 // const API_DOMAIN = "http://localhost:2709/api/v1/admin";
-const API_DOMAIN = `https://${DOMAIN}/api/v1/admin`;
+const API_DOMAIN = `${DOMAIN}/api/v1/admin`;
 
 export const Get = async (path, options ,link = API_DOMAIN) => {
   const response = await fetch(link + path, options);

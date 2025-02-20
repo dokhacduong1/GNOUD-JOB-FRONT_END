@@ -36,8 +36,8 @@ const handleSearchCategory = (id) => {
 }
     return (
         <>
-            <div className="cb-section">
-                <div className="career-key">
+            <div className="cb-section career-key">
+                <div className="">
                     <div className="container">
                         <h2 className="text-center title-text">NGÀNH NGHỀ TRỌNG ĐIỂM</h2>
                         <div className="row ">

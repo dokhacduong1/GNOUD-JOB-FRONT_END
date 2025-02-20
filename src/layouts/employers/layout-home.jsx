@@ -1,10 +1,9 @@
 /* eslint-disable no-unused-vars */
 import { Layout } from "antd";
+import { Helmet } from 'react-helmet';
 
-import Header from "./header/index";
-import FooterMain from "./footer/index";
 import { Outlet } from "react-router-dom";
-import { useSelector } from "react-redux";
+
 
 
 
@@ -13,7 +12,9 @@ function LayoutMainEmployersNoHeaderAndNoFooter() {
   //Lấy ra trạng thái của authenMainEmployers false là chưa đăng nhập true là đã đăng nhập
   // const authenMainEmployers = useSelector((status) => status.authenticationReducerClient);
 
-
+  <Helmet>
+  {/* Không thêm meta viewport */}
+</Helmet>
  
   return (
     <>

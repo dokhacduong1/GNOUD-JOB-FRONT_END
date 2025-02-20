@@ -44,7 +44,7 @@ function PasswordClient() {
     }
   };
   return (
-    <div className="col-8 ">
+    <div className="col-lg-8  col-12 mb-3">
       <div className="box-settings-info">
         <div className="box-settings-info__title">
           <h1>Thay đổi mật khẩu</h1>

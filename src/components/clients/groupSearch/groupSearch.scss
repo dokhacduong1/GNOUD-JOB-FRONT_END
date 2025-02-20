@@ -36,11 +36,16 @@
     }
   }
   .search-city {
-    width: 35%;
+    
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 5px;
-   
+   .icon-hidden{
+    @media only screen and (max-width: 600px) {
+      display: none;
+    }
+   }
     .ant-select-outlined:not(.ant-select-disabled):not(
         .ant-select-customize-input
       ):not(.ant-pagination-size-changer)

@@ -61,8 +61,8 @@ function JobsOccupation() {
   };
 
   return (
-    <div className="cb-section">
-      <div className="job__occupation">
+    <div className="cb-section job__occupation">
+      <div className="">
         <div className="container">
           <h2 className="text-center title-text">
             VIỆC LÀM THEO NGHỀ NGHIỆP HOT

@@ -1,65 +1,31 @@
 import "./header.scss";
-import { DownloadOutlined } from "@ant-design/icons";
 
-import { NavLink, useLocation } from "react-router-dom";
-import { Collapse, Button, Select, Menu, Dropdown } from "antd";
-import { useEffect, useState } from "react";
-
+import { Link, NavLink } from "react-router-dom";
+import { Menu, Dropdown } from "antd";
+import { useState } from "react";
+import { MenuOutlined } from "@ant-design/icons";
 import { useSelector } from "react-redux";
 
 import DropMenu from "./dropMenu";
-import { getCityApiDuong } from "../../../services/clients/user-userApi";
+
 import { searchCv, searchJob } from "./js/options";
 
 function Header() {
   const authenMainClient = useSelector(
     (status) => status.authenticationReducerClient
   );
-  const location = useLocation();
-  const[linkLocation,setLinkLocation] = useState(location.pathname)
-  const [isCollapseVisible, setIsCollapseVisible] = useState(0);
 
-  const [city, setCity] = useState([]);
-  useEffect(() => {
-    const fetchApi = async () => {
-      const recordCity = await getCityApiDuong();
-      if (recordCity.code === 200) {
-        const convertCity = recordCity.data.map((dataMap) => ({
-          label: dataMap.name,
-          value: dataMap.code,
-        }));
-        setCity(convertCity);
-      }
-    };
-    fetchApi();
-  }, []);
+  const [linkLocation] = useState(location.pathname);
 
-  
-
-  const buttonClickCollab = () => {
-    const numberCheck = isCollapseVisible === 1 ? 0 : 1;
-    setIsCollapseVisible(numberCheck);
-  };
-  const handleClickMenu = (agrs) => {
-    const { key } = agrs;
-    if (key !== "5") {
-      setIsCollapseVisible(0);
-    }
-  };
-  useEffect(()=>{
-  
-    setLinkLocation(location.pathname)
-  },[location.pathname])
   const itemsMenuNav = [
     {
       label: (
         <Dropdown
-      
           overlayClassName="drop-menu-ok"
-          menu={{ items: searchJob, selectedKeys:linkLocation }}
+          menu={{ items: searchJob, selectedKeys: linkLocation }}
           placement="bottomLeft"
         >
-          <div style={{fontWeight:"500"}}>Tìm Việc Làm</div>
+          <div style={{ fontWeight: "500" }}>Tìm Việc Làm</div>
         </Dropdown>
       ),
       key: "viec-lam",
@@ -68,12 +34,11 @@ function Header() {
     {
       label: (
         <Dropdown
-      
           overlayClassName="drop-menu-ok"
-          menu={{ items: searchCv, selectedKeys:linkLocation }}
+          menu={{ items: searchCv, selectedKeys: linkLocation }}
           placement="bottomLeft"
         >
-          <div style={{fontWeight:"500"}}>Hồ sơ & CV</div>
+          <div style={{ fontWeight: "500" }}>Hồ sơ & CV</div>
         </Dropdown>
       ),
       key: "cv",
@@ -89,7 +54,23 @@ function Header() {
       key: "4",
       icon: null,
     },
+  ];
+  const items = [
     
+    {
+      key: "2",
+      label: <Link to="/login">Đăng nhập</Link>,
+    
+    },
+    {
+      key: "3",
+      label: <Link to="/register">Đăng ký</Link>,
+     
+    },
+    {
+      key: "4",
+      label: <Link to="/nha-tuyen-dung">Nhà tuyển dụng</Link>,
+    },
   ];
 
   return (
@@ -97,23 +78,22 @@ function Header() {
       <header className="header">
         <div className="container-fluid">
           <div className="row justify-content-center align-items-center">
-            <div className="header__logo col-2">
+            <div className="header__logo col-xl-2 col-6">
               <NavLink className="mr-1" to="/">
                 GNOUD
               </NavLink>
             </div>
-            <div className="header__search col-5 text-center">
+            <div className="header__search col-3 text-center">
               <Menu
                 selectedKeys={location.pathname.split("/")[1]}
-                onClick={handleClickMenu}
                 mode="horizontal"
                 items={itemsMenuNav}
               />
             </div>
-       
+
             {!authenMainClient.status ? (
               <>
-                <div className="header__boxUsers col-3 text-center">
+                <div className="header__boxUsers col-5 text-center">
                   <div className="row col-12 justify-content-end align-items-center">
                     <div className="header__boxUsers-user col-3">
                       <NavLink className="mr-1" to={"/login"}>
@@ -134,6 +114,19 @@ function Header() {
                   className="header__employer text-center col-2"
                 >
                   <a href={"/nha-tuyen-dung"}>Nhà tuyển dụng</a>
+                </div>
+                <div className="header__reponsived col-6 text-end">
+                  <Dropdown
+                    menu={{
+                      items,
+                    }}
+                    trigger={['click']}
+                  >
+                    <div style={{ fontSize: "22px", cursor: "pointer" }}>
+                      {" "}
+                      <MenuOutlined />
+                    </div>
+                  </Dropdown>
                 </div>
               </>
             ) : (

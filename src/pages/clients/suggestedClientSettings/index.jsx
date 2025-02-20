@@ -104,7 +104,7 @@ function SuggestedClientSettings() {
   }, []);
 
   return (
-    <div className="col-8 ">
+    <div className="col-lg-8 col-12 mb-3 ">
       <div className="box-settings-info">
         <div className="box-settings-info__image">
           <img src={banner} alt="banner" />
@@ -137,7 +137,7 @@ function SuggestedClientSettings() {
               <hr />
               <div className="box-settings-info__h2">
                 <FontAwesomeIcon icon={faUser} />
-                <h2 className="col-6">Thông tin cá nhân</h2>
+                <h2 className="col-6" style={{fontSize:"19px"}}>Thông tin cá nhân</h2>
               </div>
 
               <Form.Item
@@ -178,7 +178,7 @@ function SuggestedClientSettings() {
 
               <div className="box-settings-info__h2">
                 <FontAwesomeIcon icon={faBriefcase} />
-                <h2>Nhu cầu công việc</h2>
+                <h2  style={{fontSize:"19px"}}>Nhu cầu công việc</h2>
               </div>
               <Form.Item
                 label="Vị trí công việc"

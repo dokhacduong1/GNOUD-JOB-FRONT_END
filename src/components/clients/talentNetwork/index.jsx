@@ -25,7 +25,7 @@ function TalentNetwork() {
                     <div className="container">
 
                         <div className="row">
-                            <div className="col-5">
+                            <div className="col-lg-5">
                                 <div className="telent-network__bg">
                                     <div className="title">
                                         <h2>Gia tăng cơ hội nghề nghiệp
@@ -35,7 +35,7 @@ function TalentNetwork() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-7">
+                            <div className="col-lg-7 telent-network_check">
                                 <div className="telent-network__comppany">
                                     <div className="row">
                                         {

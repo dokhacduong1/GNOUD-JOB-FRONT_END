@@ -8,9 +8,16 @@
     padding:  0 0 0 16px;;
     justify-content: center;
     align-items: center;
+    @media only screen and (max-width: 992.9px) {
+      gap:10px
+    }
     .col-custom{
       flex: 0 0 auto;
       width: 20%;
+      @media only screen and (max-width: 992.9px) {
+        width: 100%;
+        gap: 10px;
+      }
     }
   }
   .button-search-job {
@@ -46,12 +53,25 @@
   }
   .job-full-search{
     display: flex;
+    flex-wrap: wrap;
   }
   .job-sort-news{
+    h4{
+      @media only screen and (max-width: 992.9px) {
+        margin-bottom: 5px;
+      }
+    }
     display: flex;
+    flex-wrap: wrap;
+    @media only screen and (max-width: 992.9px) {
+      gap: 5px;
+    }
     align-items: center;
     justify-content: space-between;
     .switch{
+      @media only screen and (max-width: 992.9px) {
+       display: none;
+      }
       .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):hover{
        
       }
@@ -74,5 +94,10 @@
       
       }
     }
+  }
+}
+.job-maybe{
+  @media only screen and (max-width: 992.9px) {
+    display: none;
   }
 }

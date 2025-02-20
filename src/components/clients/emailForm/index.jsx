@@ -18,7 +18,7 @@ function EmailForm(props) {
                         <div className="email__box-title col-12">
                             <h2 className="text-center">Hãy Đăng Ký Theo Dõi Để Nhận Cơ Hội Làm Việc Mới Nhất</h2>
                         </div>
-                        <div className="email__box-form col-6">
+                        <div className="email__box-form col-lg-6 col-12">
                             <Search
                                 className="search__form "
                                 placeholder="Nhập địa chỉ email của bạn"

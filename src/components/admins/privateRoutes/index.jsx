@@ -32,7 +32,6 @@ function PrivateRoutes() {
                 deleteAllCookies();
                 navigate("/admin/login");
                 setAuthen(false);
-              
             }
           
         }

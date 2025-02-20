@@ -18,6 +18,7 @@
     }
     &-item {
       display: flex;
+    
       gap: 10px;
       a {
         display: block;
@@ -42,16 +43,24 @@
     outline: 1px solid #e9eaec;
     padding: 8px;
     width: 100px;
+    @media only screen and (max-width: 768px) {
+      height: 60px !important;
+      width: 60px !important;
+    }
   }
   &__body {
-    margin-left: 20px;
+    margin-left: 20px ;
+    @media only screen and (max-width: 768px) {
+      margin-left: 5px;
+    }
     width: 100%;
     .title_all {
-      display: flex;
-      gap: 20px;
-      justify-content: space-between;
-      margin-bottom: 4px;
-      align-items: baseline;
+      // display: flex;
+      // flex-wrap: wrap;
+      // gap: 20px;
+      // justify-content: space-between;
+      // margin-bottom: 4px;
+      // align-items: baseline;
       .title {
         display: flex;
         flex: 1;
@@ -63,6 +72,10 @@
         }
       }
       .title-salary {
+        @media only screen and (max-width: 768px) {
+          margin-top: 6px !important;
+          display: block;
+        }
         color: #3dbff7;
         font-size: 15px;
         font-weight: 700;
@@ -92,11 +105,20 @@
     .info-job{
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
         align-items: center;
+        @media only screen and (max-width: 768px) {
+          gap: 10px;
+        }
         .time-line{
             display: flex;
             align-items: center;
+            flex-wrap: wrap;
             gap: 14px;
+            @media screen and (max-width: 768px){
+              gap: 5px !important;
+              
+            }
             .address , .end_date{
                 display: flex;
                 align-items: center;
@@ -106,13 +128,18 @@
                     color: #3dbff7;
                     
                 }
+              
             }
         }
        
         .button-line{
             display: flex;
             align-items: center;
+           
             justify-content: center;
+            @media only screen and (max-width: 768px) {
+              width: 100%;
+            }
             gap: 10px;
             a{
               color: #fff;

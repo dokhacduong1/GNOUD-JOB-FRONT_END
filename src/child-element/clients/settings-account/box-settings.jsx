@@ -39,7 +39,7 @@ function BoxSettings() {
 
   return (
     <>
-      <div className="col-4 box-setting-account">
+      <div className="col-lg-4 col-12 box-setting-account">
         <div className="text-left box-siderbar">
           <div className="box-setting-account__header row ">
             <div className="profile-avatar col-4">

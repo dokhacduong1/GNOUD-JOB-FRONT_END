@@ -27,7 +27,6 @@ import MemoizedMayBeInterested from "../../../components/clients/mayBeInterested
 import MemoizedCompanyOutstanding from "../../../components/clients/companyOutstanding";
 
 const buildQueryString = (params) => {
-
   window.scrollTo(0, 0);
   return Object.entries(params)
     .map(([key, value]) => `${key}=${value || ""}`)
@@ -115,7 +114,6 @@ function JobSearchAdvanced() {
     setHiden(!hiden);
   };
 
-
   const handleChangeJobCategories = (value) => {
     const params = {
       keywords: keyword,
@@ -201,7 +199,7 @@ function JobSearchAdvanced() {
       salary_max: salary_max || "",
     };
     navigate(`?${buildQueryString(params)}`);
-  }
+  };
   return (
     <div className="cb-section cb-section-padding-bottom">
       <div className="search-addvance">
@@ -224,10 +222,10 @@ function JobSearchAdvanced() {
                 <Form
                   initialValues={{ workExperience: "", salary: "" }}
                   form={form}
-                  layout="inline row gx-0"
+                  layout="inline row gx-0 gap-2"
                   onFinish={handleFinish}
                 >
-                  <Form.Item className="col-5" name="groupDataSearch">
+                  <Form.Item className="col-lg-5" name="groupDataSearch">
                     <GroupSearch
                       valueCity={city}
                       valueKeyword={keyword}
@@ -237,10 +235,10 @@ function JobSearchAdvanced() {
                     />
                   </Form.Item>
 
-                  <Form.Item className="col-2" name={"workExperience"}>
+                  <Form.Item className="col-lg-2" name={"workExperience"}>
                     <Select size="large" options={dataExperience} />
                   </Form.Item>
-                  <Form.Item className="col-2" name={"salary"}>
+                  <Form.Item className="col-lg-2" name={"salary"}>
                     <Select size="large" options={optionsSalary} />
                   </Form.Item>
                   <Form.Item
@@ -365,7 +363,11 @@ function JobSearchAdvanced() {
                       },
                     }}
                   >
-                    <Radio.Group onChange={onChangeRaido} value={sort_key}>
+                    <Radio.Group
+                      className="radio__sort"
+                      onChange={onChangeRaido}
+                      value={sort_key}
+                    >
                       <Radio value={"createdAt"}>Tin mới nhất</Radio>
                       <Radio value={"updatedAt"}>Ngày cập nhật</Radio>
                       <Radio value={"salaryMax"}>Lương cao nhất</Radio>
@@ -374,17 +376,26 @@ function JobSearchAdvanced() {
                 </div>
               </div>
               <div className="row">
-                <MemoizedItemBoxNews
-                  recordItem={recordItem}
-                  handleChangePagination={handleChangePagination}
-                  defaultValue={page}
-                  countPagination={coutJob}
-                />
-                  <div className="suggested-job col-md-4">
-                <MemoizedMayBeInterested />
-                <hr />
-                <MemoizedCompanyOutstanding />
-              </div>
+               
+                  <MemoizedItemBoxNews
+                    recordItem={recordItem}
+                    handleChangePagination={handleChangePagination}
+                    defaultValue={page}
+                    countPagination={coutJob}
+                  />
+               
+
+                <div className="suggested-job col-lg-4 col-12">
+                  <div className="suggested-job-maybe">
+                    <MemoizedMayBeInterested />
+                  </div>
+                  
+                  <hr />
+                  <div className="suggested-job-company">
+                    <MemoizedCompanyOutstanding />
+                  </div>
+                
+                </div>
               </div>
             </div>
           </div>

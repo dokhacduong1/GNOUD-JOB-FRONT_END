@@ -21,7 +21,7 @@ import { saveJob } from "../../../services/clients/user-userApi";
 import { useDispatch, useSelector } from "react-redux";
 import { UpdateDataAuthClient } from "../../../update-data-reducer/clients/updateDataClient";
 function ItemBoxNews({
-  colGrid = 'col-md-8',
+  colGrid = 'col-lg-8 col-12',
   recordItem,
   handleChangePagination,
   countPagination = 1,

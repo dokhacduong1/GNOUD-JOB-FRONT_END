@@ -59,11 +59,11 @@ export const authenClient = async (valueForm)=>{
 }
 
 export const getCityApiDuong = async ()=>{
-    const result = await Get("",{},"https://duongshop.id.vn/api/v1/duongits/city");
+    const result = await Get("",{},"https://api-city-vn-beta.vercel.app/api/v1/duongits/city");
     return result;
 }
 export const getDistrictApiDuong = async (value)=>{
-    const result = await Get("",{},`https://duongshop.id.vn/api/v1/duongits/district/${value}`);
+    const result = await Get("",{},`https://api-city-vn-beta.vercel.app/api/v1/duongits/district/${value}`);
     return result;
 }
 export const recruitmentJob = async (valueForm)=>{

@@ -121,7 +121,7 @@ function ManagementCv() {
   ];
 
   return (
-    <div className="col-8">
+    <div className="col-lg-8 col-12 mb-3">
       <div className="box-settings-info mb-3">
         <div className="management-cv">
           <div className="banner mb-2">
@@ -130,7 +130,7 @@ function ManagementCv() {
           <div className="content">
             <div className="title">Quản lý CV</div>
             <div className="table">
-              <Table rowKey={"_id"} columns={columns} dataSource={data} />
+              <Table rowKey={"_id"} columns={columns} dataSource={data} scroll={{ x: 800 }} />
             </div>
           </div>
         </div>

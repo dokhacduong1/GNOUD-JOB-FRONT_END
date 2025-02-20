@@ -11,11 +11,11 @@ function FooterMain() {
         <>
             <Footer className='footer'>
                 <div className='container footer__main'>
-                    <div className="footer__logo col-2">
+                    <div className="footer__logo col-lg-2 col-12">
                         <NavLink className="mr-1" to={"/"}>GNOUD</NavLink>
                     </div>
                     <div className='row footer__main-body'>
-                        <div className='col-2'>
+                        <div className='col-lg-2 col-12'>
                             <div className='footer__link'>
                                 <h2>DÀNH CHO ỨNG VIÊN</h2>
                                 <ul style={{listStyle:"none",padding:"0"}}>
@@ -28,7 +28,7 @@ function FooterMain() {
                                 </ul>
                             </div>
                         </div>
-                        <div className='col-2'>
+                        <div className='col-lg-2 col-12'>
                             <div className='footer__link'>
                                 <h2>NHÀ TUYỂN DỤNG</h2>
                                 <ul style={{listStyle:"none",padding:"0"}}>
@@ -40,7 +40,7 @@ function FooterMain() {
                                 </ul>
                             </div>
                         </div>
-                        <div className='col-2'>
+                        <div className='col-lg-2 col-12'>
                             <div className='footer__link'>
                                 <h2>TRUNG TÂM HỖ TRỢ</h2>
                                 <ul style={{listStyle:"none",padding:"0"}}>
@@ -54,7 +54,7 @@ function FooterMain() {
                                 </ul>
                             </div>
                         </div>
-                        <div className='col-2'>
+                        <div className='col-lg-2 col-12'>
                             <div className='footer__link'>
                                 <h2>WEBSITE ĐỐI TÁC</h2>
                                 <ul style={{listStyle:"none",padding:"0"}}>
@@ -67,7 +67,7 @@ function FooterMain() {
                                 </ul>
                             </div>
                         </div>
-                        <div className='col-2'>
+                        <div className='col-lg-2 col-12'>
                             <div className='footer__link'>
                                 <h2>XÂY DỰNG SỰ NGHIỆP</h2>
                                 <ul style={{listStyle:"none",padding:"0"}}>
@@ -80,7 +80,7 @@ function FooterMain() {
                                 </ul>
                             </div>
                         </div>
-                        <div className='col-2'>
+                        <div className='col-lg-2 col-12'>
                             <div className='footer__link'>
                                 <h2>TÌM KIẾM MỌI LÚC MỌI NƠI</h2>
                                 <div className='footer__logo-icon '>
@@ -109,7 +109,7 @@ function FooterMain() {
                                     <p>Copyright © GNOUD Vietnam</p>
                                 </div>
                             </div>
-                            <div className='col-2 text-right'>
+                            <div className='col-lg-2 col-12 text-right'>
                                 <img src={dk} alt='dk.jpg'></img>
                             </div>
                         </div>

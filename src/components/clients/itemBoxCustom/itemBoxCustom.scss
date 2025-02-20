@@ -26,6 +26,7 @@
     }
     &-item {
       display: flex;
+     
       gap: 10px;
       a {
         display: block;
@@ -55,7 +56,11 @@
     margin-left: 20px;
     width: 100%;
     .title_all {
+      @media screen and (max-width: 768px) {
+       display: block;
+      }
       display: flex;
+      flex-wrap: wrap;
       gap: 20px;
       justify-content: space-between;
       margin-bottom: 4px;
