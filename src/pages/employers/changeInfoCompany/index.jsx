@@ -207,6 +207,7 @@ function ChangeInfoCompany() {
                         onChange={handleFileChange}
                         type="file"
                         id="file"
+                        accept="image/*"
                         ref={inputFile}
                         style={{ display: "none" }}
                       />

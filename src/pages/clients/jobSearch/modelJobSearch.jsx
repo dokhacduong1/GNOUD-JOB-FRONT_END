@@ -49,13 +49,15 @@ function ModelJobSearch({ record, infoUser,showModel }) {
   const handleChanges = (e) => {
     if (e.target.files.length === 0) return;
     if (
-      e.target.files[0].type !== "application/pdf" &&
-      e.target.files[0].size > 5 * 1024 * 1024
+      e.target.files[0].type === "application/pdf" &&
+      e.target.files[0].size < 5 * 1024 * 1024
     ) {
-      setWarning(true);
+      setFilePdf(e.target.files[0]);
+      setWarning(false);
       return;
     }
-    setFilePdf(e.target.files[0]);
+    setWarning(true);
+   
   };
   //Hàm này để mở file input lấy ảnh
   const onButtonClick = () => {
@@ -169,6 +171,7 @@ function ModelJobSearch({ record, infoUser,showModel }) {
               onDragOver={handleDragOver}
             >
               <input
+               accept=".pdf"
                 onChange={handleChanges}
                 ref={refFile}
                 type="file"

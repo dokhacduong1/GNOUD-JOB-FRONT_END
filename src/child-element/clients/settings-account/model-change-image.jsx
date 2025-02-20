@@ -14,8 +14,9 @@ import { authenticationClient } from "../../../stores/clients/actions/auth";
 import { handleFileChangeCustom } from "../../../helpers/imagesHelper";
 
 function ModelChangeImage(props) {
-    const {avatar} = props;
-   
+  const { avatar } = props;
+  const [message, setMessage] = useState("");
+
   const [isModal, setIsModalOpen] = useState(false);
   const [fileList, setFileList] = useState([]);
   const [imageChange, setImageChange] = useState(avatar);
@@ -23,8 +24,20 @@ function ModelChangeImage(props) {
   const dispatch = useDispatch();
 
   const onChange = ({ fileList }) => {
-    const imageUrl = URL.createObjectURL(fileList[0].originFileObj);
+    if (fileList.length === 0) return;
 
+    const file = fileList[0].originFileObj;
+
+    // Kiểm tra xem file có phải là ảnh hay không
+    if (!file.type.startsWith("image/")) {
+      setMessage("Vui lòng chọn một file ảnh!");
+
+      setFileList([]); // Xóa file khỏi danh sách
+      return;
+    }
+    setMessage("");
+    // Nếu là ảnh, tiếp tục xử lý
+    const imageUrl = URL.createObjectURL(file);
     setImageChange(imageUrl);
     setFileList(fileList);
   };
@@ -39,26 +52,31 @@ function ModelChangeImage(props) {
   };
 
   const submitForm = async () => {
-    
     if (fileList.length === 0) return;
-
-    setLoadingButton(true);
-    // const resizedImage = await resizeImage(fileList[0].originFileObj);
-    const noResize = await handleFileChangeCustom(fileList[0].originFileObj);
-    const base64Convert = await convertThumbUrl(noResize);
-    const valueForm = {
+    try {
+      setLoadingButton(true);
+      // const resizedImage = await resizeImage(fileList[0].originFileObj);
+      const noResize = await handleFileChangeCustom(fileList[0].originFileObj);
+      const base64Convert = await convertThumbUrl(noResize);
+      const valueForm = {
         thumbUrl: base64Convert,
-    }
-    const result = await uploadAvatar(valueForm);
-    if(result.code === 200){
+      };
+      const result = await uploadAvatar(valueForm);
+      if (result.code === 200) {
         setImageChange("");
         setFileList([]);
         //Lấy ra trạng thái của authenMainClient false là chưa đăng nhập true là đã đăng nhập
         const CheckAuth = await CheckAuthClient();
         dispatch(authenticationClient(true, CheckAuth.infoUser));
         changeModel();
+      } else {
+        setMessage(result.error);
+      }
+
+      setLoadingButton(false);
+    } catch (error) {
+      console.log(error);
     }
-    setLoadingButton(false);
   };
   return (
     <div>
@@ -79,10 +97,18 @@ function ModelChangeImage(props) {
         onCancel={changeModel}
         footer={null}
       >
+        {message !== "" && (
+          <div style={{ marginBottom: "5px", color: "red" }}>{message}</div>
+        )}
         <div className="row align-items-center justify-content-center gx-5">
           <div className="model-change-image__avatar col-8">
             <h4>Chọn ảnh</h4>
-            <Upload listType="picture" maxCount={1} onChange={onChange}>
+            <Upload
+              listType="picture"
+              maxCount={1}
+              onChange={onChange}
+              accept=".jpg,.jpeg,.png,.gif"
+            >
               <button>
                 {imageChange ? "Đổi ảnh đã chọn" : "Chọn ảnh tải lên"}
               </button>
@@ -91,14 +117,7 @@ function ModelChangeImage(props) {
           <div className="model-change-image__submit col-4">
             <h4>Ảnh đại diện</h4>
             <div className="image">
-              <img
-                src={
-                    imageChange !== ""
-                    ? imageChange
-                    : avatar
-                }
-                alt="ok"
-              />
+              <img src={imageChange !== "" ? imageChange : avatar} alt="ok" />
               <DeleteOutlined onClick={deleteImage} />
             </div>
 
